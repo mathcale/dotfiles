@@ -1,0 +1,31 @@
+{
+    "always_show_minimap_viewport": true,
+    "animation_enabled": true,
+    "bold_folder_labels": true,
+    "caret_extra_bottom": 1,
+    "caret_extra_top": 2,
+    "caret_extra_width": 1,
+    "caret_style": "phase",
+    "color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+    "draw_white_space": "none",
+    "ensure_newline_at_eof_on_save": true,
+    "font_face": "Monaco",
+    "font_size": 11,
+    "highlight_line": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
+    "match_selection": false,
+    "scroll_past_end": false,
+    "show_definitions": false,
+    "theme": "One Dark.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "tree_animation_enabled": false,
+    "word_wrap": true
+}
