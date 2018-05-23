@@ -1,6 +1,4 @@
 home:~/
-htdocs:/opt/lampp/htdocs
-konklave:/opt/lampp/htdocs/konklave-funstore
 vagrant:~/Projetos/vagrant-www
 html:~/Projetos/www/html
 wamp:/media/wamp
