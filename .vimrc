@@ -38,6 +38,9 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'reedes/vim-pencil'
 Plugin 'ajh17/Spacegray.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
+Plugin 'docunext/closetag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,6 +68,7 @@ map <C-i> :tabn<CR>
 map <C-h> :tabp<CR>
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+nmap <C-m> :TagbarToggle<CR>
 
 " Highlight current line
 :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
