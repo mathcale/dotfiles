@@ -1,3 +1,8 @@
+"
+" @mathcale's Vim Wizardry
+"
+set encoding=utf8
+
 set nocompatible
 filetype off
 
@@ -25,6 +30,14 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mxw/vim-jsx'
+Plugin 'farmergreg/vim-lastplace'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
+Plugin 'Townk/vim-autoclose'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'reedes/vim-pencil'
+Plugin 'ajh17/Spacegray.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -38,6 +51,8 @@ set laststatus=2
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set cursorline
+let base16colorspace=256
 
 " NERDTree stuff
 autocmd StdinReadPre * let s:std_in=1
@@ -45,9 +60,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Key mappings
-map <C-n> <plug>NERDTreeTabsToggle<CR>
+map <C-b> <plug>NERDTreeTabsToggle<CR>
 map <C-i> :tabn<CR>
 map <C-h> :tabp<CR>
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Highlight current line
 :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
@@ -60,4 +77,38 @@ let g:lightline = {
   \ }
 
 " Editor theme
-colorscheme onedark
+" colorscheme onedark
+colorscheme spacegray
+let g:spacegray_underline_search = 1
+let g:spacegray_italicize_comments = 1
+
+" Markdown Syntax Support
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" Vim-pencil Configuration
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init()
+    autocmd FileType text         call pencil#init()
+augroup END
+
+" Neocomplete Settings
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
