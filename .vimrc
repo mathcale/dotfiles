@@ -41,6 +41,8 @@ Plugin 'ajh17/Spacegray.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-easytags'
 Plugin 'docunext/closetag.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'sarahlim/wild-cherry-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -82,9 +84,12 @@ let g:lightline = {
 
 " Editor theme
 " colorscheme onedark
-colorscheme spacegray
-let g:spacegray_underline_search = 1
-let g:spacegray_italicize_comments = 1
+colorscheme wildcherry
+
+" Line Highlight for wildcherry theme
+:hi CursorLine   cterm=NONE ctermbg=53 ctermfg=white guibg=#19101e guifg=#ffffff
+:hi CursorColumn cterm=NONE ctermbg=53 ctermfg=white guibg=#19101e guifg=#ffffff
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " Markdown Syntax Support
 augroup markdown
