@@ -27,12 +27,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mxw/vim-jsx'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
 Plugin 'Townk/vim-autoclose'
 Plugin 'maksimr/vim-jsbeautify'
@@ -43,6 +41,9 @@ Plugin 'xolox/vim-easytags'
 Plugin 'docunext/closetag.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'sarahlim/wild-cherry-vim'
+Plugin 'tommcdo/vim-fubitive'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -53,8 +54,8 @@ set modeline
 set t_Co=256
 syntax on
 set laststatus=2
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set cursorline
 let base16colorspace=256
@@ -64,6 +65,26 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
 " Key mappings
 map <C-b> <plug>NERDTreeTabsToggle<CR>
 map <C-i> :tabn<CR>
@@ -71,11 +92,7 @@ map <C-h> :tabp<CR>
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 nmap <C-m> :TagbarToggle<CR>
-
-" Highlight current line
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+imap <C-Y> <C-y>,
 
 " Lightline color theme
 let g:lightline = {
@@ -83,26 +100,13 @@ let g:lightline = {
   \ }
 
 " Editor theme
-" colorscheme onedark
-colorscheme wildcherry
+colorscheme onedark
+" colorscheme wildcherry
 
 " Line Highlight for wildcherry theme
-:hi CursorLine   cterm=NONE ctermbg=53 ctermfg=white guibg=#19101e guifg=#ffffff
-:hi CursorColumn cterm=NONE ctermbg=53 ctermfg=white guibg=#19101e guifg=#ffffff
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-" Markdown Syntax Support
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
-
-" Vim-pencil Configuration
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
-augroup END
+" :hi CursorLine   cterm=NONE ctermbg=Gray guibg=#19101e
+" :hi CursorColumn cterm=NONE ctermbg=Gray guibg=#19101e
+" :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " Neocomplete Settings
 let g:acp_enableAtStartup = 0
