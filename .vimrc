@@ -52,13 +52,14 @@ filetype plugin indent on
 set number
 set modeline
 set t_Co=256
-syntax on
+syntax enable
 set laststatus=2
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set cursorline
 let base16colorspace=256
+set background=dark
 
 " NERDTree stuff
 autocmd StdinReadPre * let s:std_in=1
