@@ -44,6 +44,7 @@ Plugin 'sarahlim/wild-cherry-vim'
 Plugin 'tommcdo/vim-fubitive'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'junegunn/goyo.vim'
+Plugin 'dodie/vim-disapprove-deep-indentation'
 
 call vundle#end()
 filetype plugin indent on
