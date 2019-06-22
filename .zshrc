@@ -1,7 +1,7 @@
-export ZSH="/home/matheus.calegaro/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
-plugins=(git wd aws command-not-found gradle history jira npm sublime sudo vscode yarn)
+plugins=(git wd aws command-not-found gradle history jira npm sublime sudo vscode yarn gatsby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -9,21 +9,18 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 
 # Gradle
-export PATH=$PATH:/opt/gradle/gradle-2.3/bin
+# export PATH=$PATH:/opt/gradle/gradle-2.3/bin
 
 # SDKMan
-export SDKMAN_DIR="/home/matheus.calegaro/.sdkman"
-[[ -s "/home/matheus.calegaro/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matheus.calegaro/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # thefuck
-eval $(thefuck --alias)
-
-# Config do Hydra
-export PATH=$PATH:/home/matheus.calegaro/Projetos/hydra/lasa-hydra/scripts
+# eval $(thefuck --alias)
 
 # Go
-export GOPATH=/home/matheus.calegaro/go-workspace
-export PATH=$PATH:/home/matheus.calegaro/.go/bin
+export GOPATH=$HOME/go-workspace
+export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$GOPATH/bin
 
 # Localstack
@@ -33,9 +30,9 @@ export DYNAMO_ENDPOINT=http://localhost:4569
 #Android
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle
-export PATH=$PATH:/home/matheus.calegaro/Android/Sdk/tools
-export PATH=$PATH:/home/matheus.calegaro/Android/Sdk/platform-tools
-#export PATH=$PATH:/home/matheus.calegaro/Android/Sdk/emulator
+export PATH=$PATH:$HOME/Android/Sdk/tools
+export PATH=$PATH:$HOME/Android/Sdk/platform-tools
+#export PATH=$PATH:$HOME/Android/Sdk/emulator
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
