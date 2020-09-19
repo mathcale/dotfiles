@@ -1,0 +1,31 @@
+[user]
+	name = Matheus Calegaro
+	email = matheuscalegaro@outlook.com
+[color]
+	ui = true
+[core]
+	editor = vim
+[alias]
+	st = status
+	ck = checkout
+	b  = branch
+	d  = diff
+	c  = commit
+	pl = pull
+  p  = push
+  l  = log
+  cl = clone
+  a  = add
+  r  = restore
+  re = remote
+  s  = stash
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+  rebase = false
+
