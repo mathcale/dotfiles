@@ -1,3 +1,4 @@
-My configuration files.
+# Dotfiles
 
-They work for me, but it doesn't mean that they'll work for you as well.
+That's it, a bunch of config files! 🛠
+
