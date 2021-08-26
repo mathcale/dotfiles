@@ -10,6 +10,11 @@ call plug#begin()
   Plug 'dracula/vim', { 'name': 'dracula' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'preservim/nerdcommenter'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'TimUntersberger/neogit'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'Pocco81/Catppuccino.nvim'
 call plug#end()
 
 set nocompatible
@@ -38,7 +43,7 @@ set ttyfast
 set t_Co=256
 let base16colospace=256
 set background=dark
-colorscheme dracula
+colorscheme catppuccino
 highlight Normal ctermbg=NONE
 
 " Open new split panes to right and below
