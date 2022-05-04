@@ -11,7 +11,7 @@ plugins=(git wd history npm sublime sudo vscode yarn)
 source $ZSH/oh-my-zsh.sh
 
 # Default terminal text editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # SDKMan
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -21,8 +21,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval $(thefuck --alias)
 
 # Go
-export GOPATH=$HOME/go-workspace
-export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.goworkspace
+export GOBIN=$GOPATH/bin
+export GOROOT="$(brew --prefix golang)/libexec"
 #export GOARC=Hamd64
 #export GOOS=linux
 export PATH=$PATH:$GOPATH/bin
@@ -37,11 +38,33 @@ export ANDROID_HOME=$HOME/Library/Android/Sdk
 export PATH=$PATH:$HOME/Library/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/Sdk/tools
 export PATH=$PATH:$HOME/Library/Android/Sdk/platform-tools
-alias run-android="cd $HOME/Library/Android/sdk/emulator && ./emulator @oreo27 -camera-front webcam1 -camera-back webcam1 && cd -"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # React Native
 export REACT_EDITOR=code
@@ -83,3 +106,12 @@ alias cat=bat
 alias d=docker
 alias ls="exa --icons --color auto"
 
+# Node stuff
+export NODE_OPTIONS=--max_old_space_size=4096
+#export TS_NODE_TRANSPILE_ONLY=true
+
+# K8s stuff
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Init starship
+eval "$(starship init zsh)"
