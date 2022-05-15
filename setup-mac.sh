@@ -36,6 +36,9 @@ echo "Installing spaceship-prompt..."
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+echo "==> Installing starship-prompt..."
+curl -sS https://starship.rs/install.sh | sh
+
 echo "Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -59,3 +62,4 @@ echo -e "nvim +'hi NormalFloat guibg=#1e222a' +PackerSync\n"
 
 echo "🔑 Here's your public SSH key:"
 cat $HOME/.ssh/id_rsa.pub
+
