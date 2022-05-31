@@ -22,13 +22,13 @@ for PPA in ${PPAS[@]}; do
   sudo add-apt-repository $PPA -y
 done
 
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
 echo "==> Installing core packages..."
 
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
-sudo apt install -y zsh git build-essential htop iotop neofetch zip unzip rar unrar lm-sensors youtube-dl apt-transport-https zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev ttf-mscorefonts-installer neovim
+sudo apt install -y zsh git build-essential htop iotop neofetch zip unzip rar unrar lm-sensors youtube-dl apt-transport-https zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev ttf-mscorefonts-installer neovim curl
+
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 sudo apt install yarn -y --no-install-recommends
 
@@ -80,4 +80,3 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 echo "==> Run 'nvim +'hi NormalFloat guibg=#1e222a' +PackerSync' to complete installation!"
 
 echo "🎉 Done!"
-
