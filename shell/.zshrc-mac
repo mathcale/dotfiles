@@ -38,6 +38,7 @@ export ANDROID_HOME=$HOME/Library/Android/Sdk
 export PATH=$PATH:$HOME/Library/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/Sdk/tools
 export PATH=$PATH:$HOME/Library/Android/Sdk/platform-tools
+# alias run-android="cd $HOME/Library/Android/sdk/emulator && ./emulator @oreo27 -camera-front webcam1 -camera-back webcam1 && cd -"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -69,16 +70,25 @@ load-nvmrc
 # React Native
 export REACT_EDITOR=code
 
-# Python executables
+# Python2 legacy executables
 export PATH=$PATH:$HOME/Library/Python/2.7/bin
 
 # Aliases
-alias topo=htop
+alias top=htop
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
+alias vim=nvim
+alias vi=nvim
+alias cat=bat
+alias d=docker
+alias ls="exa --icons --color auto"
 
-# Disable AWS SAM CLI telemetry
+# Shell alternatives configs
+export BAT_THEME="Dracula"
+
+# Serverless/SAM
 export SAM_CLI_TELEMETRY=0
+export PATH="$HOME/.serverless/bin:$PATH"
 
 # Yarn binaries
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -90,23 +100,10 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
-
 # Deta
 export PATH="/Users/matheus.calegaro/.deta/bin:$PATH"
 
-# NeoVim
-alias vim=nvim
-alias vi=nvim
-
-# Shell alternatives configs
-export BAT_THEME="Dracula"
-alias cat=bat
-alias d=docker
-alias ls="exa --icons --color auto"
-
-# Node stuff
+# Node options
 export NODE_OPTIONS=--max_old_space_size=4096
 #export TS_NODE_TRANSPILE_ONLY=true
 
@@ -115,3 +112,4 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Init starship
 eval "$(starship init zsh)"
+
