@@ -1,18 +1,25 @@
 #!/bin/bash
 
-PPAS=("ppa:neovim-ppa/stable" "ppa:obsproject/obs-studio")
+SECONDS=0
+PPAS=("ppa:neovim-ppa/unstable" "ppa:obsproject/obs-studio")
 
-echo "@mathcale's Linux Mint/Ubuntu setup wizardry ✨"
+clear
+echo -e "✨ @mathcale's Debian setup wizardry ✨\n"
 
-if [ ! -f ~/.ssh/id_rsa ]; then
-  echo "Creating new SSH key..."
-
-  ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa -q -P ""
-  ssh-add ~/.ssh/id_rsa
+if [ ! -f ~/.ssh/id_ed25519 ]; then
+  echo "==> Creating new SSH key..."
+  ssh-keygen -t ed25519 -C "hello@matheus.me" -q -P ""
 fi
 
-echo "==> Updating system dependencies..."
+mkdir -p $HOME/Dev
+mkdir -p $HOME/Dev/tmp
+mkdir -p $HOME/Random
+mkdir -p $HOME/.goworkspace
 
+echo "==> Cloning 'mathcale/dotfiles'..."
+git clone https://github.com/mathcale/dotfiles.git $HOME/Dev/dotfiles
+
+echo "==> Updating system dependencies..."
 sudo apt update
 sudo apt full-upgrade -y
 
@@ -36,37 +43,23 @@ echo "==> Installing GUI packages..."
 
 sudo apt install -y tilix gimp plank inkscape audacity vlc gparted xsensors conky bleachbit typecatcher qbittorrent cheese
 
-echo "==> Creating 'Dev' and 'Random' dirs..."
-
-mkdir -p $HOME/Dev
-mkdir -p $HOME/Dev/tmp
-mkdir -p $HOME/Random
-
-echo "==> Cloning 'mathcale/dotfiles'..."
-
-cd $HOME/Dev
-git clone https://github.com/mathcale/dotfiles.git
-cd $HOME
-
-if [ -f $HOME/.zshrc ]; then
-  echo "==> Removing existing .zshrc file..."
-
-  rm $HOME/.zshrc
-fi
-
-echo "==> Copying .zshrc to home dir..."
-cp $HOME/Dev/dotfiles/shell/.zshrc $HOME
-
 echo "==> Copying .gitconfig to home dir..."
 cp $HOME/Dev/dotfiles/git/.gitconfig $HOME
 
 echo "==> Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "==> Installing spaceship-prompt..."
+if [ -z "$ZSH_CUSTOM" ]; then
+  ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+  mkdir -p $ZSH_CUSTOM
+fi
 
+echo "==> Installing spaceship-prompt..."
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+echo "==> Installing starship-prompt..."
+curl -sS https://starship.rs/install.sh | sh
 
 echo "==> Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -74,9 +67,23 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 echo "==> Installing sdkman..."
 curl -s "https://get.sdkman.io" | bash
 
+echo "=>> Installing jEnv..."
+git clone https://github.com/jenv/jenv.git ~/.jenv
+
 echo "==> Installing nvchad..."
-
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-echo "==> Run 'nvim +'hi NormalFloat guibg=#1e222a' +PackerSync' to complete installation!"
 
-echo "🎉 Done!"
+if [ -f $HOME/.zshrc ]; then
+  echo "Removing existing .zshrc file..."
+  rm $HOME/.zshrc
+fi
+
+echo "==> Copying .zshrc to home dir..."
+cp $HOME/Dev/dotfiles/shell/.zshrc-linux $HOME/.zshrc
+
+echo -e "🎉 Done in ${SECONDS}s\n"
+echo "🖥  Run the following command to complete nvchad's installation:"
+echo -e "nvim +'hi NormalFloat guibg=#1e222a' +PackerSync\n"
+
+echo "🔑 Here's your public SSH key:"
+cat $HOME/.ssh/id_ed25519.pub
