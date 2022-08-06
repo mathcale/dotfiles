@@ -1,44 +1,114 @@
+###
+# @mathcale's ZSH wizardry
+###
+
+# Oh My ZSH configs
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
-plugins=(git wd aws command-not-found gradle history jira npm sublime sudo vscode yarn gatsby)
+plugins=(git wd history npm sublime sudo vscode yarn)
 
 source $ZSH/oh-my-zsh.sh
 
 # Default terminal text editor
-export EDITOR="vim"
-
-# Gradle
-# export PATH=$PATH:/opt/gradle/gradle-2.3/bin
+export EDITOR="nvim"
 
 # SDKMan
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # thefuck
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 # Go
-export GOPATH=$HOME/go-workspace
-export PATH=$PATH:$HOME/.go/bin
+export GOPATH=$HOME/.goworkspace
+export GOBIN=$GOPATH/bin
+#export GOROOT="$(brew --prefix golang)/libexec"
+#export GOARC=Hamd64
+#export GOOS=linux
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # Localstack
 export DATA_DIR=/tmp/localstack/data
-export DYNAMO_ENDPOINT=http://localhost:4569
+export DYNAMO_ENDPOINT=http://localhost:8000
 
-#Android
+# Android
 export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle
+export PATH=$PATH:$HOME/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Android/Sdk/tools
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
-#export PATH=$PATH:$HOME/Android/Sdk/emulator
+# alias run-android="cd $HOME/Android/sdk/emulator && ./emulator @oreo27 -camera-front webcam1 -camera-back webcam1 && cd -"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-alias run-android="cd $HOME/Android/Sdk/emulator && ./emulator @Oreo27 && cd -"
+autoload -U add-zsh-hook
 
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# React Native
 export REACT_EDITOR=code
+
+# Aliases
+alias top=htop
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+alias vim=nvim
+alias vi=nvim
+alias d=docker
+alias ls="exa --icons --color auto"
+alias s0="sleep 0 && clear"
+alias up="sudo pacman -Syu && yay -Syu"
+alias fixlol="sudo sh -c 'sysctl -w abi.vsyscall32=0'"
+
+# Shell alternatives configs
+export BAT_THEME="Dracula"
+
+# Serverless/SAM
+export SAM_CLI_TELEMETRY=0
+export PATH="$HOME/.serverless/bin:$PATH"
+
+# Yarn binaries
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Local scripts
+export PATH=$PATH:$HOME/.local/bin
+
+# Java
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Deta
+export PATH="$HOME/.deta/bin:$PATH"
+
+# Node options
+export NODE_OPTIONS=--max_old_space_size=4096
+#export TS_NODE_TRANSPILE_ONLY=true
+
+# K8s stuff
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Init starship
+eval "$(starship init zsh)"
 
