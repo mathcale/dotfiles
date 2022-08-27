@@ -29,7 +29,7 @@ echo "==> Installing core packages..."
 sudo dnf install -y \
   zsh git htop iotop neofetch zip unzip unrar \
   lm_sensors youtube-dl sqlite neovim curl wget \
-  go dnf-plugins-core
+  go dnf-plugins-core git-delta
 
 echo "==> Installing GUI packages..."
 sudo dnf install -y \
