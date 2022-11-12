@@ -28,6 +28,12 @@ brew bundle
 echo "==> Copying .gitconfig to home dir..."
 cp $HOME/Dev/dotfiles/git/.gitconfig $HOME
 
+echo "==> Copying scripts..."
+cp $HOME/Dev/dotfiles/scripts/s0 $HOME/.local/bin
+cp $HOME/Dev/dotfiles/scripts/up.brew $HOME/.local/bin/up
+
+chmod +x $HOME/.local/bin/*
+
 echo "==> Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
