@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# s0: clears the screen and gets rid of the failed
+#     command indicator, so my OCD doesn't kills me
+
+sleep 0
+clear

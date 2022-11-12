@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -x
+
+sudo dnf upgrade -y
+sudo dnf distro-sync -y
+sudo dnf autoremove -y

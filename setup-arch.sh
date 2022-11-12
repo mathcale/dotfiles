@@ -2,6 +2,9 @@
 
 SECONDS=0
 
+NODE_FULL_VERSION="v18.12.1"
+NODE_MAJOR_VERSION="18"
+
 clear
 echo -e "✨ @mathcale's Arch setup wizardry ✨\n"
 
@@ -54,6 +57,12 @@ yay -Sy visual-studio-code-bin neovim octopi \
 echo "==> Copying .gitconfig to home dir..."
 cp $HOME/Dev/dotfiles/git/.gitconfig $HOME
 
+echo "==> Copying scripts..."
+cp $HOME/Dev/dotfiles/scripts/s0 $HOME/.local/bin
+cp $HOME/Dev/dotfiles/scripts/up.arch $HOME/.local/bin/up
+
+chmod +x $HOME/.local/bin/*
+
 echo "==> Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -72,6 +81,11 @@ curl -sS https://starship.rs/install.sh | sh
 echo "==> Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
+echo "==> Installing Node.js..."
+nvm install $NODE_FULL_VERSION
+nvm alias $NODE_MAJOR_VERSION $NODE_FULL_VERSION
+nvm alias default $NODE_MAJOR_VERSION
+
 echo "==> Installing sdkman..."
 curl -s "https://get.sdkman.io" | bash
 
@@ -88,6 +102,11 @@ fi
 
 echo "==> Copying .zshrc to home dir..."
 cp $HOME/Dev/dotfiles/shell/.zshrc-linux $HOME/.zshrc
+
+if [ ! -f $HOME/.config/starship.toml ]; then
+  echo "==> Copying starship config..."
+  cp $HOME/Dev/dotfiles/shell/starship.toml $HOME/.config
+fi
 
 echo -e "🎉 Done in ${SECONDS}s\n"
 echo "🖥  Run the following command to complete nvchad's installation:"
