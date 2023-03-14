@@ -1,5 +1,5 @@
 ###
-# @mathcale's ZSH wizardry
+# @mathcale's ZSH shenanigans
 ###
 
 # Oh My ZSH configs
@@ -13,30 +13,32 @@ source $ZSH/oh-my-zsh.sh
 # Default terminal text editor
 export EDITOR="nvim"
 
-# SDKMan
+# SDKMan stuff
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# thefuck
-#eval $(thefuck --alias)
+# thefuck stuff
+eval $(thefuck --alias)
+eval $(thefuck --alias FUCK)
 
-# Go
+# Go stuff
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.goworkspace
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# Localstack
+# Localstack stuff
 export DATA_DIR=/tmp/localstack/data
 export DYNAMO_ENDPOINT=http://localhost:8000
 
-# Android
+# Android stuff
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$HOME/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Android/Sdk/tools
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
 
-# NVM
+# NVM stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -63,7 +65,7 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# React Native
+# React Native stuff
 export REACT_EDITOR=code
 
 # Aliases
@@ -77,11 +79,13 @@ alias ls="exa --icons --color auto"
 alias s0="sleep 0 && clear"
 alias fixlol="sudo sh -c 'sysctl -w abi.vsyscall32=0'"
 alias kct="kubectl"
+alias nf="neofetch"
+alias pf="pfetch"
 
 # Shell alternatives configs
 export BAT_THEME="Dracula"
 
-# Serverless/SAM
+# Serverless/SAM stuff
 export SAM_CLI_TELEMETRY=0
 export PATH="$HOME/.serverless/bin:$PATH"
 
@@ -90,20 +94,38 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Local scripts
 export PATH=$PATH:$HOME/.local/bin
+export PATH="/usr/local/bin:$PATH"
 
-# Java
+# jEnv stuff
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Deta
-export PATH="$HOME/.deta/bin:$PATH"
-
-# Node options
+# Node stuff
 export NODE_OPTIONS=--max_old_space_size=4096
 
 # K8s stuff
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# Init starship
-eval "$(starship init zsh)"
+# HSTR stuff
+alias hh=hstr                         # hh to be alias for hstr
+setopt histignorespace                # skip cmds w/ leading space from history
+export HSTR_CONFIG=hicolor            # get more colors
+bindkey -s "\C-r" "\C-a hstr -- \C-j" # bind hstr to Ctrl-r (for Vi mode check doc)
+
+# pfetch stuff
+export PF_INFO="ascii os host memory pkgs shell editor"
+
+# Pi Pico stuff
+export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
+export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
+export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
+
+# Fix prompt's "..." problem
+export SPACESHIP_PROMPT_ASYNC=false
+
+# Spicetify stuff
+export PATH=$PATH:$HOME/.spicetify
+
+# Quickemu stuff
+export PATH=$PATH:$HOME/Apps/quickemu
 
