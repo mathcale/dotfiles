@@ -108,6 +108,9 @@ if [ ! -f $HOME/.config/starship.toml ]; then
   cp $HOME/Dev/dotfiles/shell/starship.toml $HOME/.config
 fi
 
+echo "==> Copying Tilix config..."
+dconf load /com/gexperts/Tilix/ < $HOME/Dev/dotfiles/terminal/tilix.dconf
+
 echo -e "🎉 Done in ${SECONDS}s\n"
 echo "🖥  Run the following command to complete nvchad's installation:"
 echo -e "nvim +'hi NormalFloat guibg=#1e222a' +PackerSync\n"
