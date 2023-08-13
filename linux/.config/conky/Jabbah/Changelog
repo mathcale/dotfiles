@@ -1,0 +1,26 @@
+Changelog
+------------------------------
+Jabbah - Conky Theme
+[ Scorpio Themes Pack ] 
+
+by Closebox73
+------------------------------
+
+v1.0
+date : 20 Oct 2021
+-	Initial release
+
+
+v1.2
+date : 15 Sep 2022
+-	Add override_utf8_locale line
+-	Little extra line in scripts
+
+
+v2.0
+date : 21 Jan 2023
+-	Rearrange config line
+-	Change image weather to font icon
+-	Minimize archive size
+-	Little extra line in scripts
+-	Add Changelog file

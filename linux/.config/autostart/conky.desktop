@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Conky
+Exec=/home/mthx/.config/conky/Jabbah/start.sh
+Icon=conky
+X-GNOME-Autostart-enabled=true
