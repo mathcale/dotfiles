@@ -9,10 +9,7 @@
     "include": ["~/Dev/dotfiles/arch/waybar/modules.json"],
     "modules-left": [
         "custom/appmenu",
-        "custom/wallpaper",
-        "custom/waybarthemes",
         "wlr/taskbar",
-        "group/quicklinks",
         "hyprland/window"
     ],
     "modules-center": [
@@ -25,13 +22,6 @@
         "custom/cliphist",
         "network",
         "clock",
-        "custom/exit"
-    ],
-    "group/quicklinks": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/filemanager",
-            "custom/firefox"
-        ]
-    }
+        "custom/whoami"
+    ]
 }

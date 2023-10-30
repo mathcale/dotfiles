@@ -12,7 +12,7 @@
 # ----------------------------------------------------- 
 # Select wallpaper
 # ----------------------------------------------------- 
-selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -config ~/Dev/dotfiles/arch/rofi/config-wallpaper.rasi)
+selected=$(ls -1 ~/wallpapers | grep "jpg" | rofi -dmenu -config ~/Dev/dotfiles/arch/rofi/config-wallpaper.rasi)
 
 if [ "$selected" ]; then
 
@@ -20,7 +20,7 @@ if [ "$selected" ]; then
     # ----------------------------------------------------- 
     # Update wallpaper with pywal
     # ----------------------------------------------------- 
-    wal -q -i ~/wallpaper/$selected
+    wal -q -i ~/wallpapers/$selected
 
     # ----------------------------------------------------- 
     # Get new theme
@@ -32,7 +32,7 @@ if [ "$selected" ]; then
     # ----------------------------------------------------- 
     cp $wallpaper ~/.cache/current_wallpaper.jpg   
 
-    newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
+    newwall=$(echo $wallpaper | sed "s|$HOME/wallpapers/||g")
 
     # ----------------------------------------------------- 
     # Set the new wallpaper

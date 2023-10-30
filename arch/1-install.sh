@@ -7,7 +7,7 @@ echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 # ------------------------------------------------------
 # Load Library
 # ------------------------------------------------------
-DOTFILES_DIR=$(dirname "$0")
+DOTFILES_DIR=$(pwd)
 source "$DOTFILES_DIR/scripts/library.sh"
 
 # ------------------------------------------------------

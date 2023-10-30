@@ -4,7 +4,7 @@ echo "@mathcale's Arch Linux base setup shenanigans"
 echo "Heavily inspired by Stephan Raabe's dotfiles"
 echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 
-DOTFILES_DIR=$(dirname "$0")
+DOTFILES_DIR=$(pwd)
 source "$DOTFILES_DIR/scripts/library.sh"
 
 # ------------------------------------------------------
