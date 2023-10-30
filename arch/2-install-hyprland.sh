@@ -1,29 +1,33 @@
 #!/bin/bash
 
+echo "@mathcale's Arch Linux base setup shenanigans"
+echo "Heavily inspired by Stephan Raabe's dotfiles"
+echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
+
 source $(dirname "$0")/scripts/library.sh
 
 # ------------------------------------------------------
 # Install required packages
 # ------------------------------------------------------
 echo ""
-echo "-> Install main packages"
+echo "==> Install main packages"
 
 packagesPacman=(
-    "hyprland" 
-    "xdg-desktop-portal-wlr" 
-    "waybar"
-    "rofi"
-    "grim" 
-    "slurp"
-    "swayidle"
-    "swappy"
-    "cliphist"
+  "hyprland"
+  "xdg-desktop-portal-wlr"
+  "waybar"
+  "rofi"
+  "grim"
+  "slurp"
+  "swayidle"
+  "swappy"
+  "cliphist"
 );
 
 packagesYay=(
-    "swww" 
-    "swaylock-effects" 
-    "wlogout"
+  "swww"
+  "swaylock-effects"
+  "wlogout"
 );
 
 # ------------------------------------------------------
@@ -34,6 +38,4 @@ _installPackagesYay "${packagesYay[@]}";
 
 echo ""
 echo "DONE!"
-echo "NEXT: Update the keyboard layout and screen resolution in ~/dotfiles/hypr/hyprland.conf"
-echo "Then proceed with with 3-dotfiles.sh"
-
+echo "Proceed with 3-dotfiles.sh"

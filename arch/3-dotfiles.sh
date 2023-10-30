@@ -1,74 +1,61 @@
 #!/bin/bash
 
-source $(dirname "$0")/scripts/library.sh
+echo "@mathcale's Arch Linux base setup shenanigans"
+echo "Heavily inspired by Stephan Raabe's dotfiles"
+echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 
-echo ""
-echo "The script will ask for permission to remove existing directories and files from ~/.config/"
-echo "Symbolic links will then be created from ~/dotfiles into your ~/.config/ directory."
-echo "But you can decide to keep your personal versions by answering with No (Nn)."
-echo ""
-
-read -p "Press enter to continue..." -n1 -s
+DOTFILES_DIR=$(dirname "$0")
+source "$DOTFILES_DIR/scripts/library.sh"
 
 # ------------------------------------------------------
 # Create .config folder
 # ------------------------------------------------------
 echo ""
-echo "-> Check if .config folder exists"
+echo "==> Check if .config folder exists"
 
 if [ -d ~/.config ]; then
-    echo ".config folder already exists."
+  echo ".config folder already exists."
 else
-    mkdir ~/.config
-    echo ".config folder created."
+  mkdir ~/.config
+  echo ".config folder created."
 fi
 
 # ------------------------------------------------------
 # Create symbolic links
 # ------------------------------------------------------
-# name symlink source target
-
+# Syntax: name link source target-dir
 echo ""
-echo "-------------------------------------"
-echo "-> Install general dotfiles"
-echo "-------------------------------------"
-echo ""
+echo "==> Install general dotfiles"
 
-#_installSymLink kitty ~/.config/kitty ~/dotfiles/kitty ~/.config
-_installSymLink ranger ~/.config/ranger ~/dotfiles/ranger/ ~/.config
-_installSymLink nvim ~/.config/nvim ~/dotfiles/nvim/ ~/.config
-_installSymLink starship ~/.config/starship.toml ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-_installSymLink rofi ~/.config/rofi ~/dotfiles/rofi/ ~/.config
-_installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
-_installSymLink wal ~/.config/wal ~/dotfiles/wal/ ~/.config
+#_installSymLink kitty ~/.config/kitty $DOTFILES_DIR/kitty ~/.config
+_installSymLink ranger ~/.config/ranger $DOTFILES_DIR/ranger/ ~/.config
+_installSymLink nvim ~/.config/nvim $DOTFILES_DIR/nvim/ ~/.config
+_installSymLink starship ~/.config/starship.toml $DOTFILES_DIR/starship/starship.toml ~/.config/starship.toml
+_installSymLink rofi ~/.config/rofi $DOTFILES_DIR/rofi/ ~/.config
+_installSymLink dunst ~/.config/dunst $DOTFILES_DIR/dunst/ ~/.config
+_installSymLink wal ~/.config/wal $DOTFILES_DIR/wal/ ~/.config
 
 wal -i ~/wallpapers/
 echo "Pywal templates initiated!"
+
 echo ""
+echo "==> Install GTK dotfiles"
 
-echo "-------------------------------------"
-echo "-> Install GTK dotfiles"
-echo "-------------------------------------"
+_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 $DOTFILES_DIR/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
+_installSymLink gtk-3.0 ~/.config/gtk-3.0 $DOTFILES_DIR/gtk/gtk-3.0/ ~/.config/
+_installSymLink gtk-4.0 ~/.config/gtk-4.0 $DOTFILES_DIR/gtk/gtk-4.0/ ~/.config/
+
 echo ""
+echo "==> Install Hyprland dotfiles"
 
-_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
-_installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/dotfiles/gtk/gtk-3.0/ ~/.config/
-_installSymLink gtk-4.0 ~/.config/gtk-4.0 ~/dotfiles/gtk/gtk-4.0/ ~/.config/
-
-echo "-------------------------------------"
-echo "-> Install Hyprland dotfiles"
-echo "-------------------------------------"
-echo ""
-
-_installSymLink hypr ~/.config/hypr ~/dotfiles/hypr/ ~/.config
-_installSymLink waybar ~/.config/waybar ~/dotfiles/waybar/ ~/.config
-_installSymLink swaylock ~/.config/swaylock ~/dotfiles/swaylock/ ~/.config
-_installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
-_installSymLink swappy ~/.config/swappy ~/dotfiles/swappy/ ~/.config
+_installSymLink hypr ~/.config/hypr $DOTFILES_DIR/hypr/ ~/.config
+_installSymLink waybar ~/.config/waybar $DOTFILES_DIR/waybar/ ~/.config
+_installSymLink swaylock ~/.config/swaylock $DOTFILES_DIR/swaylock/ ~/.config
+_installSymLink wlogout ~/.config/wlogout $DOTFILES_DIR/wlogout/ ~/.config
+_installSymLink swappy ~/.config/swappy $DOTFILES_DIR/swappy/ ~/.config
 
 # ------------------------------------------------------
 # DONE
 # ------------------------------------------------------
-echo "DONE!" 
-echo "NEXT: Please logout and reboot your system!"
-
+echo "DONE!"
+echo "NEXT: Please reboot your system!"

@@ -7,75 +7,77 @@ echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 # ------------------------------------------------------
 # Load Library
 # ------------------------------------------------------
-source $(dirname "$0")/scripts/library.sh
+DOTFILES_DIR=$(dirname "$0")
+source "$DOTFILES_DIR/scripts/library.sh"
 
 # ------------------------------------------------------
 # Check if yay is installed
 # ------------------------------------------------------
 if sudo pacman -Qs yay > /dev/null ; then
-    echo "yay is installed. Setup will continue."
+  echo "yay is installed. Setup will continue."
 else
-    echo "-> Installing yay"
+  echo "==> Installing yay"
 
-    _installPackagesPacman "base-devel"
-    git clone https://aur.archlinux.org/yay-git.git ~/yay-git
-    cd ~/yay-git
-    makepkg -si
-    cd ~/dotfiles/
+  _installPackagesPacman "base-devel"
+  git clone https://aur.archlinux.org/yay-git.git ~/yay-git
+  cd ~/yay-git
+  makepkg -si
+  cd $DOTFILES_DIR
 
-    echo ""
-    echo "yay has been installed successfully."
+  echo ""
+  echo "yay has been installed successfully."
 fi
 
 # ------------------------------------------------------
 # Install required packages
 # ------------------------------------------------------
 echo ""
-echo "-> Install main packages"
+echo "==> Install main packages"
 
 packagesPacman=(
-    "pacman-contrib"
-    "kitty" 
-    "rofi" 
-    "firefox" 
-    "nitrogen" 
-    "dunst" 
-    "starship"
-    "neovim" 
-    "mpv" 
-    "freerdp" 
-    "xfce4-power-manager" 
-    "thunar" 
-    "mousepad" 
-    "ttf-font-awesome" 
-    "ttf-fira-sans" 
-    "ttf-fira-code" 
-    "ttf-firacode-nerd" 
-    "figlet" 
-    "vlc" 
-    "eza" 
-    "python-pip" 
-    "python-psutil" 
-    "python-rich" 
-    "python-click" 
-    "xdg-desktop-portal-gtk"
-    "pavucontrol" 
-    "tumbler" 
-    "xautolock" 
-    "blueman"
-    "sddm"
-    "kora-icon-theme"
-    "bat"
-    "neofetch"
-    "thunderbird"
-    "gimp"
+  "pacman-contrib"
+  "kitty"
+  "rofi"
+  "firefox"
+  "nitrogen"
+  "dunst"
+  "starship"
+  "neovim"
+  "mpv"
+  "freerdp"
+  "xfce4-power-manager"
+  "thunar"
+  "mousepad"
+  "ttf-font-awesome"
+  "ttf-fira-sans"
+  "ttf-fira-code"
+  "ttf-firacode-nerd"
+  "figlet"
+  "vlc"
+  "eza"
+  "python-pip"
+  "python-psutil"
+  "python-rich"
+  "python-click"
+  "xdg-desktop-portal-gtk"
+  "pavucontrol"
+  "tumbler"
+  "xautolock"
+  "blueman"
+  "sddm"
+  "kora-icon-theme"
+  "bat"
+  "neofetch"
+  "thunderbird"
+  "gimp"
+  "zsh"
 );
 
 packagesYay=(
-    "pfetch" 
-    "dracula-cursors-git" 
-    "trizen"
-    "sddm-sugar-dark"
+  "pfetch"
+  "dracula-cursors-git"
+  "trizen"
+  "sddm-sugar-dark"
 );
   
 # ------------------------------------------------------
@@ -88,47 +90,39 @@ _installPackagesYay "${packagesYay[@]}";
 # Install pywal
 # ------------------------------------------------------
 if [ -f /usr/bin/wal ]; then
-    echo "pywal already installed."
+  echo "pywal already installed."
 else
-    yay --noconfirm -S pywal
+  yay --noconfirm -S pywal
 fi
-
-# ------------------------------------------------------
-# Install .bashrc
-# ------------------------------------------------------
-#echo ""
-#echo "-> Install .bashrc"
-
-#_installSymLink .bashrc ~/.bashrc ~/dotfiles/.bashrc ~/.bashrc
 
 # ------------------------------------------------------
 # Install sddm display manager
 # ------------------------------------------------------
 echo ""
-echo "-> Enable sddm display manager"
+echo "==> Enable sddm display manager"
 sudo systemctl enable sddm.service
 
 # ------------------------------------------------------
 # Install wallpapers
 # ------------------------------------------------------
 echo ""
-echo "-> Install wallapers"
+echo "==> Install wallapers"
 git clone https://github.com/mathcale/wallpapers.git ~/wallpapers
-echo "wallpapers installed."
+echo "wallpapers installed!"
 
 # ------------------------------------------------------
 # Init pywal
 # ------------------------------------------------------
 echo ""
-echo "-> Init pywal"
+echo "==> Init pywal"
 wal -i ~/wallpapers/default.jpg
-echo "pywal initiated."
+echo "pywal initiated!"
 	
 # ------------------------------------------------------
 # Copy default wallpaper to .cache
 # ------------------------------------------------------
 echo ""
-echo "-> Copy default wallpaper to .cache"
+echo "==> Copy default wallpaper to .cache"
 cp ~/wallpapers/default.jpg ~/.cache/current_wallpaper.jpg
 echo "default wallpaper copied."
 
@@ -137,4 +131,3 @@ echo "default wallpaper copied."
 # ------------------------------------------------------
 echo "DONE!" 
 echo "NEXT: Please continue with 2-install-hyprland.sh"
-

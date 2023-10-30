@@ -1,2 +1,3 @@
-gtk-icon-theme-name="Papirus-Dark"
-gtk-cursor-theme-name="Bibata-Modern-Ice"
+gtk-theme-name="Catppuccin-Mocha-Standard-Mauve-Dark"
+gtk-icon-theme-name="kora"
+gtk-cursor-theme-name="Dracula-cursors"

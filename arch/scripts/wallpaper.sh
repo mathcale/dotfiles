@@ -10,7 +10,7 @@
 # ----------------------------------------------------- 
 
 # Select wallpaper
-selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -config ~/dotfiles/rofi/config-wallpaper.rasi -p "Wallpapers")
+selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -config ~/Dev/dotfiles/arch/rofi/config-wallpaper.rasi -p "Wallpapers")
 
 if [ "$selected" ]; then
 
