@@ -6,8 +6,7 @@ echo "Heavily inspired by Stephan Raabe's dotfiles"
 echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 echo ""
 
-DOTFILES_DIR=$(pwd)
-source "$DOTFILES_DIR/scripts/library.sh"
+source "~/dotfiles/scripts/library.sh"
 
 # ------------------------------------------------------
 # Create .config folder
@@ -29,29 +28,29 @@ fi
 echo ""
 echo "==> Install general dotfiles"
 
-#_installSymLink kitty ~/.config/kitty $DOTFILES_DIR/kitty ~/.config
-_installSymLink ranger ~/.config/ranger $DOTFILES_DIR/ranger/ ~/.config
-_installSymLink nvim ~/.config/nvim $DOTFILES_DIR/nvim/ ~/.config
-_installSymLink starship ~/.config/starship.toml $DOTFILES_DIR/starship/starship.toml ~/.config/starship.toml
-_installSymLink rofi ~/.config/rofi $DOTFILES_DIR/rofi/ ~/.config
-_installSymLink dunst ~/.config/dunst $DOTFILES_DIR/dunst/ ~/.config
-_installSymLink wal ~/.config/wal $DOTFILES_DIR/wal/ ~/.config
+#_installSymLink kitty ~/.config/kitty ~/dotfiles/kitty ~/.config
+_installSymLink ranger ~/.config/ranger ~/dotfiles/ranger/ ~/.config
+_installSymLink nvim ~/.config/nvim ~/dotfiles/nvim/ ~/.config
+_installSymLink starship ~/.config/starship.toml ~/dotfiles/starship/starship.toml ~/.config/starship.toml
+_installSymLink rofi ~/.config/rofi ~/dotfiles/rofi/ ~/.config
+_installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
+_installSymLink wal ~/.config/wal ~/dotfiles/wal/ ~/.config
 
 echo ""
 echo "==> Install GTK dotfiles"
 
-_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 $DOTFILES_DIR/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
-_installSymLink gtk-3.0 ~/.config/gtk-3.0 $DOTFILES_DIR/gtk/gtk-3.0/ ~/.config/
-_installSymLink gtk-4.0 ~/.config/gtk-4.0 $DOTFILES_DIR/gtk/gtk-4.0/ ~/.config/
+_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
+_installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/dotfiles/gtk/gtk-3.0/ ~/.config/
+_installSymLink gtk-4.0 ~/.config/gtk-4.0 ~/dotfiles/gtk/gtk-4.0/ ~/.config/
 
 echo ""
 echo "==> Install Hyprland dotfiles"
 
-_installSymLink hypr ~/.config/hypr $DOTFILES_DIR/hypr/ ~/.config
-_installSymLink waybar ~/.config/waybar $DOTFILES_DIR/waybar/ ~/.config
-_installSymLink swaylock ~/.config/swaylock $DOTFILES_DIR/swaylock/ ~/.config
-_installSymLink wlogout ~/.config/wlogout $DOTFILES_DIR/wlogout/ ~/.config
-_installSymLink swappy ~/.config/swappy $DOTFILES_DIR/swappy/ ~/.config
+_installSymLink hypr ~/.config/hypr ~/dotfiles/hypr/ ~/.config
+_installSymLink waybar ~/.config/waybar ~/dotfiles/waybar/ ~/.config
+_installSymLink swaylock ~/.config/swaylock ~/dotfiles/swaylock/ ~/.config
+_installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
+_installSymLink swappy ~/.config/swappy ~/dotfiles/swappy/ ~/.config
 
 echo ""
 echo "==> Init pywal"

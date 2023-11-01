@@ -9,8 +9,7 @@ echo ""
 # ------------------------------------------------------
 # Load Library
 # ------------------------------------------------------
-DOTFILES_DIR=$(pwd)
-source "$DOTFILES_DIR/scripts/library.sh"
+source "~/dotfiles/scripts/library.sh"
 
 # ------------------------------------------------------
 # Check if yay is installed
@@ -24,7 +23,7 @@ else
   git clone https://aur.archlinux.org/yay-git.git ~/yay-git
   cd ~/yay-git
   makepkg -si
-  cd $DOTFILES_DIR
+  cd ~/dotfiles
 
   echo ""
   echo "yay has been installed successfully."
