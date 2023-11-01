@@ -1,8 +1,10 @@
 #!/bin/bash
 
+echo ""
 echo "@mathcale's Arch Linux base setup shenanigans"
 echo "Heavily inspired by Stephan Raabe's dotfiles"
 echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
+echo ""
 
 DOTFILES_DIR=$(pwd)
 source "$DOTFILES_DIR/scripts/library.sh"
@@ -35,9 +37,6 @@ _installSymLink rofi ~/.config/rofi $DOTFILES_DIR/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst $DOTFILES_DIR/dunst/ ~/.config
 _installSymLink wal ~/.config/wal $DOTFILES_DIR/wal/ ~/.config
 
-wal -i ~/wallpapers/
-echo "Pywal templates initiated!"
-
 echo ""
 echo "==> Install GTK dotfiles"
 
@@ -53,6 +52,11 @@ _installSymLink waybar ~/.config/waybar $DOTFILES_DIR/waybar/ ~/.config
 _installSymLink swaylock ~/.config/swaylock $DOTFILES_DIR/swaylock/ ~/.config
 _installSymLink wlogout ~/.config/wlogout $DOTFILES_DIR/wlogout/ ~/.config
 _installSymLink swappy ~/.config/swappy $DOTFILES_DIR/swappy/ ~/.config
+
+echo ""
+echo "==> Init pywal"
+wal -i ~/wallpapers/default.jpg
+echo "pywal initiated!"
 
 # ------------------------------------------------------
 # DONE

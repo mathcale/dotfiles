@@ -1,8 +1,10 @@
 #/bin/bash
 
+echo ""
 echo "@mathcale's Arch Linux base setup shenanigans"
 echo "Heavily inspired by Stephan Raabe's dotfiles"
 echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
+echo ""
 
 # ------------------------------------------------------
 # Load Library
@@ -109,14 +111,6 @@ echo ""
 echo "==> Install wallapers"
 git clone https://github.com/mathcale/wallpapers.git ~/wallpapers
 echo "wallpapers installed!"
-
-# ------------------------------------------------------
-# Init pywal
-# ------------------------------------------------------
-echo ""
-echo "==> Init pywal"
-wal -i ~/wallpapers/default.jpg
-echo "pywal initiated!"
 	
 # ------------------------------------------------------
 # Copy default wallpaper to .cache
