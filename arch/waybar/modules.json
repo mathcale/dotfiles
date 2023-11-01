@@ -31,9 +31,9 @@
     },
     "custom/cliphist": {
         "format": "",
-        "on-click": "sleep 0.1 && ~/Dev/dotfiles/arch/scripts/cliphist.sh",
-        "on-click-right": "sleep 0.1 && ~/Dev/dotfiles/arch/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && ~/Dev/dotfiles/arch/scripts/cliphist.sh w",
+        "on-click": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh w",
         "tooltip": false
     },
     "custom/updates": {
@@ -41,25 +41,25 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",
-        "exec": "~/Dev/dotfiles/arch/scripts/updates.sh",
+        "exec": "~/dotfiles/arch/scripts/updates.sh",
         "restart-interval": 60,
-        "on-click": "alacritty -e ~/Dev/dotfiles/arch/scripts/installupdates.sh",
+        "on-click": "alacritty -e ~/dotfiles/arch/scripts/installupdates.sh",
         "tooltip": false
     },
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/Dev/dotfiles/arch/scripts/wallpaper-swww.sh",
-        "on-click-right": "~/Dev/dotfiles/arch/scripts/updatewal-swww.sh",
+        "on-click": "~/dotfiles/arch/scripts/wallpaper-swww.sh",
+        "on-click-right": "~/dotfiles/arch/scripts/updatewal-swww.sh",
         "tooltip": false
     },
     "custom/waybarthemes": {
         "format": "",
-        "on-click": "~/Dev/dotfiles/arch/waybar/themeswitcher.sh",
+        "on-click": "~/dotfiles/arch/waybar/themeswitcher.sh",
         "tooltip": false
     },
     "custom/filemanager": {
         "format": "",
-        "on-click": "~/Dev/dotfiles/arch/scripts/filemanager.sh",
+        "on-click": "~/dotfiles/arch/scripts/filemanager.sh",
         "tooltip": false
     },
     "custom/firefox": {
@@ -69,12 +69,12 @@
     },
     "custom/calculator": {
         "format": "",
-        "on-click": "~/Dev/dotfiles/arch/scripts/calculator.sh",
+        "on-click": "~/dotfiles/arch/scripts/calculator.sh",
         "tooltip": false
     },
     "custom/appmenu": {
         "format": "Apps",
-        "on-click": "~/Dev/dotfiles/arch/scripts/applauncher.sh",
+        "on-click": "~/dotfiles/arch/scripts/applauncher.sh",
         "tooltip": false
     },
     "custom/exit": {

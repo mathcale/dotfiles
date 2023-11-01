@@ -23,8 +23,8 @@ fi
 IFS=';' read -ra arrThemes <<< "$themestyle"
 echo ${arrThemes[0]}
 
-if [ ! -f ~/Dev/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css ]; then
+if [ ! -f ~/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css ]; then
     themestyle="/ml4w;/ml4w/light"
 fi
 
-waybar -c ~/Dev/dotfiles/arch/waybar/themes${arrThemes[0]}/config -s ~/Dev/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css &
+waybar -c ~/dotfiles/arch/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css &

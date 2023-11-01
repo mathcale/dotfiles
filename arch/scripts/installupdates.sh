@@ -11,7 +11,7 @@
 # ----------------------------------------------------- 
 
 sleep 1
-source ~/Dev/dotfiles/arch/scripts/library.sh
+source ~/dotfiles/arch/scripts/library.sh
 clear
 
 # ------------------------------------------------------

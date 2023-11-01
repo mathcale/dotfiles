@@ -28,7 +28,7 @@ Hard fork from Stephan Raabe's [dotfiles](https://gitlab.com/stephan-raabe/dotfi
 
 Included is a pywal configuration that changes the color scheme based on a randomly selected wallpaper. With the key binding `Super + Shift + w` you can change the wallpaper. `Super + Ctrl + w` opens rofi with a list of installed wallpapers for your individual selection. See also the .bashrc and the key bindings on Hyprland for more alias definitions.
 
-In addition, you can switch the Waybar Template with SUPER + CTRL + T or by pressing the "..." icon in Waybar. The templates are available in ~/dev/dotfiles/arch/waybar/themes. You can add your own personal themes into this folder. The script will read in the folder structure.
+In addition, you can switch the Waybar Template with SUPER + CTRL + T or by pressing the "..." icon in Waybar. The templates are available in ~/dotfiles/arch/waybar/themes. You can add your own personal themes into this folder. The script will read in the folder structure.
 
 ## Getting started
 

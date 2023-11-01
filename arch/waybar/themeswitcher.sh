@@ -44,12 +44,12 @@ done
 # Show rofi dialog
 # ----------------------------------------------------- 
 listNames=${listNames::-2}
-choice=$(echo -e "$listNames" | rofi -dmenu -config ~/Dev/dotfiles/arch/rofi/config-wallpaper.rasi -no-show-icons -width 30 -p "Themes" -format i) 
+choice=$(echo -e "$listNames" | rofi -dmenu -config ~/dotfiles/arch/rofi/config-wallpaper.rasi -no-show-icons -width 30 -p "Themes" -format i) 
 
 # ----------------------------------------------------- 
 # Set new theme by writing the theme information to ~/.cache/.themestyle.sh
 # ----------------------------------------------------- 
 if [ "$choice" ]; then
     echo "${listThemes[$choice+1]}" > ~/.cache/.themestyle.sh
-    ~/Dev/dotfiles/arch/waybar/launch.sh
+    ~/dotfiles/arch/waybar/launch.sh
 fi

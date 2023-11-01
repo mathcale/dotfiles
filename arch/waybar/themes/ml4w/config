@@ -6,7 +6,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "spacing": 0,
-    "include": ["~/Dev/dotfiles/arch/waybar/modules.json"],
+    "include": ["~/dotfiles/arch/waybar/modules.json"],
     "modules-left": [
         "custom/appmenu",
         "wlr/taskbar",

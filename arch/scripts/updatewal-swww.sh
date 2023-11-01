@@ -39,7 +39,7 @@ swww img $wallpaper \
     --transition-duration=0.7 \
     --transition-pos "$( hyprctl cursorpos )"
 
-~/Dev/dotfiles/arch/waybar/launch.sh
+~/dotfiles/arch/waybar/launch.sh
 sleep 1
 
 # ----------------------------------------------------- 
