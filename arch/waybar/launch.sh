@@ -8,7 +8,7 @@ killall waybar
 # ----------------------------------------------------- 
 # Default theme: /THEMEFOLDER;/VARIATION
 # ----------------------------------------------------- 
-themestyle="/ml4w;/ml4w/light"
+themestyle="/ml4w;/ml4w/mixed"
 
 # ----------------------------------------------------- 
 # Get current theme information from .cache/.themestyle.sh
@@ -24,7 +24,7 @@ IFS=';' read -ra arrThemes <<< "$themestyle"
 echo ${arrThemes[0]}
 
 if [ ! -f ~/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css ]; then
-    themestyle="/ml4w;/ml4w/light"
+    themestyle="/ml4w;/ml4w/mixed"
 fi
 
 waybar -c ~/dotfiles/arch/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/arch/waybar/themes${arrThemes[1]}/style.css &

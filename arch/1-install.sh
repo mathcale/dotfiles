@@ -9,7 +9,7 @@ echo ""
 # ------------------------------------------------------
 # Load Library
 # ------------------------------------------------------
-source "~/dotfiles/scripts/library.sh"
+source ~/dotfiles/arch/scripts/library.sh
 
 # ------------------------------------------------------
 # Check if yay is installed
@@ -23,7 +23,7 @@ else
   git clone https://aur.archlinux.org/yay-git.git ~/yay-git
   cd ~/yay-git
   makepkg -si
-  cd ~/dotfiles
+  cd ~/dotfiles/arch
 
   echo ""
   echo "yay has been installed successfully."
@@ -66,7 +66,6 @@ packagesPacman=(
   "xautolock"
   "blueman"
   "sddm"
-  "kora-icon-theme"
   "bat"
   "neofetch"
   "thunderbird"
@@ -79,6 +78,7 @@ packagesYay=(
   "dracula-cursors-git"
   "trizen"
   "sddm-sugar-dark"
+  "kora-icon-theme"
 );
   
 # ------------------------------------------------------

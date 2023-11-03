@@ -11,7 +11,7 @@
 # ----------------------------------------------------- 
 # Default theme folder
 # ----------------------------------------------------- 
-themes_path="$HOME/dotfiles/waybar/themes"
+themes_path="$HOME/dotfiles/arch/waybar/themes"
 
 # ----------------------------------------------------- 
 # Initialize arrays
@@ -27,7 +27,7 @@ for value in $options
 do
     if [ ! $value == "$themes_path" ]; then
         if [ $(find $value -maxdepth 1 -type d | wc -l) = 1 ]; then
-            result=$(echo $value | sed "s#$HOME/dotfiles/waybar/themes/#/#g")
+            result=$(echo $value | sed "s#$HOME/dotfiles/arch/waybar/themes/#/#g")
             IFS='/' read -ra arrThemes <<< "$result"
             listThemes[${#listThemes[@]}]="/${arrThemes[1]};$result"
             if [ -f $themes_path$result/config.sh ]; then
