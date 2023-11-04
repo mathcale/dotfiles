@@ -8,9 +8,6 @@ echo ""
 
 source ~/dotfiles/arch/scripts/library.sh
 
-# ------------------------------------------------------
-# Create .config folder
-# ------------------------------------------------------
 echo ""
 echo "==> Check if .config folder exists"
 
@@ -21,14 +18,12 @@ else
   echo ".config folder created."
 fi
 
-# ------------------------------------------------------
-# Create symbolic links
-# ------------------------------------------------------
 # Syntax: name link source target-dir
+
 echo ""
 echo "==> Install general dotfiles"
 
-#_installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
+_installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
 _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
@@ -55,8 +50,4 @@ echo "==> Init pywal"
 wal -i ~/wallpapers/default.jpg
 echo "pywal initiated!"
 
-# ------------------------------------------------------
-# DONE
-# ------------------------------------------------------
-echo "DONE!"
-echo "NEXT: Please reboot your system!"
+echo "Done! Please reboot your system!"
