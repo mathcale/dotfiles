@@ -18,7 +18,6 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "bluetooth",
         "custom/cliphist",
         "network",
         "clock",
