@@ -28,6 +28,7 @@ _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starsh
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
 _installSymLink wal ~/.config/wal ~/dotfiles/arch/wal/ ~/.config
+_installSymLink neofetch ~/.config/neofetch ~/dotfiles/arch/neofetch/ ~/.config
 
 echo ""
 echo "==> Install GTK dotfiles"
