@@ -1,28 +1,44 @@
 #!/bin/bash
 
 echo ""
-echo "@mathcale's Arch Linux base setup shenanigans"
+echo "✨ @mathcale's Arch Linux base setup shenanigans ✨"
 echo "Heavily inspired by Stephan Raabe's dotfiles"
 echo "Original source: https://gitlab.com/stephan-raabe/dotfiles"
 echo ""
 
 source ~/dotfiles/arch/scripts/library.sh
 
-echo ""
-echo "==> Check if .config folder exists"
-
-if [ -d ~/.config ]; then
-  echo ".config folder already exists."
-else
+if [ ! -d ~/.config ]; then
   mkdir ~/.config
-  echo ".config folder created."
+  echo "👌 ~/.config folder created."
 fi
 
-# Syntax: name link source target-dir
+if [ ! -d ~/Dev ]; then
+  mkdir ~/Dev
+  echo "👌 ~/Dev folder created."
+fi
+
+if [ ! -d ~/Random ]; then
+  mkdir ~/Random
+  echo "👌 ~/Random folder created."
+fi
+
+if [ ! -d ~/.goworkspace ]; then
+  mkdir ~/.goworkspace
+  echo "👌 ~/.goworkspace folder created."
+fi
+
+if [ ! -d ~/.local/bin ]; then
+  mkdir -p ~/.local/bin
+  echo "👌 ~/.local/bin folder created."
+fi
 
 echo ""
-echo "==> Install general dotfiles"
+echo "==> Installing general dotfiles"
+# Syntax: name link source target-dir
 
+_installSymLink .zshrc ~/.zshrc ~/dotfiles/shell/.zshrc ~/.zshrc
+_installSymLink .gitconfig ~/.gitconfig ~/dotfiles/git/.gitconfig ~/.gitconfig
 _installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
 _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
@@ -31,14 +47,14 @@ _installSymLink wal ~/.config/wal ~/dotfiles/arch/wal/ ~/.config
 _installSymLink neofetch ~/.config/neofetch ~/dotfiles/arch/neofetch/ ~/.config
 
 echo ""
-echo "==> Install GTK dotfiles"
+echo "==> Installing GTK dotfiles"
 
 _installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/arch/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
 _installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/dotfiles/arch/gtk/gtk-3.0/ ~/.config/
 _installSymLink gtk-4.0 ~/.config/gtk-4.0 ~/dotfiles/arch/gtk/gtk-4.0/ ~/.config/
 
 echo ""
-echo "==> Install Hyprland dotfiles"
+echo "==> Installing Hyprland dotfiles"
 
 _installSymLink hypr ~/.config/hypr ~/dotfiles/arch/hypr/ ~/.config
 _installSymLink waybar ~/.config/waybar ~/dotfiles/arch/waybar/ ~/.config
@@ -47,8 +63,15 @@ _installSymLink wlogout ~/.config/wlogout ~/dotfiles/arch/wlogout/ ~/.config
 _installSymLink swappy ~/.config/swappy ~/dotfiles/arch/swappy/ ~/.config
 
 echo ""
+echo "==> Copying scripts"
+
+cp ~/dotfiles/scripts/s0 ~/.local/bin/s0
+cp ~/dotfiles/arch/scripts/up.sh ~/.local/bin/up
+chmod +x ~/.local/bin/*
+
+echo ""
 echo "==> Init pywal"
 wal -i ~/wallpapers/default.jpg
-echo "pywal initiated!"
+echo "👌 pywal initiated!"
 
-echo "Done! Please reboot your system!"
+echo "🎉 Done! Please reboot your system!"
