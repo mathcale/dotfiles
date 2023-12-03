@@ -18,10 +18,6 @@ export EDITOR="nvim"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# thefuck stuff
-eval $(thefuck --alias)
-eval $(thefuck --alias FUCK)
-
 # Go stuff
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.goworkspace
@@ -71,12 +67,12 @@ export REACT_EDITOR=code
 
 # Aliases
 alias top=htop
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 alias vim=nvim
 alias vi=nvim
 alias d=docker
-alias ls="exa --icons --color auto"
+alias ls="eza --icons --color auto"
 alias s0="sleep 0 && clear"
 alias fixlol="sudo sh -c 'sysctl -w abi.vsyscall32=0'"
 alias kct="kubectl"
@@ -104,14 +100,13 @@ eval "$(jenv init -)"
 # Node stuff
 export NODE_OPTIONS=--max_old_space_size=4096
 
-# K8s stuff
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 # HSTR stuff
-alias hh=hstr                         # hh to be alias for hstr
-setopt histignorespace                # skip cmds w/ leading space from history
-export HSTR_CONFIG=hicolor            # get more colors
-bindkey -s "\C-r" "\C-a hstr -- \C-j" # bind hstr to Ctrl-r (for Vi mode check doc)
+alias hh=hstr
+setopt histignorespace
+export HSTR_CONFIG=hicolor
+export HSTR_PROMPT="Search: "
+export HISTFILE=~/.zsh_history
+bindkey -s "\C-r" "\C-a hstr -- \C-j"
 
 # pfetch stuff
 export PF_INFO="ascii os host memory pkgs shell editor"
@@ -120,9 +115,6 @@ export PF_INFO="ascii os host memory pkgs shell editor"
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
 export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
 export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
-
-# Fix prompt's "..." problem
-export SPACESHIP_PROMPT_ASYNC=false
 
 # Spicetify stuff
 export PATH=$PATH:$HOME/.spicetify
