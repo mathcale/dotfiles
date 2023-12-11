@@ -13,3 +13,5 @@ gsettings set "$GNOME_SCHEMA" gtk-theme "$GTK_THEME"
 gsettings set "$GNOME_SCHEMA" icon-theme "$ICON_THEME"
 gsettings set "$GNOME_SCHEMA" cursor-theme "$CURSOR_THEME"
 gsettings set "$GNOME_SCHEMA" font-name "$FONT_NAME"
+gsettings set "$GNOME_SCHEMA" color-scheme prefer-dark
+
