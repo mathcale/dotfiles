@@ -1,0 +1,159 @@
+@import "mocha.css";
+
+* {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: FontAwesome, Overpass, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: @crust;
+  border-radius: 4px;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+}
+
+#workspaces {
+  padding: 0 10px;
+  background-color: @crust;
+  border-radius: 4px;
+}
+
+#workspaces button {
+  margin: 5px 4px;
+  padding: 0 5px;
+  background-color: @crust;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+}
+
+#workspaces button:hover {
+  background-color: @mauve;
+  color: #ffffff;
+}
+
+#workspaces button.active {
+  color: @mauve;
+}
+
+#workspaces button:hover.active {
+  color: #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd,
+#custom-cliphist,
+#custom-whoami {
+  margin: 5px 4px;
+  padding: 0 10px;
+  background-color: @mantle;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+#workspaces {
+  margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  background-color: #2ecc71;
+  color: #000000;
+}
+
+#network.disconnected {
+  background-color: @red;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#temperature {
+  background-color: @peach;
+}
+
+#temperature.critical {
+  background-color: @red;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#pulseaudio {
+  background-color: #8caaee;
+}
+
+#clock {
+  background-color: #ca9ee6;
+}
+
+#custom-whoami {
+  background-color: #e78284;
+}
+
+#network {
+  background-color: #a6d189;
+}

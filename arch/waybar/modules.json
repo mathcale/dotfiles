@@ -3,24 +3,20 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
     "persistent_workspaces": {
-      "*": 5
+      "*": 4
     }
   },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close"
-  },
   "hyprland/window": {
+    "format": "{title}",
     "separate-outputs": true
   },
   "custom/cliphist": {
@@ -30,44 +26,32 @@
     "on-click-middle": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh w",
     "tooltip": false
   },
-  "custom/wallpaper": {
-    "format": "",
-    "on-click": "~/dotfiles/arch/scripts/wallpaper-swww.sh",
-    "on-click-right": "~/dotfiles/arch/scripts/updatewal-swww.sh",
-    "tooltip": false
-  },
-  "custom/waybarthemes": {
-    "format": "",
-    "on-click": "~/dotfiles/arch/waybar/themeswitcher.sh",
-    "tooltip": false
-  },
   "custom/appmenu": {
     "format": "Apps",
     "on-click": "~/dotfiles/arch/scripts/applauncher.sh",
     "tooltip": false
   },
   "custom/whoami": {
-    "exec": "echo $(whoami)",
+    "format": "",
     "on-click": "wlogout",
     "tooltip": false
   },
   "tray": {
-    "icon-size": 18,
+    "icon-size": 16,
     "spacing": 10
   },
   "clock": {
     "timezone": "America/Sao_Paulo",
     "tooltip-format": "<big>{:%A}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y %H:%M}"
+    "format": " {:%d/%m/%Y %H:%M}"
   },
   "network": {
     "format": "{ifname}",
-    "format-ethernet": "⇣ {bandwidthDownBytes} ⇡ {bandwidthUpBytes}",
-    "format-disconnected": "",
+    "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-disconnected": " Disconnected",
     "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": " Disconnected",
     "max-length": 50,
     "interval": 2
   },
@@ -95,10 +79,5 @@
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager"
-  },
-  "user": {
-    "format": "{user}",
-    "interval": 60,
-    "icon": false
   }
 }
