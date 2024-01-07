@@ -82,6 +82,7 @@ alias ls="eza --icons --color auto"
 alias kct="kubectl"
 alias nf="neofetch"
 alias pf="pfetch"
+alias lzd="lazydocker"
 
 # Shell alternatives configs
 export BAT_THEME="Dracula"
