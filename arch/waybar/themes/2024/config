@@ -15,6 +15,7 @@
   "modules-center": [],
   "modules-right": [
     "network",
+    "temperature",
     "tray",
     "custom/cliphist",
     "pulseaudio",

@@ -79,5 +79,12 @@
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
+    "interval": 2,
+    "critical-threshold": 80,
+    "on-click": "xsensors",
+    "format": " {temperatureC}°C"
   }
 }
