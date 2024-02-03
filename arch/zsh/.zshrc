@@ -121,5 +121,18 @@ export PATH=$PATH:$HOME/.spicetify
 
 export GTK_THEME='Catppuccin-Frappe-Standard-Mauve-Dark:dark'
 
+# Google Cloud SDK stuff.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# Disable buildkit
+export DOCKER_BUILDKIT=0
+
+# Fix kitty ssh shenanigans
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+# Init autopair plugin
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
+
 # Starship stuff
 eval "$(starship init zsh)"
