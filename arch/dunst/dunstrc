@@ -1,15 +1,16 @@
 [global]
 monitor = 1
 width = (0, 500)
-offset = 10x10
+origin = "top-center"
+offset = 0x20
 padding = 10
-transparency = 80
+gap_size = 10
 frame_color = "#cba6f7"
 separator_color= frame
 icon_theme = "kora"
 corner_radius = 4
 frame_width = 1
-font = "Overpass" 12
+font = "Fira Sans Bold" 12
 
 [urgency_low]
 background = "#1E1E2E"

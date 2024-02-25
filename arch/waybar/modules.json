@@ -4,8 +4,6 @@
     "active-only": false,
     "all-outputs": true,
     "format": "{icon}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format-icons": {
       "urgent": "",
       "active": "",
@@ -21,9 +19,9 @@
   },
   "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/dotfiles/arch/scripts/cliphist.sh w",
+    "on-click": "~/dotfiles/arch/scripts/cliphist.sh",
+    "on-click-right": "~/dotfiles/arch/scripts/cliphist.sh d",
+    "on-click-middle": "~/dotfiles/arch/scripts/cliphist.sh w",
     "tooltip": false
   },
   "custom/appmenu": {
@@ -31,7 +29,7 @@
     "on-click": "~/dotfiles/arch/scripts/applauncher.sh",
     "tooltip": false
   },
-  "custom/whoami": {
+  "custom/logout": {
     "format": "",
     "on-click": "wlogout",
     "tooltip": false
@@ -53,7 +51,8 @@
     "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": " Disconnected",
     "max-length": 50,
-    "interval": 2
+    "interval": 2,
+    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "scroll-step": 1,

@@ -37,14 +37,19 @@ echo ""
 echo "==> Installing general dotfiles"
 # Syntax: name link source target-dir
 
-_installSymLink .zshrc ~/.zshrc ~/dotfiles/shell/.zshrc ~/.zshrc
+_installSymLink .zshrc ~/.zshrc ~/dotfiles/arch/zsh/.zshrc ~/.zshrc
+_installSymLink .warprc ~/.warprc ~/dotfiles/arch/zsh/.warprc ~/.warprc
 _installSymLink .gitconfig ~/.gitconfig ~/dotfiles/git/.gitconfig ~/.gitconfig
 _installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
 _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
-_installSymLink wal ~/.config/wal ~/dotfiles/arch/wal/ ~/.config
 _installSymLink neofetch ~/.config/neofetch ~/dotfiles/arch/neofetch/ ~/.config
+_installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
+_installSymLink GIMP ~/.config/GIMP ~/dotfiles/arch/GIMP/ ~/.config
+_installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
+_installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
+_installSymLink appimagelauncher ~/.config/appimagelauncher.cfg ~/dotfiles/appimagelauncher/appimagelauncher.cfg ~/.config/appimagelauncher.cfg
 
 echo ""
 echo "==> Installing GTK dotfiles"
@@ -71,7 +76,6 @@ chmod +x ~/.local/bin/*
 
 echo ""
 echo "==> Init pywal"
-wal -i ~/wallpapers/default.jpg
-echo "👌 pywal initiated!"
+wal -i ~/wallpapers/joenco-GSNJzQeLSmw-unsplash.jpg
 
 echo "🎉 Done! Please reboot your system!"

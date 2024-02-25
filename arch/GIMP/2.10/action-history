@@ -1,0 +1,20 @@
+# GIMP action-history
+
+(history-item "tools-color-picker" 1)
+(history-item "file-print-gtk" 3)
+(history-item "file-quit" 1)
+(history-item "file-open" 0)
+(history-item "image-scale" 0)
+(history-item "tools-rect-select" 1)
+(history-item "dialogs-preferences" 0)
+(history-item "file-export-as" 0)
+(history-item "image-rotate-90" 0)
+(history-item "image-rotate-270" 0)
+(history-item "file-overwrite" 0)
+(history-item "tools-iscissors" 0)
+(history-item "edit-copy" 0)
+(history-item "image-new" 0)
+(history-item "edit-paste" 0)
+(history-item "file-export" 1)
+
+# end of action-history

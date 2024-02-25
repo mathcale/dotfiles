@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="$HOME/Pictures/screenshots/"
+DIR="$HOME/Pictures/Screenshots/"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
 option2="Selected area"

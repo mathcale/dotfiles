@@ -15,11 +15,12 @@
   "modules-center": [],
   "modules-right": [
     "network",
+    "bluetooth",
     "temperature",
-    "tray",
-    "custom/cliphist",
     "pulseaudio",
     "clock",
-    "custom/whoami"
+    "tray",
+    "custom/cliphist",
+    "custom/logout"
   ]
 }
