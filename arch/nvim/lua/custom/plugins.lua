@@ -51,6 +51,10 @@ local plugins = {
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
+  {
+    "github/copilot.vim",
+    lazy = false
+  }
 }
 
 return plugins

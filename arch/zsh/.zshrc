@@ -111,5 +111,8 @@ export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
 export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
 export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 
+# Rust stuff
+source "$HOME/.cargo/env"
+
 # Init Starship prompt
 eval "$(starship init zsh)"
