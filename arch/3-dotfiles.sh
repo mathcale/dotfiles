@@ -45,7 +45,8 @@ _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starsh
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
 _installSymLink neofetch ~/.config/neofetch ~/dotfiles/arch/neofetch/ ~/.config
-_installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
+_installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
+# _installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
 _installSymLink GIMP ~/.config/GIMP ~/dotfiles/arch/GIMP/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
@@ -73,9 +74,5 @@ echo "==> Copying scripts"
 cp ~/dotfiles/scripts/s0 ~/.local/bin/s0
 cp ~/dotfiles/arch/scripts/up.sh ~/.local/bin/up
 chmod +x ~/.local/bin/*
-
-echo ""
-echo "==> Init pywal"
-wal -i ~/wallpapers/joenco-GSNJzQeLSmw-unsplash.jpg
 
 echo "🎉 Done! Please reboot your system!"

@@ -18,8 +18,8 @@ source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 ####
 
 # Default terminal text editor
-export VISUAL="nvim"
-export EDITOR="nvim"
+export VISUAL="lvim"
+export EDITOR="lvim"
 
 # thefuck stuff
 eval $(thefuck --alias)
@@ -27,15 +27,17 @@ eval $(thefuck --alias FUCK)
 
 # Aliases
 alias top=htop
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
-alias vim=nvim
-alias vi=nvim
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias vim=lvim
+alias vi=lvim
+alias lv=lvim
 alias d=docker
 alias ls="eza --icons --color auto"
 alias kct="kubectl"
 alias nf="neofetch"
 alias pf="pfetch"
+alias ff="fastfetch"
 alias lzd="lazydocker"
 alias lzg="lazygit"
 alias yaegi='rlwrap yaegi'
@@ -77,6 +79,9 @@ export GTK_THEME='Catppuccin-Mocha-Standard-Mauve-Dark'
 # Fix kitty ssh shenanigans
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
+# Enable MangoHud on every game
+export MANGOHUD=1
+
 ####
 # PROGRAMMING-RELATED STUFF
 ####
@@ -110,9 +115,6 @@ eval "`fnm env`"
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
 export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
 export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
-
-# Rust stuff
-source "$HOME/.cargo/env"
 
 # Init Starship prompt
 eval "$(starship init zsh)"

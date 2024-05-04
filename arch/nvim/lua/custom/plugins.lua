@@ -54,7 +54,10 @@ local plugins = {
   {
     "github/copilot.vim",
     lazy = false
-  }
+  },
+  {
+    "b0o/schemastore.nvim",
+  },
 }
 
 return plugins
