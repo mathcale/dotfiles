@@ -1,10 +1,13 @@
 [user]
   name = Matheus Calegaro
   email = hello@matheus.me
+
 [color]
   ui = true
+
 [core]
-  editor = vim
+  editor = nvim
+
 [alias]
   st = status
   ck = checkout
@@ -19,27 +22,34 @@
   r  = restore
   re = remote
   s  = stash
+
 [url "git@github.com:"]
   insteadOf = https://github.com/
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [pull]
   rebase = false
+
 [init]
   defaultBranch = main
+
 [pager]
   diff = delta
   log = delta
   reflog = delta
   show = delta
+
 [delta]
   plus-style = "syntax #012800"
   minus-style = "syntax #340001"
   syntax-theme = Dracula
   navigate = true
   side-by-side = true
+
 [interactive]
   diffFilter = delta --color-only

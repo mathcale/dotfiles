@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -x
-
-sudo pacman -Syu
-yay -Syu

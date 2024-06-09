@@ -39,7 +39,7 @@ echo "==> Installing general dotfiles"
 
 _installSymLink .zshrc ~/.zshrc ~/dotfiles/arch/zsh/.zshrc ~/.zshrc
 _installSymLink .warprc ~/.warprc ~/dotfiles/arch/zsh/.warprc ~/.warprc
-_installSymLink .gitconfig ~/.gitconfig ~/dotfiles/git/.gitconfig ~/.gitconfig
+_installSymLink .gitconfig ~/.gitconfig ~/dotfiles/arch/git/.gitconfig ~/.gitconfig
 _installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
 _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config

@@ -5,10 +5,10 @@ Hard fork from Stephan Raabe's [dotfiles](https://gitlab.com/stephan-raabe/dotfi
 ## Common Packages
 
 - **Terminal**: Kitty
-- **Editors**: Neovim, Visual Studio Code and Sublime Text
+- **Editors**: Neovim (feat. LunarVim), Visual Studio Code and Sublime Text
 - **Shell**: zsh
 - **Prompt**: Starship
-- **Icons**: Font Awesome
+- **Glyphs**: Font Awesome
 - **Menus**: Rofi
 - **Color scheme**: Catppuccin Mocha
 - **Browser**: Firefox
