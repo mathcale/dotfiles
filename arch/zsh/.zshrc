@@ -26,7 +26,6 @@ eval $(thefuck --alias)
 eval $(thefuck --alias FUCK)
 
 # Aliases
-alias top=htop
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias vim=lvim
@@ -35,8 +34,6 @@ alias lv=lvim
 alias d=docker
 alias ls="eza --icons --color auto"
 alias kct="kubectl"
-alias nf="neofetch"
-alias pf="pfetch"
 alias ff="fastfetch"
 alias lzd="lazydocker"
 alias lzg="lazygit"
@@ -64,14 +61,8 @@ zle -N hstr_no_tiocsti
 bindkey '\C-r' hstr_no_tiocsti
 export HSTR_TIOCSTI=n
 
-# pfetch stuff
-export PF_INFO="ascii os host memory pkgs shell editor"
-
 # Spicetify stuff
 export PATH=$PATH:$HOME/.spicetify
-
-# Quickemu stuff
-export PATH=$PATH:$HOME/Apps/quickemu
 
 # Set theme for GTK apps
 export GTK_THEME='Catppuccin-Mocha-Standard-Mauve-Dark'
@@ -79,7 +70,7 @@ export GTK_THEME='Catppuccin-Mocha-Standard-Mauve-Dark'
 # Fix kitty ssh shenanigans
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-# Enable MangoHud on every game
+# Enable MangoHud
 export MANGOHUD=1
 
 ####
