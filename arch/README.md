@@ -1,9 +1,10 @@
 # Arch Linux Dotfiles
 
-Hard fork from Stephan Raabe's [dotfiles](https://gitlab.com/stephan-raabe/dotfiles).
+![Screenshot](screenshot.png)
 
-## Common Packages
+## Main Packages
 
+- **Window manager**: hyprland
 - **Terminal**: Kitty
 - **Editors**: Neovim (feat. LunarVim), Visual Studio Code and Sublime Text
 - **Shell**: zsh
@@ -15,20 +16,18 @@ Hard fork from Stephan Raabe's [dotfiles](https://gitlab.com/stephan-raabe/dotfi
 - **File manager**: Thunar
 - **Cursor**: Dracula
 - **Icons**: Kora
-
-## Hyprland
-
-- **Status Bar**: waybar
+- **Status Bar**: Waybar
 - **Screenshots**: grim & slurp
 - **Clipboard Manager**: cliphist
+- **Notifications**: dunst
+- **Session Manager**: SDDM
 - **Logout**: wlogout
 - **Screenlock**: swaylock-effects
+- **Wallpaper engine**: hyprpaper
 
 ## Getting started
 
-To make it easy for you to get started with my dotfiles, here's a list of recommended next steps.
-
-PLEASE BACKUP YOUR EXISTING .config WITH YOUR DOTFILES BEFORE STARTING THE SCRIPTS.
+> Make sure to backup your existing `~/.config` folder before running the following commands.
 
 ```sh
 # Make sure that you're in your home directory
@@ -46,6 +45,10 @@ cd dotfiles/arch
 # Install hyprland window manager
 ./2-install-hyprland.sh
 
-# Install dotfiles
+# Install dotfiles with symbolic links
 ./3-install-dotfiles.sh
 ```
+
+## Credits
+
+Inspired on Stephan Raabe's [dotfiles](https://gitlab.com/stephan-raabe/dotfiles)
