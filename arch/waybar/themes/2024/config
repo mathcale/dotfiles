@@ -15,12 +15,13 @@
   "modules-center": [],
   "modules-right": [
     "network",
-    "bluetooth",
+    "cpu",
+    "memory",
     "temperature",
     "pulseaudio",
     "clock",
+    "custom/clipboard",
     "tray",
-    "custom/cliphist",
     "custom/logout"
   ]
 }

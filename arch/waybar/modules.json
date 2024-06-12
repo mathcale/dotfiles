@@ -14,19 +14,16 @@
     }
   },
   "hyprland/window": {
-    "format": "{title}",
+    "format": "{}",
+    "icon": false,
+    "icon-size": 16,
     "separate-outputs": true
   },
-  "custom/cliphist": {
-    "format": "",
+  "custom/clipboard": {
+    "format": "",
     "on-click": "~/dotfiles/arch/scripts/cliphist.sh",
     "on-click-right": "~/dotfiles/arch/scripts/cliphist.sh d",
     "on-click-middle": "~/dotfiles/arch/scripts/cliphist.sh w",
-    "tooltip": false
-  },
-  "custom/appmenu": {
-    "format": "Apps",
-    "on-click": "~/dotfiles/arch/scripts/applauncher.sh",
     "tooltip": false
   },
   "custom/logout": {
@@ -46,22 +43,20 @@
   "network": {
     "format": "{ifname}",
     "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "format-disconnected": " Disconnected",
+    "format-disconnected": " No network",
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
-    "tooltip-format-disconnected": " Disconnected",
+    "tooltip-format-disconnected": " No network",
     "max-length": 50,
     "interval": 2,
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{icon} {volume}%   {format_source}",
+    "format-muted": "{icon}  Muted  {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "  Muted",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -69,15 +64,13 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", " ", " "]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol"
-  },
-  "bluetooth": {
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager"
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
@@ -85,5 +78,17 @@
     "critical-threshold": 80,
     "on-click": "xsensors",
     "format": " {temperatureC}°C"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 2
+  },
+  "memory": {
+    "format": " {}%",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    },
+    "interval": 2
   }
 }
