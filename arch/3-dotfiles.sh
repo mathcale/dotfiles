@@ -44,9 +44,8 @@ _installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
 _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
-_installSymLink neofetch ~/.config/neofetch ~/dotfiles/arch/neofetch/ ~/.config
 _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
-# _installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
+# _installSymLink lvim ~/.config/lvim ~/dotfiles/arch/lvim/ ~/.config
 _installSymLink GIMP ~/.config/GIMP ~/dotfiles/arch/GIMP/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
