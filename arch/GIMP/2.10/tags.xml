@@ -10,10 +10,10 @@
     <tag>round</tag>
   </resource>
 
-  <resource identifier="gimp-brush-clipboard-image" checksum="db9a5dad7c0acdb26f233efb34d0e79f">
+  <resource identifier="gimp-brush-clipboard-image" checksum="fc4ccfb57123ec00b5fc7aabc1d814cb">
   </resource>
 
-  <resource identifier="gimp-brush-clipboard-mask" checksum="0cb1fb0d3f328effca87c0116023a261">
+  <resource identifier="gimp-brush-clipboard-mask" checksum="0e0c7380172424381b090fa8b7959412">
   </resource>
 
   <resource identifier="${gimp_data_dir}/brushes/Basic/1-pixel.vbr" checksum="c84494b4a904a7c1a3548e564b073ca3">
@@ -772,7 +772,7 @@
   <resource identifier="${mypaint_brushes_dir}/ramon/wet_round.myb" checksum="038abfe33947692f773e0244d2ac7fc1">
   </resource>
 
-  <resource identifier="gimp-pattern-clipboard-image" checksum="52ed97ce9beaa3e5e0c77b3ab98bc117">
+  <resource identifier="gimp-pattern-clipboard-image" checksum="15fce171bab8a2e6795eea803d2c70ae">
   </resource>
 
   <resource identifier="${gimp_data_dir}/patterns/Legacy/3dgreen.pat" checksum="00052731f14a5bc614daece969b368bc">
@@ -4522,12 +4522,6 @@
   <resource identifier="Carter One" checksum="(null)">
   </resource>
 
-  <resource identifier="CaskaydiaCove Nerd Font" checksum="(null)">
-  </resource>
-
-  <resource identifier="CaskaydiaCove Nerd Font Mono" checksum="(null)">
-  </resource>
-
   <resource identifier="Castoro" checksum="(null)">
   </resource>
 
@@ -7369,9 +7363,6 @@
   <resource identifier="Font Awesome 6 Free Heavy" checksum="(null)">
   </resource>
 
-  <resource identifier="Font Awesome v4 Compatibility" checksum="(null)">
-  </resource>
-
   <resource identifier="Forum" checksum="(null)">
   </resource>
 
@@ -9973,9 +9964,6 @@
   <resource identifier="JetBrains Mono Medium Italic" checksum="(null)">
   </resource>
 
-  <resource identifier="JetBrainsMono Nerd Font" checksum="(null)">
-  </resource>
-
   <resource identifier="JetBrains Mono Thin" checksum="(null)">
   </resource>
 
@@ -12121,24 +12109,6 @@
   <resource identifier="Manuale Ultra-Bold Italic" checksum="(null)">
   </resource>
 
-  <resource identifier="Maple Mono" checksum="(null)">
-  </resource>
-
-  <resource identifier="Maple Mono Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Maple Mono Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Maple Mono Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Maple Mono Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Maple Mono Light Italic" checksum="(null)">
-  </resource>
-
   <resource identifier="Marcellus" checksum="(null)">
   </resource>
 
@@ -12287,9 +12257,6 @@
   </resource>
 
   <resource identifier="Mate Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Material Design Icons Desktop" checksum="(null)">
   </resource>
 
   <resource identifier="Mate SC" checksum="(null)">
@@ -12595,6 +12562,12 @@
   <resource identifier="Monaspace Argon Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Argon Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Argon Expanded" checksum="(null)">
   </resource>
 
@@ -12602,21 +12575,6 @@
   </resource>
 
   <resource identifier="Monaspace Argon Italic Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Argon Italic Semi-Expanded" checksum="(null)">
@@ -12634,6 +12592,12 @@
   <resource identifier="Monaspace Argon Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Argon Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Argon Medium" checksum="(null)">
   </resource>
 
@@ -12644,6 +12608,12 @@
   </resource>
 
   <resource identifier="Monaspace Argon Medium Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Medium Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Medium Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Argon Semi-Bold" checksum="(null)">
@@ -12667,21 +12637,6 @@
   <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
   </resource>
 
-  <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Argon Semi-Expanded" checksum="(null)">
-  </resource>
-
   <resource identifier="Monaspace Argon Ultra-Bold" checksum="(null)">
   </resource>
 
@@ -12694,6 +12649,12 @@
   <resource identifier="Monaspace Argon Ultra-Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Argon Ultra-Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Ultra-Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Argon Ultra-Light" checksum="(null)">
   </resource>
 
@@ -12704,6 +12665,12 @@
   </resource>
 
   <resource identifier="Monaspace Argon Ultra-Light Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Ultra-Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Argon Ultra-Light Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Krypton" checksum="(null)">
@@ -12721,6 +12688,12 @@
   <resource identifier="Monaspace Krypton Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Krypton Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Krypton Expanded" checksum="(null)">
   </resource>
 
@@ -12728,21 +12701,6 @@
   </resource>
 
   <resource identifier="Monaspace Krypton Italic Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Krypton Italic Semi-Expanded" checksum="(null)">
@@ -12760,6 +12718,12 @@
   <resource identifier="Monaspace Krypton Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Krypton Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Krypton Medium" checksum="(null)">
   </resource>
 
@@ -12770,6 +12734,12 @@
   </resource>
 
   <resource identifier="Monaspace Krypton Medium Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Medium Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Medium Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Krypton Semi-Bold" checksum="(null)">
@@ -12793,21 +12763,6 @@
   <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
   </resource>
 
-  <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Krypton Semi-Expanded" checksum="(null)">
-  </resource>
-
   <resource identifier="Monaspace Krypton Ultra-Bold" checksum="(null)">
   </resource>
 
@@ -12820,6 +12775,12 @@
   <resource identifier="Monaspace Krypton Ultra-Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Krypton Ultra-Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Ultra-Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Krypton Ultra-Light" checksum="(null)">
   </resource>
 
@@ -12830,6 +12791,12 @@
   </resource>
 
   <resource identifier="Monaspace Krypton Ultra-Light Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Ultra-Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Krypton Ultra-Light Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Neon" checksum="(null)">
@@ -12847,6 +12814,12 @@
   <resource identifier="Monaspace Neon Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Neon Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Neon Expanded" checksum="(null)">
   </resource>
 
@@ -12854,21 +12827,6 @@
   </resource>
 
   <resource identifier="Monaspace Neon Italic Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Neon Italic Semi-Expanded" checksum="(null)">
@@ -12886,6 +12844,12 @@
   <resource identifier="Monaspace Neon Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Neon Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Neon Medium" checksum="(null)">
   </resource>
 
@@ -12896,6 +12860,12 @@
   </resource>
 
   <resource identifier="Monaspace Neon Medium Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Medium Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Medium Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Neon Semi-Bold" checksum="(null)">
@@ -12919,21 +12889,6 @@
   <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
   </resource>
 
-  <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Neon Semi-Expanded" checksum="(null)">
-  </resource>
-
   <resource identifier="Monaspace Neon Ultra-Bold" checksum="(null)">
   </resource>
 
@@ -12946,6 +12901,12 @@
   <resource identifier="Monaspace Neon Ultra-Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Neon Ultra-Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Ultra-Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Neon Ultra-Light" checksum="(null)">
   </resource>
 
@@ -12956,6 +12917,12 @@
   </resource>
 
   <resource identifier="Monaspace Neon Ultra-Light Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Ultra-Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Neon Ultra-Light Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Radon" checksum="(null)">
@@ -12973,6 +12940,12 @@
   <resource identifier="Monaspace Radon Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Radon Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Radon Expanded" checksum="(null)">
   </resource>
 
@@ -12980,21 +12953,6 @@
   </resource>
 
   <resource identifier="Monaspace Radon Italic Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Radon Italic Semi-Expanded" checksum="(null)">
@@ -13012,6 +12970,12 @@
   <resource identifier="Monaspace Radon Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Radon Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Radon Medium" checksum="(null)">
   </resource>
 
@@ -13022,6 +12986,12 @@
   </resource>
 
   <resource identifier="Monaspace Radon Medium Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Medium Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Medium Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Radon Semi-Bold" checksum="(null)">
@@ -13045,21 +13015,6 @@
   <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
   </resource>
 
-  <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Radon Semi-Expanded" checksum="(null)">
-  </resource>
-
   <resource identifier="Monaspace Radon Ultra-Bold" checksum="(null)">
   </resource>
 
@@ -13072,6 +13027,12 @@
   <resource identifier="Monaspace Radon Ultra-Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Radon Ultra-Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Ultra-Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Radon Ultra-Light" checksum="(null)">
   </resource>
 
@@ -13082,6 +13043,12 @@
   </resource>
 
   <resource identifier="Monaspace Radon Ultra-Light Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Ultra-Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Radon Ultra-Light Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Xenon" checksum="(null)">
@@ -13099,6 +13066,12 @@
   <resource identifier="Monaspace Xenon Bold Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Xenon Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Bold Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Xenon Expanded" checksum="(null)">
   </resource>
 
@@ -13106,21 +13079,6 @@
   </resource>
 
   <resource identifier="Monaspace Xenon Italic Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Xenon Italic Semi-Expanded" checksum="(null)">
@@ -13138,6 +13096,12 @@
   <resource identifier="Monaspace Xenon Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Xenon Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monaspace Xenon Medium" checksum="(null)">
   </resource>
 
@@ -13148,6 +13112,12 @@
   </resource>
 
   <resource identifier="Monaspace Xenon Medium Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Medium Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Medium Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Xenon Semi-Bold" checksum="(null)">
@@ -13171,21 +13141,6 @@
   <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
   </resource>
 
-  <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
-  </resource>
-
-  <resource identifier="Monaspace Xenon Semi-Expanded" checksum="(null)">
-  </resource>
-
   <resource identifier="Monaspace Xenon Ultra-Bold" checksum="(null)">
   </resource>
 
@@ -13196,6 +13151,12 @@
   </resource>
 
   <resource identifier="Monaspace Xenon Ultra-Bold Italic Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Ultra-Bold Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Ultra-Bold Semi-Expanded" checksum="(null)">
   </resource>
 
   <resource identifier="Monaspace Xenon Ultra-Light" checksum="(null)">
@@ -13210,6 +13171,12 @@
   <resource identifier="Monaspace Xenon Ultra-Light Italic Expanded" checksum="(null)">
   </resource>
 
+  <resource identifier="Monaspace Xenon Ultra-Light Italic Semi-Expanded" checksum="(null)">
+  </resource>
+
+  <resource identifier="Monaspace Xenon Ultra-Light Semi-Expanded" checksum="(null)">
+  </resource>
+
   <resource identifier="Monda" checksum="(null)">
   </resource>
 
@@ -13220,12 +13187,6 @@
   </resource>
 
   <resource identifier="Monomaniac One" checksum="(null)">
-  </resource>
-
-  <resource identifier="mononoki Nerd Font" checksum="(null)">
-  </resource>
-
-  <resource identifier="mononoki Nerd Font Mono" checksum="(null)">
   </resource>
 
   <resource identifier="Monospace" checksum="(null)">
@@ -14776,21 +14737,6 @@
   <resource identifier="Noto Sans Chorasmian" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Sans CJK HK" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans CJK JP" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans CJK KR" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans CJK SC" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans CJK TC" checksum="(null)">
-  </resource>
-
   <resource identifier="Noto Sans Coptic" checksum="(null)">
   </resource>
 
@@ -16331,21 +16277,6 @@
   </resource>
 
   <resource identifier="Noto Sans Mono Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Mono CJK HK" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Mono CJK JP" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Mono CJK KR" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Mono CJK SC" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Mono CJK TC" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Mono Heavy" checksum="(null)">
@@ -22165,7 +22096,7 @@
   <resource identifier="Shippori Antique" checksum="(null)">
   </resource>
 
-  <resource identifier="Shippori Antique B1" checksum="(null)">
+  <resource identifier="ShipporiAntiqueB1-Regular" checksum="(null)">
   </resource>
 
   <resource identifier="Shippori Mincho" checksum="(null)">
@@ -24065,6 +23996,9 @@
   </resource>
 
   <resource identifier="Turret Road weight=275" checksum="(null)">
+  </resource>
+
+  <resource identifier="Twemoji" checksum="(null)">
   </resource>
 
   <resource identifier="Twinkle Star" checksum="(null)">

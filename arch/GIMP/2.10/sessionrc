@@ -1,5 +1,5 @@
 # GIMP sessionrc
-#
+# 
 # This file takes session-specific info (that is info, you want to keep
 # between two GIMP sessions).  You are not supposed to edit it manually, but
 # of course you can do.  The sessionrc will be entirely rewritten every time
@@ -15,8 +15,8 @@
     (size 2538 1010)
     (open-on-exit)
     (aux-info
-        (left-docks-width "280")
-        (right-docks-width "297")
+        (left-docks-width "282")
+        (right-docks-width "305")
         (maximized "no"))
     (gimp-toolbox
         (side left)
@@ -82,18 +82,21 @@
     (size 1002 672))
 (session-info "toplevel"
     (factory-entry "gimp-file-open-dialog")
-    (position 776 194)
-    (size 1008 692))
+    (position 825 246)
+    (size 910 588))
 (session-info "toplevel"
     (factory-entry "gimp-file-export-dialog")
-    (position 776 194)
-    (size 1008 692))
+    (position 825 246)
+    (size 910 588))
 (session-info "toplevel"
     (factory-entry "gimp-toolbox-color-dialog")
     (position 1062 337))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
-    (position 1210 491))
+    (position 1277 537))
+(session-info "toplevel"
+    (factory-entry "gimp-operation-tool-dialog")
+    (position 86 106))
 
 (hide-docks no)
 (single-window-mode yes)
