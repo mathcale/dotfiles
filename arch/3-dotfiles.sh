@@ -63,7 +63,6 @@ echo "==> Installing Hyprland dotfiles"
 
 _installSymLink hypr ~/.config/hypr ~/dotfiles/arch/hypr/ ~/.config
 _installSymLink waybar ~/.config/waybar ~/dotfiles/arch/waybar/ ~/.config
-_installSymLink swaylock ~/.config/swaylock ~/dotfiles/arch/swaylock/ ~/.config
 _installSymLink wlogout ~/.config/wlogout ~/dotfiles/arch/wlogout/ ~/.config
 _installSymLink swappy ~/.config/swappy ~/dotfiles/arch/swappy/ ~/.config
 

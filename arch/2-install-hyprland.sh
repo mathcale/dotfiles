@@ -11,8 +11,8 @@ source ~/dotfiles/arch/scripts/library.sh
 echo ""
 echo "==> Install main packages"
 
-packagesYay=("hyprland-git" "hyprland-plugin-csgo-vulkan-fix-git" "swaylock-effects" "wlogout");
-packagesPacman=("xdg-desktop-portal-wlr" "waybar" "rofi" "grim" "slurp" "swappy" "cliphist" "hyprpaper");
+packagesPacman=("xdg-desktop-portal-wlr" "waybar" "rofi" "grim" "slurp" "swappy" "cliphist" "hyprpaper" "hyprlock");
+packagesYay=("hyprland-git" "hyprland-plugin-csgo-vulkan-fix-git" "wlogout");
 
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
