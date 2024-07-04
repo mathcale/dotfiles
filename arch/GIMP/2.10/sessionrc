@@ -93,7 +93,7 @@
     (position 1062 337))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
-    (position 1277 537))
+    (position 1225 501))
 (session-info "toplevel"
     (factory-entry "gimp-operation-tool-dialog")
     (position 86 106))
