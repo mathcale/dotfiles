@@ -101,7 +101,7 @@ _installPackagesFlatpak() {
   fi
 
   echo -e "\nFlatpak packages not installed: ${toInstall[@]}\n"
-  flatpak install "${toInstall[@]}"
+  flatpak install --user flathub "${toInstall[@]}"
 }
 
 _installSymLink() {

@@ -4,7 +4,7 @@
 
 ## Main Packages
 
-- **Window manager**: hyprland
+- **Window manager**: Hyprland
 - **Terminal**: Kitty
 - **Editors**: Neovim (feat. LunarVim), Visual Studio Code and Sublime Text
 - **Shell**: zsh
@@ -22,7 +22,7 @@
 - **Notifications**: dunst
 - **Session Manager**: SDDM
 - **Logout**: wlogout
-- **Screenlock**: swaylock-effects
+- **Screenlock**: hyprlock
 - **Wallpaper engine**: hyprpaper
 
 ## Getting started
@@ -42,11 +42,8 @@ cd dotfiles/arch
 # Install all required packages
 ./1-install.sh
 
-# Install hyprland window manager
-./2-install-hyprland.sh
-
 # Install dotfiles with symbolic links
-./3-install-dotfiles.sh
+./2-dotfiles.sh
 ```
 
 ## Credits
