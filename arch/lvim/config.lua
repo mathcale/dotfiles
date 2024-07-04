@@ -77,7 +77,7 @@ lvim.plugins = {
   {
     "folke/persistence.nvim",
     event = "BufReadPre",
-    module = "persistence",
+    lazy = true,
     config = function()
       require("persistence").setup {
         dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
@@ -99,12 +99,17 @@ lvim.plugins = {
     --  vim.o.timeoutlen = 500
     -- end
   },
+  {
+    "Fymyte/rasi.vim",
+  }
 }
 
 -- Configs
 lvim.colorscheme = "catppuccin-mocha"
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.format_on_save.enabled = true
+vim.opt.wrap = true
+vim.o.clipboard = 'unnamedplus'
 
 -- Keybindings
 lvim.builtin.which_key.mappings["S"] = {
@@ -113,3 +118,4 @@ lvim.builtin.which_key.mappings["S"] = {
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
+lvim.builtin.terminal.open_mapping = "<c-t>"
