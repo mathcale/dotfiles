@@ -21,9 +21,9 @@
   },
   "custom/clipboard": {
     "format": "",
-    "on-click": "~/dotfiles/arch/scripts/cliphist.sh",
-    "on-click-right": "~/dotfiles/arch/scripts/cliphist.sh d",
-    "on-click-middle": "~/dotfiles/arch/scripts/cliphist.sh w",
+    "on-click": "~/dotfiles/arch/scripts/clipboard.sh",
+    "on-click-right": "~/dotfiles/arch/scripts/clipboard.sh d",
+    "on-click-middle": "~/dotfiles/arch/scripts/clipboard.sh w",
     "tooltip": false
   },
   "custom/logout": {
@@ -73,7 +73,7 @@
     "on-click": "pavucontrol"
   },
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
     "interval": 2,
     "critical-threshold": 80,
     "on-click": "xsensors",

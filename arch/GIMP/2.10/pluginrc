@@ -1605,8 +1605,6 @@
         (proc-arg 4 "filename" "The name of the file to export the image in")
         (proc-arg 4 "raw-filename" "The name of the file to export the image in")
         (proc-arg 0 "compression" "Compression level (0 = none, 1 = RLE, 2 = ARLE)")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-rawtherapee/file-rawtherapee" 1714698844
-    (has-init))
 (plug-in-def "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder" 1714698844
     (proc-def "file-raw-placeholder-canon-load" 1
          "Load files in the Canon raw formats via raw-placeholder"
@@ -4530,7 +4528,7 @@
         (proc-arg 16 "drawable" "Input drawable (not used)")
         (proc-arg 0 "link-after-alignment" "Link the visible layers after alignment { TRUE, FALSE }")
         (proc-arg 0 "use-bottom" "use the bottom layer as the base of alignment { TRUE, FALSE }")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1709979187
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1719507508
     (proc-def "file-jxl-load" 1
          "Loads JPEG XL image files"
          "Loads JPEG XL image files"

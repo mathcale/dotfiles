@@ -4,10 +4,6 @@ configuration {
     font:                       "Fira Sans Bold 10";
     show-icons:                 false;
     icon-theme:                 "kora";
-    display-drun:               "APPS";
-    display-run:                "RUN";
-    display-filebrowser:        "FILES";
-    display-window:             "WINDOW";
   	hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
@@ -15,7 +11,7 @@ configuration {
     window-format:              "{w} · {c} · {t}";
 }
 
-@import "colors.rasi";
+@import "colors.rasi"
 
 /* ---- Window ---- */
 window {

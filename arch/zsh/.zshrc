@@ -65,7 +65,7 @@ export HSTR_TIOCSTI=n
 export PATH=$PATH:$HOME/.spicetify
 
 # Set theme for GTK apps
-export GTK_THEME='Catppuccin-Mocha-Standard-Mauve-Dark'
+export GTK_THEME="catppuccin-mocha-mauve-standard+default"
 
 # Fix kitty ssh shenanigans
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
