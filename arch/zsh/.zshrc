@@ -17,6 +17,10 @@ source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 # GENERAL CONFIGS
 ####
 
+PRIVATERC_FILE=~/.privaterc && test -f $PRIVATERC_FILE && source $PRIVATERC_FILE
+
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Default terminal text editor
 export VISUAL="lvim"
 export EDITOR="lvim"
@@ -40,11 +44,12 @@ alias lzg="lazygit"
 alias yaegi='rlwrap yaegi'
 
 # Shell alternatives configs
-export BAT_THEME="Dracula"
+export BAT_THEME="Catppuccin Mocha"
 
 # Local scripts
 export PATH=$PATH:$HOME/.local/bin
 export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:$HOME/.cargo/bin
 
 # HSTR stuff
 alias hh=hstr
@@ -69,9 +74,6 @@ export GTK_THEME="catppuccin-mocha-mauve-standard+default"
 
 # Fix kitty ssh shenanigans
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-
-# Enable MangoHud
-export MANGOHUD=1
 
 ####
 # PROGRAMMING-RELATED STUFF
