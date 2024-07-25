@@ -1,15 +1,15 @@
 # GIMP action-history
 
-(history-item "tools-rect-select" 4)
+(history-item "tools-rect-select" 5)
 (history-item "tools-color-picker" 1)
-(history-item "file-print-gtk" 1)
-(history-item "file-open" 0)
+(history-item "file-print-gtk" 0)
 (history-item "image-new" 0)
 (history-item "file-quit" 1)
+(history-item "file-open" 0)
 (history-item "file-export" 1)
-(history-item "image-scale" 0)
 (history-item "edit-copy" 0)
 (history-item "edit-paste" 1)
+(history-item "image-scale" 1)
 (history-item "view-close" 0)
 (history-item "script-fu-guide-new-percent" 0)
 (history-item "edit-clear" 0)
@@ -24,6 +24,10 @@
 (history-item "image-color-profile-assign" 0)
 (history-item "tools-scale" 0)
 (history-item "layers-alpha-add" 0)
-(history-item "tools-bucket-fill" 1)
+(history-item "tools-bucket-fill" 0)
+(history-item "dialogs-toolbox" 0)
+(history-item "layers-new" 0)
+(history-item "layers-duplicate" 0)
+(history-item "file-save-as" 1)
 
 # end of action-history
