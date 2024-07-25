@@ -52,7 +52,7 @@ button:hover {
   color: #ffffff;
 }
 
-#clock, #cpu, #memory, #temperature, #network, #pulseaudio,
+#clock, #system, #temperature, #network, #pulseaudio,
 #tray, #custom-clipboard, #custom-logout, #bluetooth {
   margin: 5px 3px;
   padding: 0 10px;
@@ -69,11 +69,7 @@ button:hover {
   background-color: @green;
 }
 
-#cpu {
-  background-color: @yellow;
-}
-
-#memory {
+#system {
   background-color: @peach;
 }
 

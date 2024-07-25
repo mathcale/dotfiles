@@ -80,7 +80,7 @@
     "format": " {temperatureC}°C"
   },
   "cpu": {
-    "format": " {usage}%",
+    "format": " {usage}%  ",
     "interval": 2
   },
   "memory": {
@@ -90,5 +90,9 @@
       "critical": 90
     },
     "interval": 2
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
   }
 }

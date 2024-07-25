@@ -15,8 +15,7 @@
   "modules-center": [],
   "modules-right": [
     "network",
-    "cpu",
-    "memory",
+    "group/system",
     "temperature",
     "pulseaudio",
     "clock",
