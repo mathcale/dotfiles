@@ -81,7 +81,8 @@
   },
   "cpu": {
     "format": " {usage}%  ",
-    "interval": 2
+    "interval": 2,
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "format": " {}%",
@@ -89,10 +90,14 @@
       "warning": 70,
       "critical": 90
     },
-    "interval": 2
+    "interval": 2,
+    "on-click": "kitty -e btop"
   },
   "group/system": {
     "orientation": "horizontal",
-    "modules": ["cpu", "memory"]
+    "modules": [
+      "cpu",
+      "memory"
+    ]
   }
 }
