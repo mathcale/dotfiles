@@ -14,7 +14,7 @@
 - **Color scheme**: Catppuccin Mocha
 - **Browser**: Firefox
 - **File manager**: Thunar
-- **Cursor**: Dracula
+- **Cursor**: Phinger
 - **Icons**: Kora
 - **Status Bar**: Waybar
 - **Screenshots**: grim & slurp
