@@ -46,7 +46,6 @@ _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
 _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
 # _installSymLink lvim ~/.config/lvim ~/dotfiles/arch/lvim/ ~/.config
-_installSymLink GIMP ~/.config/GIMP ~/dotfiles/arch/GIMP/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink appimagelauncher ~/.config/appimagelauncher.cfg ~/dotfiles/appimagelauncher/appimagelauncher.cfg ~/.config/appimagelauncher.cfg
