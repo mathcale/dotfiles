@@ -8,7 +8,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-plugins=(sudo git wd history npm yarn golang)
+plugins=(sudo git wd history npm golang)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
