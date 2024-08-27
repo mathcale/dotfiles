@@ -6,7 +6,9 @@
   ui = true
 
 [core]
-  editor = nvim
+  editor = lvim
+  hooksPath = /Users/mcalegaro/.config/git/hooks/
+  symlinks = false
 
 [alias]
   st = status
@@ -47,7 +49,7 @@
 [delta]
   plus-style = "syntax #012800"
   minus-style = "syntax #340001"
-  syntax-theme = Dracula
+  syntax-theme = "Catppuccin Mocha"
   navigate = true
   side-by-side = true
 

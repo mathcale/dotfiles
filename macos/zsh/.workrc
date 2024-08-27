@@ -1,0 +1,4 @@
+# vi:syntax=sh
+alias co=colima
+alias boot-colima="colima start --cpu 2 --memory 2 --mount-type 9p --arch aarch64"
+alias cafe="cowsay pegando um cafe"

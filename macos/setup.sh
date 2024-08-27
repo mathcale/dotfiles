@@ -13,9 +13,7 @@ mkdir -p $HOME/Dev
 mkdir -p $HOME/Dev/tmp
 mkdir -p $HOME/Random
 mkdir -p $HOME/.goworkspace
-
-echo "==> Cloning 'mathcale/dotfiles'..."
-git clone https://github.com/mathcale/dotfiles.git $HOME/Dev/dotfiles
+mkdir -p $HOME/.local/bin
 
 echo "==> Installing Homebrew..."
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -29,8 +27,7 @@ cp $HOME/Dev/dotfiles/macos/git/.gitconfig $HOME
 
 echo "==> Copying scripts..."
 cp $HOME/Dev/dotfiles/macos/scripts/s0 $HOME/.local/bin
-cp $HOME/Dev/dotfiles/macos/scripts/up $HOME/.local/bin/up
-
+cp $HOME/Dev/dotfiles/macos/scripts/up $HOME/.local/bin
 chmod +x $HOME/.local/bin/*
 
 echo "==> Installing oh-my-zsh..."
@@ -56,7 +53,12 @@ if [ -f $HOME/.zshrc ]; then
 fi
 
 echo "==> Copying .zshrc to home dir..."
-cp $HOME/Dev/dotfiles/shell/.zshrc-mac $HOME/.zshrc
+cp $HOME/Dev/dotfiles/macos/zsh/.zshrc $HOME
+cp $HOME/Dev/dotfiles/macos/zsh/.workrc $HOME
+
+echo ""
+echo "==> Installing wallapers"
+git clone https://github.com/mathcale/wallpapers.git ~/Wallpapers
 
 echo "🎉 Done in ${SECONDS}s"
 echo "🔑 Here's your public SSH key:"
