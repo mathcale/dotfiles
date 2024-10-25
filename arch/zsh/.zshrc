@@ -13,6 +13,10 @@ plugins=(sudo git wd history npm golang)
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
+autoload -Uz compinit
+compinit
+
 ####
 # GENERAL CONFIGS
 ####
@@ -108,6 +112,9 @@ eval "`fnm env`"
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
 export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
 export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
+
+# Deno stuff
+. "$HOME/.deno/env"
 
 # Init Starship prompt
 eval "$(starship init zsh)"

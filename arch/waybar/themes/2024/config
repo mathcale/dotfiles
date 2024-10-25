@@ -20,7 +20,6 @@
     "pulseaudio",
     "clock",
     "custom/clipboard",
-    "tray",
-    "custom/logout"
+    "tray"
   ]
 }
