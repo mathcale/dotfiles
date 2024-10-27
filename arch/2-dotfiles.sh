@@ -48,7 +48,7 @@ _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.conf
 # _installSymLink lvim ~/.config/lvim ~/dotfiles/arch/lvim/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
-_installSymLink appimagelauncher ~/.config/appimagelauncher.cfg ~/dotfiles/appimagelauncher/appimagelauncher.cfg ~/.config/appimagelauncher.cfg
+_installSymLink waypaper ~/.config/waypaper ~/dotfiles/arch/waypaper ~/.config
 
 echo ""
 echo "==> Installing GTK dotfiles"
