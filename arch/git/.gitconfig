@@ -1,3 +1,6 @@
+[include]
+  path = $HOME/.gitconfig-theme
+
 [user]
   name = Matheus Calegaro
   email = hello@matheus.me
@@ -47,7 +50,7 @@
 [delta]
   plus-style = "syntax #012800"
   minus-style = "syntax #340001"
-  syntax-theme = Dracula
+  features = catppuccin-mocha
   navigate = true
   side-by-side = true
 
