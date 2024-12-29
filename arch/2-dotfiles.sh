@@ -9,28 +9,28 @@ echo ""
 source ~/dotfiles/arch/scripts/library.sh
 
 if [ ! -d ~/.config ]; then
-  mkdir ~/.config
-  echo "👌 ~/.config folder created."
+    mkdir ~/.config
+    echo "👌 ~/.config folder created."
 fi
 
 if [ ! -d ~/Dev ]; then
-  mkdir ~/Dev
-  echo "👌 ~/Dev folder created."
+    mkdir ~/Dev
+    echo "👌 ~/Dev folder created."
 fi
 
 if [ ! -d ~/Random ]; then
-  mkdir ~/Random
-  echo "👌 ~/Random folder created."
+    mkdir ~/Random
+    echo "👌 ~/Random folder created."
 fi
 
 if [ ! -d ~/.goworkspace ]; then
-  mkdir ~/.goworkspace
-  echo "👌 ~/.goworkspace folder created."
+    mkdir ~/.goworkspace
+    echo "👌 ~/.goworkspace folder created."
 fi
 
 if [ ! -d ~/.local/bin ]; then
-  mkdir -p ~/.local/bin
-  echo "👌 ~/.local/bin folder created."
+    mkdir -p ~/.local/bin
+    echo "👌 ~/.local/bin folder created."
 fi
 
 echo ""
@@ -45,7 +45,7 @@ _installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starsh
 _installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
 _installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
 _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
-# _installSymLink lvim ~/.config/lvim ~/dotfiles/arch/lvim/ ~/.config
+_installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink waypaper ~/.config/waypaper ~/dotfiles/arch/waypaper ~/.config
