@@ -104,7 +104,7 @@ export PATH=$PATH:$HOME/Android/Sdk/platform-tools
 
 # Node stuff
 export REACT_EDITOR=code
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
@@ -116,5 +116,9 @@ export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 # Deno stuff
 . "$HOME/.deno/env"
 
+# sst
+export PATH=/home/mthx/.sst/bin:$PATH
+
 # Init Starship prompt
 eval "$(starship init zsh)"
+
