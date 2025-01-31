@@ -40,7 +40,7 @@ alias vim=lvim
 alias vi=lvim
 alias lv=lvim
 alias d=docker
-alias ls="eza --icons --color auto"
+alias ls="eza --icons --color auto --group-directories-first"
 alias kct="kubectl"
 alias ff="fastfetch"
 alias lzd="lazydocker"
@@ -77,7 +77,7 @@ export PATH=$PATH:$HOME/.spicetify
 export GTK_THEME="catppuccin-mocha-mauve-standard+default"
 
 # Fix kitty ssh shenanigans
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+export TERM=xterm-256color
 
 ####
 # PROGRAMMING-RELATED STUFF
@@ -122,3 +122,4 @@ export PATH=/home/mthx/.sst/bin:$PATH
 # Init Starship prompt
 eval "$(starship init zsh)"
 
+nerdfetch

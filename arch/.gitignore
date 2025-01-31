@@ -1,1 +1,3 @@
 lvim/session/*
+nvim/session/*
+zsh/.privaterc
