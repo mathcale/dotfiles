@@ -1,11 +1,15 @@
 lvim.plugins = {
-  { "catppuccin/nvim",   name = "catppuccin", priority = 1000 },
-  { "github/copilot.vim" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
   {
     "wfxr/minimap.vim",
     build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    config = function()
+    lazy = false,
+    cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
+    init = function()
       vim.cmd("let g:minimap_width = 10")
       vim.cmd("let g:minimap_auto_start = 1")
       vim.cmd("let g:minimap_auto_start_win_enter = 1")
@@ -39,7 +43,9 @@ lvim.plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
-  { "mrjones2014/nvim-ts-rainbow" },
+  {
+    "mrjones2014/nvim-ts-rainbow",
+  },
   {
     "romgrk/nvim-treesitter-context",
     config = function()
@@ -94,14 +100,18 @@ lvim.plugins = {
   },
   {
     "tpope/vim-surround",
-    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-    -- setup = function()
-    --  vim.o.timeoutlen = 500
-    -- end
   },
   {
     "Fymyte/rasi.vim",
-  }
+  },
+  {
+    "edluffy/hologram.nvim",
+    config = function()
+      require("hologram").setup {
+        auto_display = true
+      }
+    end
+  },
 }
 
 -- Configs
@@ -119,3 +129,12 @@ lvim.builtin.which_key.mappings["S"] = {
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 lvim.builtin.terminal.open_mapping = "<c-t>"
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Trouble",
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+}

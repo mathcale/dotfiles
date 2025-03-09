@@ -1,1 +1,8 @@
-UUID=44D0B87CD0B875B0	/mnt/dados	ntfs	rw,auto,users,exec,nls=utf8,umask=003,gid=46,uid=1000    0   0
+# 8TB drive
+UUID=44D0B87CD0B875B0   /mnt/retro  ntfs-3g    defaults,auto,rw,lazytime,big_writes,nofail,users,exec,nls=utf8,umask=003,gid=46,uid=1000 0 0
+
+# 2TB drive
+UUID=48BF-A3F0  /mnt/dados  exfat   defaults,uid=1000,gid=46,umask=003  0 0
+
+# Shares
+fileshare.home.lan:/mnt/data /mnt/vault nfs   defaults  0 0

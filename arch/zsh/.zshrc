@@ -101,6 +101,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$HOME/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Android/Sdk/tools
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
+alias run-emu="emulator @pixel8_38 -logcat '*:d' > /var/log/android-emulator.log 2>&1"
 
 # Node stuff
 export REACT_EDITOR=code
