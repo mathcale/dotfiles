@@ -70,11 +70,8 @@ zle -N hstr_no_tiocsti
 bindkey '\C-r' hstr_no_tiocsti
 export HSTR_TIOCSTI=n
 
-# Spicetify stuff
-export PATH=$PATH:$HOME/.spicetify
-
-# Set theme for GTK apps
-export GTK_THEME="catppuccin-mocha-mauve-standard+default"
+# Set GTK apps theme
+export GTK_THEME="Catppuccin-Purple-Dark"
 
 # Fix kitty ssh shenanigans
 export TERM=xterm-256color
