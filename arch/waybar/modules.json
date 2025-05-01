@@ -85,7 +85,7 @@
     "on-click": "kitty -e btop"
   },
   "memory": {
-    "format": " {}%",
+    "format": " {}%  ",
     "states": {
       "warning": 70,
       "critical": 90
@@ -97,7 +97,8 @@
     "orientation": "horizontal",
     "modules": [
       "cpu",
-      "memory"
+      "memory",
+      "temperature"
     ]
   }
 }

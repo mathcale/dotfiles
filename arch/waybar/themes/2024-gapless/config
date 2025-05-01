@@ -9,14 +9,12 @@
     "~/dotfiles/arch/waybar/modules.json"
   ],
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
   "modules-center": [],
   "modules-right": [
     "network",
     "group/system",
-    "temperature",
     "pulseaudio",
     "clock",
     "custom/clipboard",

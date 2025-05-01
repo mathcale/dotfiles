@@ -54,7 +54,6 @@ button:hover {
 
 #clock,
 #system,
-#temperature,
 #network,
 #pulseaudio,
 #tray,
@@ -78,10 +77,6 @@ button:hover {
 
 #system {
   background-color: @peach;
-}
-
-#temperature {
-  background-color: @teal;
 }
 
 #pulseaudio {

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-THEME="2024"
+THEME="2024-gapless"
 
 killall waybar
 waybar \
