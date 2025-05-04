@@ -2,8 +2,9 @@
   "layer": "top",
   "height": 32,
   "spacing": 1,
-  "margin-top": 5,
+  "margin-top": 0,
   "margin-right": 5,
+  "margin-bottom": 0,
   "margin-left": 5,
   "include": ["~/dotfiles/arch/waybar/themes/2025/modules.json"],
   "modules-left": [
