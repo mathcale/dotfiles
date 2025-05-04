@@ -1,0 +1,22 @@
+{
+  "layer": "top",
+  "height": 32,
+  "spacing": 1,
+  "margin-top": 5,
+  "margin-right": 5,
+  "margin-left": 5,
+  "include": ["~/dotfiles/arch/waybar/themes/2025/modules.json"],
+  "modules-left": [
+    "pulseaudio",
+    "custom/clipboard"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "group/system",
+    "tray",
+    "clock"
+  ]
+}

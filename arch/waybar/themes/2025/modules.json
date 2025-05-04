@@ -1,0 +1,105 @@
+{
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": false,
+    "separate-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "icon": false,
+    "icon-size": 16,
+    "separate-outputs": true
+  },
+  "custom/clipboard": {
+    "format": "",
+    "on-click": "~/dotfiles/arch/scripts/clipboard.sh",
+    "on-click-right": "~/dotfiles/arch/scripts/clipboard.sh d",
+    "on-click-middle": "~/dotfiles/arch/scripts/clipboard.sh w",
+    "tooltip": false
+  },
+  "custom/logout": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+  "clock": {
+    "timezone": "America/Sao_Paulo",
+    "tooltip-format": "<big>{:%A, %d/%m/%Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%H:%M}"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": " {bandwidthDownBytes}   {bandwidthUpBytes}",
+    "format-disconnected": " No network",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": " No network",
+    "max-length": 50,
+    "interval": 2,
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume}%   {format_source}",
+    "format-muted": "{icon}  Muted  {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "  Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
+    "interval": 2,
+    "critical-threshold": 80,
+    "on-click": "xsensors",
+    "format": " {temperatureC}°C"
+  },
+  "cpu": {
+    "format": " {usage}%  ",
+    "interval": 2,
+    "on-click": "kitty -e btop"
+  },
+  "memory": {
+    "format": " {}%  ",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    },
+    "interval": 2,
+    "on-click": "kitty -e btop"
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  }
+}
