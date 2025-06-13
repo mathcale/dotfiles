@@ -1,4 +1,5 @@
 {
+  "output": "DP-1",
   "layer": "top",
   "height": 32,
   "spacing": 1,
@@ -6,9 +7,12 @@
   "margin-right": 5,
   "margin-bottom": 0,
   "margin-left": 5,
-  "include": ["~/dotfiles/arch/waybar/themes/2025/modules.json"],
+  "include": [
+    "~/dotfiles/arch/waybar/themes/2025/modules.json"
+  ],
   "modules-left": [
     "pulseaudio",
+    "group/system",
     "custom/clipboard"
   ],
   "modules-center": [
@@ -16,7 +20,6 @@
   ],
   "modules-right": [
     "network",
-    "group/system",
     "tray",
     "clock"
   ]

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [[ ! -v HYPRLAND_INSTANCE_SIGNATURE ]]; then
+  echo "Running outside a Hyprland session, exiting..."
+  exit
+fi
+
+restore=false
+config_wallpaper=$(awk -F '=' '/^preload/ {print $2}' ~/dotfiles/arch/hypr/hyprpaper.conf | sed 's/^[[:space:]]*//')
+
+usage() {
+  echo "Usage: $0 [OPTIONS]"
+  echo "Options:"
+  echo "  -h, --help       Display this help message"
+  echo "  -r, --restore    Restore wallpaper"
+}
+
+handle_options() {
+  while [ $# -gt 0 ]; do
+    case $1 in
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    -r | --restore)
+      restore=true
+      ;;
+    esac
+    shift
+  done
+}
+
+handle_options "$@"
+
+if [ "$restore" = true ]; then
+  echo "Restoring wallpaper to $config_wallpaper..."
+  hyprctl hyprpaper wallpaper ,"$config_wallpaper"
+  exit 0
+fi
+
+hyprctl hyprpaper preload "~/wallpapers/black.png"
+hyprctl hyprpaper wallpaper ,"~/wallpapers/black.png"

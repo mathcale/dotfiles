@@ -26,8 +26,8 @@ PRIVATERC_FILE=~/.privaterc && test -f $PRIVATERC_FILE && source $PRIVATERC_FILE
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Default terminal text editor
-export VISUAL="lvim"
-export EDITOR="lvim"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 # thefuck stuff
 eval $(thefuck --alias)
@@ -36,9 +36,7 @@ eval $(thefuck --alias FUCK)
 # Aliases
 alias dcu="docker compose up"
 alias dcd="docker compose down"
-alias vim=lvim
-alias vi=lvim
-alias lv=lvim
+alias nv=nvim
 alias d=docker
 alias ls="eza --icons --color auto --group-directories-first"
 alias kct="kubectl"
