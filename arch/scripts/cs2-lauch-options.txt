@@ -1,1 +1,1 @@
-/home/mthx/dotfiles/arch/scripts/black-bg && LD_PRELOAD="" gamescope -W 2560 -H 1080 -w 1920 -h 1080 -r 144 -S auto --mangoapp --force-grab-cursor -- %command% && /home/mthx/dotfiles/arch/scripts/black-bg --restore
+/home/mathcale/dotfiles/arch/scripts/black-bg && LD_PRELOAD="" gamescope -W 2560 -H 1080 -w 1920 -h 1080 -r 144 -S auto --mangoapp --force-grab-cursor -- %command% && /home/mathcale/dotfiles/arch/scripts/black-bg --restore

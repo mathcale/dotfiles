@@ -40,7 +40,7 @@ alias nv=nvim
 alias d=docker
 alias ls="eza --icons --color auto --group-directories-first"
 alias kct="kubectl"
-alias ff="fastfetch"
+alias nf="nerdfetch"
 alias lzd="lazydocker"
 alias lzg="lazygit"
 alias yaegi='rlwrap yaegi'
@@ -111,9 +111,6 @@ export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 
 # Deno stuff
 . "$HOME/.deno/env"
-
-# sst
-export PATH=/home/mthx/.sst/bin:$PATH
 
 # Init Starship prompt
 eval "$(starship init zsh)"

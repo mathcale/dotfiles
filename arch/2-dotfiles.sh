@@ -33,7 +33,7 @@ if [ ! -d ~/.local/bin ]; then
   echo "👌 ~/.local/bin folder created."
 fi
 
-if [ ! f ~/.privaterc ]; then
+if [ ! -f ~/.privaterc ]; then
   touch ~/.privaterc
 fi
 
@@ -72,7 +72,7 @@ _installSymLink swappy ~/.config/swappy ~/dotfiles/arch/swappy/ ~/.config
 echo ""
 echo "==> Copying scripts"
 
-cp ~/dotfiles/scripts/s0 ~/.local/bin/s0
+cp ~/dotfiles/arch/scripts/s0 ~/.local/bin/s0
 cp ~/dotfiles/arch/scripts/up.sh ~/.local/bin/up
 chmod +x ~/.local/bin/*
 
