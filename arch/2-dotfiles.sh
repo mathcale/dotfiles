@@ -53,6 +53,7 @@ _installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
 _installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink waypaper ~/.config/waypaper ~/dotfiles/arch/waypaper ~/.config
+_installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimeapps.list ~/.config/mimeapps.list
 
 echo ""
 echo "==> Installing GTK dotfiles"
