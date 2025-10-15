@@ -74,6 +74,10 @@ export GTK_THEME="Catppuccin-Purple-Dark"
 # Fix kitty ssh shenanigans
 export TERM=xterm-256color
 
+# ROCm stuff
+export ROCM_PATH=/opt/rocm
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+
 ####
 # PROGRAMMING-RELATED STUFF
 ####
@@ -111,6 +115,10 @@ export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 
 # Deno stuff
 . "$HOME/.deno/env"
+
+# bun stuff
+export PATH="$HOME/.bun/bin:$PATH"
+[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
 
 # Init Starship prompt
 eval "$(starship init zsh)"
