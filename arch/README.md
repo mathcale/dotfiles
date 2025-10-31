@@ -6,21 +6,21 @@
 
 - **Window manager**: Hyprland
 - **Terminal**: Kitty
-- **Editors**: Neovim (feat. LunarVim), Visual Studio Code and Sublime Text
+- **Editors**: Neovim (feat. LazyVim), Visual Studio Code and Sublime Text
 - **Shell**: zsh
 - **Prompt**: Starship
 - **Glyphs**: Font Awesome
 - **Menus**: Rofi
 - **Color scheme**: Catppuccin Mocha
-- **Browser**: Firefox
-- **File manager**: Thunar
+- **Browser**: Zen
+- **File manager**: Nautilus
 - **Cursor**: Phinger
 - **Icons**: Kora
 - **Status Bar**: Waybar
 - **Screenshots**: grim & slurp
 - **Clipboard Manager**: cliphist
 - **Notifications**: dunst
-- **Session Manager**: SDDM
+- **Session Manager**: GDM
 - **Logout**: wlogout
 - **Screenlock**: hyprlock
 - **Wallpaper engine**: hyprpaper
