@@ -8,7 +8,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-plugins=(sudo git wd history npm golang)
+plugins=(sudo git wd history npm golang pnpm)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
@@ -119,6 +119,13 @@ export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 # bun stuff
 export PATH="$HOME/.bun/bin:$PATH"
 [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+
+# pnpm stuff
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 # Init Starship prompt
 eval "$(starship init zsh)"
