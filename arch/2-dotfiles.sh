@@ -41,18 +41,14 @@ echo ""
 echo "==> Installing general dotfiles"
 # Syntax: name link source target-dir
 
-_installSymLink .zshrc ~/.zshrc ~/dotfiles/arch/zsh/.zshrc ~/.zshrc
-_installSymLink .warprc ~/.warprc ~/dotfiles/arch/zsh/.warprc ~/.warprc
+_installSymLink .zshrc ~/.zshrc ~/dotfiles/arch/shell/.zshrc ~/.zshrc
+_installSymLink .warprc ~/.warprc ~/dotfiles/arch/shell/.warprc ~/.warprc
 _installSymLink .gitconfig ~/.gitconfig ~/dotfiles/arch/git/.gitconfig ~/.gitconfig
 _installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
-_installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/starship/starship.toml ~/.config/starship.toml
-_installSymLink rofi ~/.config/rofi ~/dotfiles/arch/rofi/ ~/.config
-_installSymLink dunst ~/.config/dunst ~/dotfiles/arch/dunst/ ~/.config
+_installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/shell/starship.toml ~/.config/starship.toml
 _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
 _installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
-_installSymLink xfce4 ~/.config/xfce4 ~/dotfiles/arch/xfce4/ ~/.config
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
-_installSymLink waypaper ~/.config/waypaper ~/dotfiles/arch/waypaper ~/.config
 _installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimeapps.list ~/.config/mimeapps.list
 
 echo ""
@@ -66,9 +62,6 @@ echo ""
 echo "==> Installing Hyprland dotfiles"
 
 _installSymLink hypr ~/.config/hypr ~/dotfiles/arch/hypr/ ~/.config
-_installSymLink waybar ~/.config/waybar ~/dotfiles/arch/waybar/ ~/.config
-_installSymLink wlogout ~/.config/wlogout ~/dotfiles/arch/wlogout/ ~/.config
-_installSymLink swappy ~/.config/swappy ~/dotfiles/arch/swappy/ ~/.config
 
 echo ""
 echo "==> Copying scripts"

@@ -43,10 +43,6 @@ _installPackagesYay "${packagesYay[@]}";
 _installPackagesFlatpak "${packagesFlatpak[@]}"
 
 echo ""
-echo "==> Installing Go packages"
-go install github.com/jesseduffield/lazydocker@latest
-
-echo ""
 echo "==> Adding symlink for emoji font"
 sudo ln -sf /usr/share/fontconfig/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.conf
 
