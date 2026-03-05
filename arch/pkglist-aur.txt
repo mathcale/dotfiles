@@ -14,6 +14,7 @@ cider
 code-minimap
 cozette-otb
 dmg2img
+dms-shell-bin
 docker-buildx-git
 downgrade
 dracula-cursors-git

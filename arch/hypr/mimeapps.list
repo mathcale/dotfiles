@@ -14,6 +14,9 @@ text/plain=sublime_text.desktop;
 image/x-xfig=figma-linux.desktop;
 application/x-shellscript=sublime_text.desktop;
 text/x-python=sublime_text.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;
+application/x-bittorrent=org.qbittorrent.qBittorrent.desktop;
 
 [Default Applications]
 x-scheme-handler/figma=figma-linux.desktop
@@ -27,10 +30,14 @@ application/x-extension-shtml=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/x-extension-xht=zen.desktop
 application/zip=org.gnome.FileRoller.desktop
-x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
 text/plain=sublime_text.desktop
 inode/directory=org.gnome.Nautilus.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 image/x-xfig=figma-linux.desktop
 application/x-shellscript=sublime_text.desktop
 text/x-python=sublime_text.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
+application/x-bittorrent=org.qbittorrent.qBittorrent.desktop

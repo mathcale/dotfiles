@@ -64,6 +64,17 @@ echo "==> Installing Hyprland dotfiles"
 _installSymLink hypr ~/.config/hypr ~/dotfiles/arch/hypr/ ~/.config
 
 echo ""
+echo "==> Installing DankMaterialShell dotfiles"
+
+if [ ! -d ~/.config/environment.d ]; then
+  mkdir -p ~/.config/environment.d
+  echo "👌 ~/.config/environment.d folder created."
+fi
+
+_installSymLink DankMaterialShell ~/.config/DankMaterialShell ~/dotfiles/arch/dms ~/.config/DankMaterialShell
+_installSymLink 90-dms.conf ~/.config/environment.d/90-dms.conf ~/dotfiles/arch/environment.d/90-dms.conf ~/.config/environment.d/90-dms.conf
+
+echo ""
 echo "==> Copying scripts"
 
 cp ~/dotfiles/arch/scripts/s0 ~/.local/bin/s0
