@@ -100,6 +100,26 @@ systemctl --user enable --now ulauncher.service
 echo "👌 ulauncher service enabled (restricted to GNOME sessions)."
 
 echo ""
+echo "==> Installing DMS plugins"
+
+DMS_PLUGINS_DIR="$HOME/.config/DankMaterialShell/plugins"
+mkdir -p "$DMS_PLUGINS_DIR"
+
+_installDmsPlugin() {
+  local name="$1"
+  local url="$2"
+  if [ ! -d "$DMS_PLUGINS_DIR/$name" ]; then
+    git clone "$url" "$DMS_PLUGINS_DIR/$name"
+    echo "👌 DMS plugin '$name' installed."
+  else
+    echo "👌 DMS plugin '$name' already installed, skipping."
+  fi
+}
+
+_installDmsPlugin "calculator" "https://github.com/rochacbruno/DankCalculator"
+_installDmsPlugin "emojiLauncher" "https://github.com/devnullvoid/dms-emoji-launcher"
+
+echo ""
 echo "==> Copying scripts"
 
 cp ~/dotfiles/arch/scripts/s0 ~/.local/bin/s0
