@@ -57,7 +57,7 @@ _installPackagesPacman() {
   fi
 
   echo -e "\nPackages not installed: ${toInstall[@]}\n"
-  sudo pacman --noconfirm -S "${toInstall[@]}"
+  sudo pacman -Syu "${toInstall[@]}"
 }
 
 _installPackagesYay() {
