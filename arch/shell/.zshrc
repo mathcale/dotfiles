@@ -8,14 +8,14 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-plugins=(sudo git wd history npm golang pnpm)
+plugins=(sudo git wd history npm golang)
+
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
+ZSH_DISABLE_COMPFIX=true
+# zstyle ':omz:update' mode disabled
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
-
-if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
-autoload -Uz compinit
-compinit
 
 ####
 # GENERAL CONFIGS
@@ -29,21 +29,13 @@ export XDG_CONFIG_HOME=$HOME/.config
 export VISUAL="nvim"
 export EDITOR="nvim"
 
-# thefuck stuff
-eval $(thefuck --alias)
-eval $(thefuck --alias FUCK)
-
 # Aliases
 alias dcu="docker compose up"
 alias dcd="docker compose down"
 alias nv=nvim
 alias d=docker
 alias ls="eza --icons --color auto --group-directories-first"
-alias kct="kubectl"
 alias nf="nerdfetch"
-alias lzd="lazydocker"
-alias lzg="lazygit"
-alias yaegi='rlwrap yaegi'
 
 # Shell alternatives configs
 export BAT_THEME="Catppuccin Mocha"
@@ -86,7 +78,15 @@ export HSA_OVERRIDE_GFX_VERSION=10.3.0
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+
+_jenv_init() {
+  unfunction java javac jenv 2>/dev/null
+  eval "$(jenv init -)"
+}
+
+java()  { _jenv_init; java  "$@"; }
+javac() { _jenv_init; javac "$@"; }
+jenv()  { _jenv_init; jenv  "$@"; }
 
 # Go stuff
 export PATH=$PATH:/usr/local/go/bin
@@ -106,15 +106,23 @@ alias run-emu="emulator @pixel8_38 -logcat '*:d' > /var/log/android-emulator.log
 export REACT_EDITOR=code
 export PATH="$HOME/.npm-global/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"
+
+_fnm_init() {
+  unfunction node npm npx yarn pnpm bun 2>/dev/null
+  eval "$(fnm env --use-on-cd)"
+}
+
+node() { _fnm_init; node  "$@"; }
+npm()  { _fnm_init; npm   "$@"; }
+npx()  { _fnm_init; npx   "$@"; }
+yarn() { _fnm_init; yarn  "$@"; }
+pnpm() { _fnm_init; pnpm  "$@"; }
+bun()  { _fnm_init; bun   "$@"; }
 
 # Pi Pico stuff
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
 export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
 export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
-
-# Deno stuff
-. "$HOME/.deno/env"
 
 # bun stuff
 export PATH="$HOME/.bun/bin:$PATH"
@@ -129,5 +137,3 @@ esac
 
 # Init Starship prompt
 eval "$(starship init zsh)"
-
-nerdfetch
