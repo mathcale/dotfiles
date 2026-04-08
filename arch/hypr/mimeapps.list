@@ -1,14 +1,5 @@
 [Added Associations]
-x-scheme-handler/http=zen.desktop;
-x-scheme-handler/https=zen.desktop;
-x-scheme-handler/chrome=zen.desktop;
-text/html=zen.desktop;
-application/x-extension-htm=zen.desktop;
-application/x-extension-html=zen.desktop;
-application/x-extension-shtml=zen.desktop;
 application/xhtml+xml=zen.desktop;
-application/x-extension-xhtml=zen.desktop;
-application/x-extension-xht=zen.desktop;
 application/zip=org.gnome.FileRoller.desktop;
 text/plain=sublime_text.desktop;
 image/x-xfig=figma-linux.desktop;
@@ -17,6 +8,13 @@ text/x-python=sublime_text.desktop;
 image/jpeg=org.gnome.Loupe.desktop;
 image/png=org.gnome.Loupe.desktop;
 application/x-bittorrent=org.qbittorrent.qBittorrent.desktop;
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-7QQNL3.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-7QQNL3.desktop;
+application/json=sublime_text.desktop;
+application/sql=sublime_text.desktop;
 
 [Default Applications]
 x-scheme-handler/figma=figma-linux.desktop
@@ -41,3 +39,9 @@ image/jpeg=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 application/x-bittorrent=org.qbittorrent.qBittorrent.desktop
+application/xhtml+xml=zen.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-7QQNL3.desktop
+message/rfc822=userapp-Thunderbird-7QQNL3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-7QQNL3.desktop
+application/json=sublime_text.desktop
+application/sql=sublime_text.desktop
