@@ -55,6 +55,11 @@ echo "==> Enabling GDM"
 sudo systemctl enable gdm
 
 echo ""
+echo "==> Enabling Bluetooth rfkill unblock service"
+sudo cp ~/dotfiles/arch/systemd/rfkill-unblock-bluetooth.service /etc/systemd/system/rfkill-unblock-bluetooth.service
+sudo systemctl enable rfkill-unblock-bluetooth.service
+
+echo ""
 echo "==> Installing wallapers"
 git clone https://github.com/mathcale/wallpapers.git ~/wallpapers
 echo "👌 wallpapers installed!"

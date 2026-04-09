@@ -1,0 +1,10 @@
+[Unit]
+Description=Unblock Bluetooth via rfkill
+After=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rfkill unblock bluetooth
+
+[Install]
+WantedBy=multi-user.target
