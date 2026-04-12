@@ -1,10 +1,12 @@
 [Unit]
-Description=Unblock Bluetooth via rfkill
+Description=Rebind Bluetooth USB dongle to work around btusb init failure
 After=bluetooth.service
+Requires=bluetooth.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rfkill unblock bluetooth
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/local/bin/rebind-bt-dongle.sh
 
 [Install]
 WantedBy=multi-user.target

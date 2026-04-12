@@ -55,7 +55,9 @@ echo "==> Enabling GDM"
 sudo systemctl enable gdm
 
 echo ""
-echo "==> Enabling Bluetooth rfkill unblock service"
+echo "==> Enabling Bluetooth dongle rebind workaround"
+sudo cp ~/dotfiles/arch/scripts/rebind-bt-dongle.sh /usr/local/bin/rebind-bt-dongle.sh
+sudo chmod +x /usr/local/bin/rebind-bt-dongle.sh
 sudo cp ~/dotfiles/arch/systemd/rfkill-unblock-bluetooth.service /etc/systemd/system/rfkill-unblock-bluetooth.service
 sudo systemctl enable rfkill-unblock-bluetooth.service
 
