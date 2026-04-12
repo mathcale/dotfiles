@@ -135,5 +135,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# LM Studio stuff
+export PATH="$HOME/.lmstudio/bin:$PATH"
+
 # Init Starship prompt
 eval "$(starship init zsh)"
