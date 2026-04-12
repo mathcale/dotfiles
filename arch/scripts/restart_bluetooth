@@ -1,6 +1,0 @@
-#!/usr/bin/python
-
-from usb.core import find as finddev
-
-dev = finddev(idVendor=0x0A12, idProduct=0x0001)
-dev.reset()
