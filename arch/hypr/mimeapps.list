@@ -16,6 +16,8 @@ x-scheme-handler/mid=userapp-Thunderbird-7QQNL3.desktop;
 application/json=sublime_text.desktop;
 application/sql=sublime_text.desktop;
 application/octet-stream=sublime_text.desktop;
+application/pdf=org.gnome.Evince.desktop;
+video/vnd.avi=mpv.desktop;
 
 [Default Applications]
 x-scheme-handler/figma=figma-linux.desktop
@@ -47,3 +49,5 @@ x-scheme-handler/mid=userapp-Thunderbird-7QQNL3.desktop
 application/json=sublime_text.desktop
 application/sql=sublime_text.desktop
 application/octet-stream=sublime_text.desktop
+application/pdf=org.gnome.Evince.desktop
+video/vnd.avi=mpv.desktop
