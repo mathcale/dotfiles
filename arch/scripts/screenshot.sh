@@ -41,15 +41,24 @@ case "$MODE" in
         ;;
 
     area-annotate|screen-annotate|active-annotate)
-        # Capture to stdout, pipe into satty. satty handles save + clipboard via its own UI.
-        grimblast save "$(grimblast_mode "$MODE")" - | satty \
-            --filename - \
+        # Capture once to a temp file, then:
+        #   1. Save the raw capture to $OUT immediately, so closing satty via
+        #      Super+Q / window-close still leaves an un-annotated screenshot on disk
+        #      (satty has no hook for compositor-initiated close).
+        #   2. Pipe the same image into satty for annotation. On Enter/Esc, satty
+        #      overwrites $OUT with the annotated version and copies to clipboard.
+        TMP="$(mktemp --suffix=.png)"
+        trap 'rm -f "$TMP"' EXIT
+        grimblast save "$(grimblast_mode "$MODE")" "$TMP"
+        cp "$TMP" "$OUT"
+        satty \
+            --filename "$TMP" \
             --output-filename "$OUT" \
             --early-exit \
             --copy-command 'wl-copy' \
-            --actions-on-enter save-to-clipboard \
-            --save-after-copy
-        notify "Annotated screenshot saved to $OUT"
+            --actions-on-enter save-to-clipboard,save-to-file \
+            --actions-on-escape save-to-clipboard,save-to-file,exit
+        notify "Screenshot saved to $OUT"
         ;;
 
     *)
