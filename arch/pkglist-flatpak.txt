@@ -1,0 +1,6 @@
+com.github.tchx84.Flatseal
+com.stremio.Stremio
+info.cemu.Cemu
+net.pcsx2.PCSX2
+net.rpcs3.RPCS3
+org.ppsspp.PPSSPP
