@@ -40,11 +40,9 @@ ttf-font-awesome-4
 ttf-joypixels
 ttf-ms-fonts
 ttf-twemoji
-ulauncher
 update-grub
 visual-studio-code-bin
 vkbasalt
-webkit2gtk
 xdg-terminal-exec
 yay-git
 zsh-autopair-git

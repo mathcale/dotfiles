@@ -358,12 +358,17 @@ hl.bind(mod .. " + SHIFT + up",    hl.dsp.window.resize({ x =    0, y = -100, re
 hl.bind(mod .. " + SHIFT + down",  hl.dsp.window.resize({ x =    0, y =  100, relative = true }))
 
 -- Screenshots
-hl.bind("XF86Launch1",        hl.dsp.exec_cmd("grimblast copy area"))
-hl.bind("CTRL + XF86Launch1", hl.dsp.exec_cmd("grimblast copy screen"))
-hl.bind("ALT + XF86Launch1",  hl.dsp.exec_cmd("grimblast copy active"))
-hl.bind("Print",              hl.dsp.exec_cmd("grimblast copy area"))
-hl.bind("CTRL + Print",       hl.dsp.exec_cmd("grimblast copy screen"))
-hl.bind("ALT + Print",        hl.dsp.exec_cmd("grimblast copy active"))
+local screenshot = os.getenv("HOME") .. "/.local/bin/screenshot"
+hl.bind("XF86Launch1",                 hl.dsp.exec_cmd(screenshot .. " area"))
+hl.bind("CTRL + XF86Launch1",          hl.dsp.exec_cmd(screenshot .. " screen"))
+hl.bind("ALT + XF86Launch1",           hl.dsp.exec_cmd(screenshot .. " active"))
+hl.bind("SHIFT + XF86Launch1",         hl.dsp.exec_cmd(screenshot .. " area-annotate"))
+hl.bind("Print",                       hl.dsp.exec_cmd(screenshot .. " area"))
+hl.bind("CTRL + Print",                hl.dsp.exec_cmd(screenshot .. " screen"))
+hl.bind("ALT + Print",                 hl.dsp.exec_cmd(screenshot .. " active"))
+hl.bind("SHIFT + Print",               hl.dsp.exec_cmd(screenshot .. " area-annotate"))
+hl.bind("CTRL + SHIFT + Print",        hl.dsp.exec_cmd(screenshot .. " screen-annotate"))
+hl.bind("ALT + SHIFT + Print",         hl.dsp.exec_cmd(screenshot .. " active-annotate"))
 
 -- DPMS off
 hl.bind(mod .. " + SHIFT + P", hl.dsp.dpms({ action = "disable" }))

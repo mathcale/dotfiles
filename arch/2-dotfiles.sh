@@ -124,6 +124,7 @@ echo "==> Copying scripts"
 
 cp ~/dotfiles/arch/scripts/s0 ~/.local/bin/s0
 cp ~/dotfiles/arch/scripts/up.sh ~/.local/bin/up
+cp ~/dotfiles/arch/scripts/screenshot.sh ~/.local/bin/screenshot
 chmod +x ~/.local/bin/*
 
 echo "🎉 Done! Please reboot your system!"

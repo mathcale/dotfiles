@@ -125,6 +125,7 @@ golangci-lint
 goverlay
 gparted
 grilo-plugins
+grimblast-git
 grub
 grub-hook
 gst-libav
@@ -157,6 +158,7 @@ hyprpaper
 hyprpicker
 i2c-tools
 inetutils
+inotify-tools
 iotop
 iptables
 iwd
@@ -219,6 +221,8 @@ nwg-displays
 nwg-look
 obs-gstreamer
 obs-studio
+onlyoffice-bin
+openbsd-netcat
 opencl-mesa
 opencode
 openssh
@@ -279,6 +283,8 @@ rygel
 s-nail
 samba
 sassc
+satty
+scrcpy
 screen
 sg3_utils
 simple-scan
