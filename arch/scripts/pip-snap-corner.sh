@@ -46,4 +46,4 @@ fi
 
 ADDRESS=$(echo "$ACTIVE_WINDOW" | jq -r '.address')
 
-hyprctl dispatch movewindowpixel "exact $SNAP_X $SNAP_Y,address:$ADDRESS"
+hyprctl dispatch "hl.dsp.window.move({x=$SNAP_X,y=$SNAP_Y,exact=true,window=hl.get_window(\"address:$ADDRESS\")})"
