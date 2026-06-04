@@ -43,11 +43,12 @@ echo "==> Installing general dotfiles"
 
 _installSymLink .zshrc ~/.zshrc ~/dotfiles/arch/shell/.zshrc ~/.zshrc
 _installSymLink .warprc ~/.warprc ~/dotfiles/arch/shell/.warprc ~/.warprc
-_installSymLink .gitconfig ~/.gitconfig ~/dotfiles/arch/git/.gitconfig ~/.gitconfig
-_installSymLink kitty ~/.config/kitty ~/dotfiles/arch/kitty ~/.config
-_installSymLink starship ~/.config/starship.toml ~/dotfiles/arch/shell/starship.toml ~/.config/starship.toml
+_installSymLink .gitconfig ~/.gitconfig ~/dotfiles/cross/git/.gitconfig ~/.gitconfig
+_installSymLink .gitconfig-theme ~/.gitconfig-theme ~/dotfiles/cross/git/theme.gitconfig ~/.gitconfig-theme
+_installSymLink kitty ~/.config/kitty ~/dotfiles/cross/kitty ~/.config
+_installSymLink starship ~/.config/starship.toml ~/dotfiles/cross/starship.toml ~/.config/starship.toml
 _installSymLink fastfetch ~/.config/fastfetch ~/dotfiles/arch/fastfetch/ ~/.config
-_installSymLink nvim ~/.config/nvim ~/dotfiles/arch/nvim/ ~/.config
+_installSymLink nvim ~/.config/nvim ~/dotfiles/cross/nvim/ ~/.config
 _installSymLink ulauncher ~/.config/ulauncher ~/dotfiles/arch/ulauncher ~/.config
 _installSymLink xdg-terminals.list ~/.config/xdg-terminals.list ~/dotfiles/arch/xdg-terminals.list ~/.config/xdg-terminals.list
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config

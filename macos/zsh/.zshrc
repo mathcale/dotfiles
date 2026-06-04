@@ -1,34 +1,81 @@
-###
+####
 # @mathcale's ZSH shenanigans
-###
+####
 
-# Oh My ZSH configs
+####
+# ZSH SETUP
+####
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="robbyrussell"
-plugins=(git wd history npm sudo golang brew zsh-autopair)
+ZSH_THEME="robbyrussell"
+plugins=(sudo git wd history npm golang brew)
+
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
+ZSH_DISABLE_COMPFIX=true
+# zstyle ':omz:update' mode disabled
 
 source $ZSH/oh-my-zsh.sh
+source $(brew --prefix)/share/zsh-autopair/zsh-autopair.zsh
 
-# Homebrew stuff
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+####
+# GENERAL CONFIGS
+####
 
-# Default terminal text editor
-export EDITOR="lvim"
+PRIVATERC_FILE=~/.privaterc && test -f $PRIVATERC_FILE && source $PRIVATERC_FILE
 
-# Golang stuff
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+# Aliases
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias nv=nvim
+alias d=docker
+alias l="eza --icons --color auto -lah"
+alias ls="eza --icons --color auto --group-directories-first"
+alias reset-hard="git reset --hard @{u}"
+alias ff="fastfetch"
+alias ka="killall"
+
+# Shell alternatives configs
+export BAT_THEME="Catppuccin Mocha"
+
+# Local scripts
+export PATH=$PATH:$HOME/.local/bin
+export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:$HOME/.cargo/bin
+
+# HSTR
+alias hh=hstr
+setopt histignorespace
+export HSTR_CONFIG=hicolor
+export HSTR_PROMPT="Search: "
+export HISTFILE=~/.zsh_history
+hstr_no_tiocsti() {
+  zle -I
+  { HSTR_OUT="$( { </dev/tty hstr ${BUFFER}; } 2>&1 1>&3 3>&- )"; } 3>&1;
+  BUFFER="${HSTR_OUT}"
+  CURSOR=${#BUFFER}
+  zle redisplay
+}
+zle -N hstr_no_tiocsti
+bindkey '\C-r' hstr_no_tiocsti
+export HSTR_TIOCSTI=n
+
+# Fix kitty ssh shenanigans
+export TERM=xterm-256color
+
+####
+# PROGRAMMING-RELATED STUFF
+####
+
+# Go stuff
 export GOPATH=$HOME/.goworkspace
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-# export GOPRIVATE=
-# export GONOSUMDB=
-export GOPROXY=https://proxy.golang.org,direct
-# export GONOPROXY=
-# export GOARCH=amd64
 
-# Android
+# Android stuff
 export ANDROID_HOME=$HOME/Library/Android/Sdk
 export PATH=$PATH:$HOME/Library/Android/Sdk/emulator
 export PATH=$PATH:$HOME/Library/Android/Sdk/tools
@@ -37,50 +84,35 @@ alias run-android="emulator @Honeywell_CT60_Emu_API_29"
 
 # Node stuff
 export NODE_OPTIONS=--max_old_space_size=4096
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export REACT_EDITOR=code
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
-[[ $(command -v "fnm") ]] && eval "$(fnm env --use-on-cd --log-level=quiet)"
 
-# Aliases
-alias top=htop
-alias dcu="docker compose up"
-alias dcd="docker compose down"
-alias vim=nvim
-alias vi=nvim
-alias d=docker
-alias l="eza --icons --color auto -lah"
-alias reset-hard="git reset --hard @{u}"
-alias ka="killall"
-alias nf="neofetch"
-alias pf="pfetch"
-alias kct="kubectl"
-alias lzd="lazydocker"
-alias lzg="lazygit"
-alias yaegi='rlwrap yaegi'
+_fnm_init() {
+  unfunction node npm npx yarn pnpm bun 2>/dev/null
+  eval "$(fnm env --use-on-cd --log-level=quiet)"
+}
 
-# Shell alternatives configs
-export BAT_THEME="Catppuccin Mocha"
+node() { _fnm_init; node  "$@"; }
+npm()  { _fnm_init; npm   "$@"; }
+npx()  { _fnm_init; npx   "$@"; }
+yarn() { _fnm_init; yarn  "$@"; }
+pnpm() { _fnm_init; pnpm  "$@"; }
+bun()  { _fnm_init; bun   "$@"; }
 
-# Local scripts
-export PATH=$PATH:$HOME/.local/bin
-export PATH="/usr/local/bin:$PATH"
+# Pi Pico stuff
+export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
+export PICO_EXAMPLES_PATH="$HOME/Dev/embedded/pico-examples"
+export PICO_EXTRAS_PATH="$HOME/Dev/embedded/pico-extras"
 
-# HSTR stuff
-alias hh=hstr
-setopt histignorespace
-export HSTR_CONFIG=hicolor
-export HSTR_PROMPT="Search: "
-export HISTFILE=~/.zsh_history
-bindkey -s "\C-r" "\C-a hstr -- \C-j"
+# bun stuff
+export PATH="$HOME/.bun/bin:$PATH"
+[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
 
-# Import work-related stuff
-[ -f ~/.workrc ] && source ~/.workrc
+# pnpm stuff
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
-# Pyenv stuff
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-# Starship stuff
 eval "$(starship init zsh)"

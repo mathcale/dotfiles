@@ -35,7 +35,7 @@ alias dcd="docker compose down"
 alias nv=nvim
 alias d=docker
 alias ls="eza --icons --color auto --group-directories-first"
-alias nf="nerdfetch"
+alias ff="fastfetch"
 
 # Shell alternatives configs
 export BAT_THEME="Catppuccin Mocha"

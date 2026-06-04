@@ -29,7 +29,6 @@ lssecret-git
 minecraft-launcher
 mycli
 nautilus-open-any-terminal
-nerdfetch
 phinger-cursors
 pipes.sh
 plymouth-theme-catppuccin-mocha-git
