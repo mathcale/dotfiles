@@ -30,9 +30,9 @@ ln -sf $DOTFILES/cross/git/theme.gitconfig $HOME/.gitconfig-theme
 
 mkdir -p $HOME/.config/kitty
 ln -sf $DOTFILES/cross/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
-ln -sf $DOTFILES/cross/kitty/themes $HOME/.config/kitty/themes
+ln -sfn $DOTFILES/cross/kitty/themes $HOME/.config/kitty/themes
 
-ln -sf $DOTFILES/cross/nvim $HOME/.config/nvim
+ln -sfn $DOTFILES/cross/nvim $HOME/.config/nvim
 ln -sf $DOTFILES/cross/starship.toml $HOME/.config/starship.toml
 
 ln -sf $DOTFILES/macos/zsh/.zshrc $HOME/.zshrc
