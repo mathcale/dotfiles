@@ -15,7 +15,7 @@ ZSH_DISABLE_COMPFIX=true
 # zstyle ':omz:update' mode disabled
 
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-autopair/zsh-autopair.zsh
+[[ -f "$(brew --prefix)/share/zsh-autopair/zsh-autopair.zsh" ]] && source "$(brew --prefix)/share/zsh-autopair/zsh-autopair.zsh"
 
 ####
 # GENERAL CONFIGS
