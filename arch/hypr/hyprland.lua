@@ -149,7 +149,7 @@ hl.config({
         kb_layout          = "us",
         kb_variant         = "intl",
         kb_model           = "",
-        kb_options         = "",
+        kb_options         = "caps:escape_shifted_capslock",
         kb_rules           = "",
         numlock_by_default = true,
         follow_mouse       = 1,
