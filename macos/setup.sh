@@ -35,6 +35,10 @@ ln -sfn $DOTFILES/cross/kitty/themes $HOME/.config/kitty/themes
 ln -sfn $DOTFILES/cross/nvim $HOME/.config/nvim
 ln -sf $DOTFILES/cross/starship.toml $HOME/.config/starship.toml
 
+mkdir -p $HOME/.config/btop/themes
+ln -sf $DOTFILES/cross/btop/btop.conf $HOME/.config/btop/btop.conf
+ln -sf $DOTFILES/cross/btop/themes/catppuccin_mocha.theme $HOME/.config/btop/themes/catppuccin_mocha.theme
+
 ln -sf $DOTFILES/macos/zsh/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/macos/zsh/.zprofile $HOME/.zprofile
 ln -sf $DOTFILES/macos/zsh/.workrc $HOME/.workrc
