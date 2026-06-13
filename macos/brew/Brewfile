@@ -1,10 +1,16 @@
+tap "gromgit/fuse", trusted: true
 brew "act"
 brew "bat"
 brew "btop"
+brew "fontconfig"
+brew "cask"
 brew "cmatrix"
 brew "cocoapods"
 brew "cowsay"
 brew "ctags"
+brew "curl"
+brew "sqlite"
+brew "deno"
 brew "docker"
 brew "docker-compose"
 brew "docker-credential-helper"
@@ -29,13 +35,15 @@ brew "hstr"
 brew "htop"
 brew "jq"
 brew "mas"
-cask "mitmproxy"
+brew "mycli"
+brew "mysql-client"
 brew "neovim"
 brew "nmap"
 brew "ripgrep"
+brew "opencode"
+brew "rlwrap"
 brew "sl"
 brew "speedtest-cli"
-brew "sqlite"
 brew "sqlite-utils"
 brew "starship"
 brew "telnet"
@@ -47,6 +55,7 @@ brew "yt-dlp"
 brew "zsh"
 brew "zsh-autopair"
 
+cask "1password"
 cask "arduino-ide"
 cask "audacity"
 cask "balenaetcher"
@@ -56,21 +65,28 @@ cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "gimp"
 cask "insomnia"
+cask "istat-menus"
 cask "jetbrains-toolbox"
 cask "kitty"
 cask "localsend"
+cask "mitmproxy"
 cask "notion"
 cask "orbstack"
+cask "protonvpn"
+cask "qbittorrent"
 cask "runjs"
+cask "steam"
 cask "sublime-text"
 cask "temurin@21"
 cask "thunderbird"
 cask "visual-studio-code"
 cask "vlc"
+cask "zen"
 
-# Mac App Store apps
-mas "WhatsApp Messenger", id: 310633997
-mas "Telegram", id: 747648890
-mas "Parcel - Delivery Tracking", id: 375589283
+mas "CopyClip", id: 595191960
 mas "Magnet", id: 441258766
-mas "CopyClip - Clipboard History", id: 595191960
+mas "Parcel", id: 375589283
+mas "Telegram", id: 747648890
+mas "WhatsApp", id: 310633997
+
+go "github.com/air-verse/air"
