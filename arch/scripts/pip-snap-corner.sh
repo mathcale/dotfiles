@@ -5,7 +5,8 @@ PADDING=5
 ACTIVE_WINDOW=$(hyprctl activewindow -j)
 WINDOW_TITLE=$(echo "$ACTIVE_WINDOW" | jq -r '.title // ""')
 
-if [[ "$WINDOW_TITLE" != "Picture-in-Picture" ]]; then
+# Match both Firefox/Zen (Picture-in-Picture) and Brave (Picture in picture) formats
+if [[ "$WINDOW_TITLE" != "Picture-in-Picture" ]] && [[ "$WINDOW_TITLE" != "Picture in picture" ]]; then
   exit 0
 fi
 
@@ -46,4 +47,5 @@ fi
 
 ADDRESS=$(echo "$ACTIVE_WINDOW" | jq -r '.address')
 
-hyprctl dispatch "hl.dsp.window.move({x=$SNAP_X,y=$SNAP_Y,exact=true,window=hl.get_window(\"address:$ADDRESS\")})"
+# Use hyprctl eval to execute the Lua window move command
+hyprctl eval "hl.dispatch(hl.dsp.window.move({x=$SNAP_X,y=$SNAP_Y,exact=true,window=hl.get_window(\"address:$ADDRESS\")}))"
