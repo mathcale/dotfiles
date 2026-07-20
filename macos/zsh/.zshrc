@@ -65,6 +65,8 @@ export HSTR_TIOCSTI=n
 # Fix kitty ssh shenanigans
 export TERM=xterm-256color
 
+export HOMEBREW_NO_ENV_HINTS=1
+
 ####
 # PROGRAMMING-RELATED STUFF
 ####
