@@ -3,6 +3,6 @@
 set -x
 
 brew update
-brew upgrade
-brew upgrade --cask
+yes | brew upgrade
+yes | brew upgrade --cask
 brew cleanup
