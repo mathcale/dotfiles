@@ -80,7 +80,7 @@ _installSymLink 90-dms.conf ~/.config/environment.d/90-dms.conf ~/dotfiles/arch/
 echo ""
 echo "==> Applying GNOME keybindings"
 
-dconf load / < ~/dotfiles/arch/dconf/gnome.conf
+dconf load / <~/dotfiles/arch/dconf/gnome.conf
 echo "👌 GNOME keybindings applied."
 
 echo ""
@@ -119,6 +119,27 @@ _installDmsPlugin() {
 
 _installDmsPlugin "calculator" "https://github.com/rochacbruno/DankCalculator"
 _installDmsPlugin "emojiLauncher" "https://github.com/devnullvoid/dms-emoji-launcher"
+
+echo ""
+echo "==> Restoring wallpapers"
+
+DMS_WALLPAPER="$HOME/Pictures/wallpapers/nasa-eHTBf7286Xw-unsplash.jpg"
+GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/nasa-eHTBf7286Xw-unsplash.jpg"
+DMS_SESSION="$HOME/.local/state/DankMaterialShell/session.json"
+
+if [ -f "$DMS_SESSION" ] && command -v python3 &>/dev/null; then
+  python3 ~/dotfiles/arch/scripts/set-dms-wallpaper.py "$DMS_SESSION" "$DMS_WALLPAPER"
+  echo "👌 DMS wallpaper set to $DMS_WALLPAPER"
+else
+  echo "⚠️  DMS session.json not found, skipping DMS wallpaper restore."
+fi
+
+# GNOME: restore via gsettings
+if command -v gsettings &>/dev/null; then
+  gsettings set org.gnome.desktop.background picture-uri "$GNOME_WALLPAPER"
+  gsettings set org.gnome.desktop.background picture-uri-dark "$GNOME_WALLPAPER"
+  echo "👌 GNOME wallpaper set to $GNOME_WALLPAPER"
+fi
 
 echo ""
 echo "==> Copying scripts"
