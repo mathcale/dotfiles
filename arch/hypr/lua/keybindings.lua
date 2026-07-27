@@ -41,7 +41,6 @@ hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + W", hl.dsp.group.toggle())
--- Note: `mod + P` was bound twice in old config (pin + submap); submap wins below.
 
 -- Focus navigation
 hl.bind(mod .. " + left", hl.dsp.focus({ direction = "l" }))
@@ -53,7 +52,7 @@ hl.bind(mod .. " + J", hl.dsp.focus({ direction = "d" }))
 hl.bind(mod .. " + K", hl.dsp.focus({ direction = "u" }))
 hl.bind(mod .. " + L", hl.dsp.focus({ direction = "r" }))
 
--- Window movement (note: this collides with monitor focus in old config; window movement wins)
+-- Window movement
 hl.bind(mod .. " + CTRL + left", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mod .. " + CTRL + down", hl.dsp.window.move({ direction = "d" }))
 hl.bind(mod .. " + CTRL + up", hl.dsp.window.move({ direction = "u" }))
@@ -106,7 +105,7 @@ hl.bind(mod .. " + CTRL + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 -- Mouse drag/resize
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Move window" })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "Resize window" })
--- PiP corner snap on drag end (fires on mouse:272 release).
+-- PiP corner snap on drag end
 hl.bind(
   mod .. " + mouse:272",
   hl.dsp.exec_cmd(os.getenv("HOME") .. "/dotfiles/arch/scripts/pip-snap-corner.sh"),

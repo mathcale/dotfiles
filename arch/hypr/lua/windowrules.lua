@@ -24,8 +24,6 @@ hl.window_rule({
 })
 hl.window_rule({ match = { class = "^(xdg-desktop-portal)$" }, float = true })
 
--- Picture-in-Picture: float, sized, pinned, opaque, snapped to bottom-right.
--- Matches both Firefox/Zen (Picture-in-Picture) and Brave (Picture in picture) formats.
 hl.window_rule({
   name = "pip",
   match = { title = "^(Picture in picture|Picture-in-Picture)$" },

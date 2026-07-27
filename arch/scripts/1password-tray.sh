@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Launch 1Password minimized to tray, waiting for the StatusNotifierWatcher
-# DBus service to be ready first. Without this, the tray icon silently fails
-# to register when 1Password starts before the tray host (e.g. Waybar, DMS).
 
 until dbus-send \
     --session \

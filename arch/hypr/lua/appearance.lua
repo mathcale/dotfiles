@@ -41,7 +41,6 @@ hl.config({
 
   dwindle = {
     preserve_split = true,
-    -- pseudotile is no longer a config option; use hl.dsp.window.pseudo() bind.
   },
 
   master = {
@@ -68,10 +67,44 @@ hl.config({
   },
 })
 
--- Keep simple: speeds + default bezier, matching the previous hyprlang config.
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "default" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
+hl.animation({
+  enabled = true,
+  leaf = "windowsIn",
+  speed = 3,
+  bezier = "default"
+})
+
+hl.animation({
+  enabled = true,
+  leaf = "windowsOut",
+  speed = 3,
+  bezier = "default"
+})
+
+hl.animation({
+  enabled = true,
+  leaf = "windowsMove",
+  speed = 4,
+  bezier = "default"
+})
+
+hl.animation({
+  enabled = true,
+  leaf = "workspaces",
+  speed = 5,
+  bezier = "default"
+})
+
+hl.animation({
+  enabled = true,
+  leaf = "fade",
+  speed = 3,
+  bezier = "default"
+})
+
+hl.animation({
+  enabled = true,
+  leaf = "border",
+  speed = 3,
+  bezier = "default"
+})
