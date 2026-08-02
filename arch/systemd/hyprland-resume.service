@@ -1,0 +1,12 @@
+[Unit]
+Description=Reload Hyprland monitor config after resume from suspend
+After=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hyprctl reload
+ExecStart=/usr/bin/sleep 2
+ExecStart=/usr/bin/xrandr --output DP-1 --primary
+
+[Install]
+WantedBy=sleep.target
