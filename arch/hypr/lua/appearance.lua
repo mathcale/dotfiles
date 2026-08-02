@@ -19,11 +19,14 @@ hl.config({
 
     blur = {
       enabled = true,
-      size = 12,
-      passes = 4,
+      size = 10,
+      passes = 3,
       new_optimizations = true,
-      ignore_opacity = true,
-      xray = true,
+      -- ignore_opacity = true,
+      xray = false,
+      noise = 0.02,
+      contrast = 1.0,
+      brightness = 0.7,
     },
 
     shadow = {
@@ -71,40 +74,40 @@ hl.animation({
   enabled = true,
   leaf = "windowsIn",
   speed = 3,
-  bezier = "default"
+  bezier = "default",
 })
 
 hl.animation({
   enabled = true,
   leaf = "windowsOut",
   speed = 3,
-  bezier = "default"
+  bezier = "default",
 })
 
 hl.animation({
   enabled = true,
   leaf = "windowsMove",
   speed = 4,
-  bezier = "default"
+  bezier = "default",
 })
 
 hl.animation({
   enabled = true,
   leaf = "workspaces",
   speed = 5,
-  bezier = "default"
+  bezier = "default",
 })
 
 hl.animation({
   enabled = true,
   leaf = "fade",
   speed = 3,
-  bezier = "default"
+  bezier = "default",
 })
 
 hl.animation({
   enabled = true,
   leaf = "border",
   speed = 3,
-  bezier = "default"
+  bezier = "default",
 })

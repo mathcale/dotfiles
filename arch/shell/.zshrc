@@ -107,17 +107,7 @@ export REACT_EDITOR=code
 export PATH="$HOME/.npm-global/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/fnm:$PATH"
 
-_fnm_init() {
-  unfunction node npm npx yarn pnpm bun 2>/dev/null
-  eval "$(fnm env --use-on-cd)"
-}
-
-node() { _fnm_init; node  "$@"; }
-npm()  { _fnm_init; npm   "$@"; }
-npx()  { _fnm_init; npx   "$@"; }
-yarn() { _fnm_init; yarn  "$@"; }
-pnpm() { _fnm_init; pnpm  "$@"; }
-bun()  { _fnm_init; bun   "$@"; }
+eval "$(fnm env --use-on-cd)"
 
 # Pi Pico stuff
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
