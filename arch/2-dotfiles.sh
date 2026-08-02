@@ -84,6 +84,18 @@ dconf load / <~/dotfiles/arch/dconf/gnome.conf
 echo "👌 GNOME keybindings applied."
 
 echo ""
+echo "==> Enabling hyprland-resume service (reloads monitor config after suspend)"
+
+_installSymLink hyprland-resume.service \
+  ~/.config/systemd/user/hyprland-resume.service \
+  ~/dotfiles/arch/systemd/hyprland-resume.service \
+  ~/.config/systemd/user/hyprland-resume.service
+
+systemctl --user daemon-reload
+systemctl --user enable hyprland-resume.service
+echo "👌 hyprland-resume service enabled."
+
+echo ""
 echo "==> Enabling ulauncher service (GNOME only)"
 
 if [ ! -d ~/.config/systemd/user/ulauncher.service.d ]; then

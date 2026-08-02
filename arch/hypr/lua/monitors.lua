@@ -12,3 +12,10 @@ hl.monitor({
   scale = 1.0,
   transform = 3,
 })
+
+-- Disable any unrecognized outputs so they don't squat at 0,0
+-- and confuse XWayland's primary display selection.
+hl.monitor({
+  output = "",
+  disabled = true,
+})
