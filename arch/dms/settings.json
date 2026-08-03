@@ -288,7 +288,9 @@
   "rememberLastQuery": false,
   "rememberLastMode": true,
   "spotlightSectionViewModes": {},
-  "appDrawerSectionViewModes": {},
+  "appDrawerSectionViewModes": {
+    "apps": "list"
+  },
   "niriOverviewOverlayEnabled": true,
   "niriOverviewLauncherStyle": "full",
   "dankLauncherV2Size": "compact",
@@ -349,8 +351,8 @@
       "cursorHideTimeout": 0
     }
   },
-  "launcherLogoMode": "os",
-  "launcherLogoCustomPath": "",
+  "launcherLogoMode": "custom",
+  "launcherLogoCustomPath": "/usr/share/pixmaps/archlinux-logo-white.svg",
   "launcherLogoColorOverride": "",
   "launcherLogoColorInvertOnMode": false,
   "launcherLogoBrightness": 0.5,
@@ -640,6 +642,10 @@
       ],
       "showOnLastDisplay": false,
       "leftWidgets": [
+        {
+          "id": "launcherButton",
+          "enabled": true
+        },
         {
           "id": "network_speed_monitor",
           "enabled": true
