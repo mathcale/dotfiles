@@ -67,6 +67,34 @@ export TERM=xterm-256color
 
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Update kitty padding for certain apps
+KITTY_PADDING_DEFAULT=4
+KITTY_NO_PADDING_APPS=(opencode nvim)
+
+_kitty_run_without_padding() {
+  local cmd="$1"
+  shift
+
+  if [[ -n "$KITTY_WINDOW_ID" ]] && command -v kitty &>/dev/null; then
+    kitty @ set-spacing padding=0 &>/dev/null
+
+    command "$cmd" "$@"
+    local exit_status=$?
+
+    kitty @ set-spacing padding=$KITTY_PADDING_DEFAULT &>/dev/null
+
+    return $exit_status
+  else
+    command "$cmd" "$@"
+  fi
+}
+
+for _app in "${KITTY_NO_PADDING_APPS[@]}"; do
+  eval "${_app}() { _kitty_run_without_padding ${_app} \"\$@\"; }"
+done
+
+unset _app
+
 ####
 # PROGRAMMING-RELATED STUFF
 ####

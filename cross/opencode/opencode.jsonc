@@ -1,0 +1,92 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "cloudflare": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.cloudflare.com/mcp",
+      "oauth": {}
+    },
+    "playwright": {
+      "enabled": true,
+      "type": "local",
+      "command": [
+        "bunx",
+        "@playwright/mcp@latest",
+        "--ignore-https-errors"
+      ]
+    },
+    "context7": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y @upstash/context7-mcp --api-key {env:CONTEXT7_API_KEY}"
+      ]
+    },
+    "memory": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y @modelcontextprotocol/server-memory"
+      ]
+    },
+    "next-devtools": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y next-devtools-mcp@latest"
+      ]
+    },
+    "railway": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y @railway/mcp-server"
+      ]
+    },
+    "shadcn": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y shadcn@latest mcp"
+      ]
+    },
+    "Linear": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/bin/zsh",
+        "-c",
+        "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y mcp-remote https://mcp.linear.app/mcp"
+      ]
+    },
+    "proxmox": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "uvx",
+        "proxmox-mcp-server"
+      ],
+      "environment": {
+        "PROXMOX_HOST": "{env:PROXMOX_HOST}",
+        "PROXMOX_PORT": "{env:PROXMOX_PORT}",
+        "PROXMOX_USER": "{env:PROXMOX_USER}",
+        "PROXMOX_TOKEN_NAME": "{env:PROXMOX_TOKEN_NAME}",
+        "PROXMOX_TOKEN_VALUE": "{env:PROXMOX_TOKEN_VALUE}",
+        "PROXMOX_VERIFY_SSL": "{env:PROXMOX_VERIFY_SSL}"
+      }
+    }
+  },
+  "provider": {}
+}
+

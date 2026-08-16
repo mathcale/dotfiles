@@ -39,6 +39,9 @@ mkdir -p $HOME/.config/btop/themes
 ln -sf $DOTFILES/cross/btop/btop.conf $HOME/.config/btop/btop.conf
 ln -sf $DOTFILES/cross/btop/themes/catppuccin_mocha.theme $HOME/.config/btop/themes/catppuccin_mocha.theme
 
+mkdir -p $HOME/.config/opencode
+ln -sf $DOTFILES/cross/opencode/opencode.jsonc $HOME/.config/opencode/opencode.jsonc
+
 ln -sf $DOTFILES/macos/zsh/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/macos/zsh/.zprofile $HOME/.zprofile
 ln -sf $DOTFILES/macos/zsh/.workrc $HOME/.workrc

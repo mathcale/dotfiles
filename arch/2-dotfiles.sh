@@ -53,6 +53,7 @@ _installSymLink ulauncher ~/.config/ulauncher ~/dotfiles/arch/ulauncher ~/.confi
 _installSymLink xdg-terminals.list ~/.config/xdg-terminals.list ~/dotfiles/arch/xdg-terminals.list ~/.config/xdg-terminals.list
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimeapps.list ~/.config/mimeapps.list
+_installSymLink opencode.jsonc ~/.config/opencode/opencode.jsonc ~/dotfiles/cross/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
 echo ""
 echo "==> Installing GTK dotfiles"
@@ -121,6 +122,7 @@ mkdir -p "$DMS_PLUGINS_DIR"
 _installDmsPlugin() {
   local name="$1"
   local url="$2"
+
   if [ ! -d "$DMS_PLUGINS_DIR/$name" ]; then
     git clone "$url" "$DMS_PLUGINS_DIR/$name"
     echo "👌 DMS plugin '$name' installed."
@@ -135,12 +137,13 @@ _installDmsPlugin "emojiLauncher" "https://github.com/devnullvoid/dms-emoji-laun
 echo ""
 echo "==> Restoring wallpapers"
 
-DMS_WALLPAPER="$HOME/Pictures/wallpapers/nasa-eHTBf7286Xw-unsplash.jpg"
-GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/nasa-eHTBf7286Xw-unsplash.jpg"
+DMS_WALLPAPER="$HOME/Pictures/wallpapers/valentine-dexheimer-wzTSUHBRVJU-unsplash.jpg"
+GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/valentine-dexheimer-wzTSUHBRVJU-unsplash.jpg"
 DMS_SESSION="$HOME/.local/state/DankMaterialShell/session.json"
 
 if [ -f "$DMS_SESSION" ] && command -v python3 &>/dev/null; then
   python3 ~/dotfiles/arch/scripts/set-dms-wallpaper.py "$DMS_SESSION" "$DMS_WALLPAPER"
+
   echo "👌 DMS wallpaper set to $DMS_WALLPAPER"
 else
   echo "⚠️  DMS session.json not found, skipping DMS wallpaper restore."
@@ -150,6 +153,7 @@ fi
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.background picture-uri "$GNOME_WALLPAPER"
   gsettings set org.gnome.desktop.background picture-uri-dark "$GNOME_WALLPAPER"
+
   echo "👌 GNOME wallpaper set to $GNOME_WALLPAPER"
 fi
 
@@ -159,6 +163,7 @@ echo "==> Copying scripts"
 cp ~/dotfiles/arch/scripts/s0 ~/.local/bin/s0
 cp ~/dotfiles/arch/scripts/up.sh ~/.local/bin/up
 cp ~/dotfiles/arch/scripts/screenshot.sh ~/.local/bin/screenshot
+
 chmod +x ~/.local/bin/*
 
 echo "🎉 Done! Please reboot your system!"
