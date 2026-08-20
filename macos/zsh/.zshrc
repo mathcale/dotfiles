@@ -117,17 +117,7 @@ export NODE_OPTIONS=--max_old_space_size=4096
 export REACT_EDITOR=code
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
 
-_fnm_init() {
-  unfunction node npm npx yarn pnpm bun 2>/dev/null
-  eval "$(fnm env --use-on-cd --log-level=quiet)"
-}
-
-node() { _fnm_init; node  "$@"; }
-npm()  { _fnm_init; npm   "$@"; }
-npx()  { _fnm_init; npx   "$@"; }
-yarn() { _fnm_init; yarn  "$@"; }
-pnpm() { _fnm_init; pnpm  "$@"; }
-bun()  { _fnm_init; bun   "$@"; }
+eval "$(fnm env --use-on-cd)"
 
 # Pi Pico stuff
 export PICO_SDK_PATH="$HOME/Dev/embedded/pico-sdk"
