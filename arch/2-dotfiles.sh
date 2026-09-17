@@ -199,6 +199,10 @@ if [ -f ~/dotfiles/arch/avatar.png ]; then
     sudo chmod 644 "/var/lib/AccountsService/icons/$USER"
   fi
 
+  if command -v dms &>/dev/null; then
+    dms ipc call profile setImage ~/dotfiles/arch/avatar.png
+  fi
+
   echo "👌 User avatar restored."
 fi
 
