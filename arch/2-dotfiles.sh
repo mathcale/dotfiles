@@ -56,6 +56,36 @@ _installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimea
 _installSymLink opencode.jsonc ~/.config/opencode/opencode.jsonc ~/dotfiles/cross/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
 echo ""
+echo "==> Installing shared agent config (OpenCode, Copilot, Pi)"
+
+if [ ! -d ~/.claude ]; then
+  mkdir -p ~/.claude
+  echo "👌 ~/.claude folder created."
+fi
+
+if [ ! -d ~/.copilot ]; then
+  mkdir -p ~/.copilot
+  echo "👌 ~/.copilot folder created."
+fi
+
+if [ ! -d ~/.pi/agent ]; then
+  mkdir -p ~/.pi/agent
+  echo "👌 ~/.pi/agent folder created."
+fi
+
+if [ ! -d ~/.agents ]; then
+  mkdir -p ~/.agents
+  echo "👌 ~/.agents folder created."
+fi
+
+_installSymLink opencode-AGENTS.md ~/.config/opencode/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.config/opencode/AGENTS.md
+_installSymLink opencode-agents ~/.config/opencode/agents ~/dotfiles/cross/agents/agents ~/.config/opencode/agents
+_installSymLink agents-skills ~/.agents/skills ~/dotfiles/cross/agents/skills ~/.agents/skills
+_installSymLink claude-CLAUDE.md ~/.claude/CLAUDE.md ~/dotfiles/cross/agents/AGENTS.md ~/.claude/CLAUDE.md
+_installSymLink copilot-agents ~/.copilot/agents ~/dotfiles/cross/agents/agents ~/.copilot/agents
+_installSymLink pi-AGENTS.md ~/.pi/agent/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.pi/agent/AGENTS.md
+
+echo ""
 echo "==> Installing GTK dotfiles"
 
 _installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/arch/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
@@ -155,6 +185,21 @@ if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.background picture-uri-dark "$GNOME_WALLPAPER"
 
   echo "👌 GNOME wallpaper set to $GNOME_WALLPAPER"
+fi
+
+echo ""
+echo "==> Restoring user avatar"
+
+if [ -f ~/dotfiles/arch/avatar.png ]; then
+  cp ~/dotfiles/arch/avatar.png ~/.face
+
+  if [ -d /var/lib/AccountsService/icons ]; then
+    sudo cp ~/dotfiles/arch/avatar.png "/var/lib/AccountsService/icons/$USER"
+    sudo chown root:root "/var/lib/AccountsService/icons/$USER"
+    sudo chmod 644 "/var/lib/AccountsService/icons/$USER"
+  fi
+
+  echo "👌 User avatar restored."
 fi
 
 echo ""
