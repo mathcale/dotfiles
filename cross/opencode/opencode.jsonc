@@ -8,7 +8,7 @@
       "oauth": {}
     },
     "playwright": {
-      "enabled": true,
+      "enabled": false,
       "type": "local",
       "command": [
         "bunx",
@@ -27,7 +27,7 @@
     },
     "memory": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "/bin/zsh",
         "-c",
@@ -63,7 +63,7 @@
     },
     "Linear": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "/bin/zsh",
         "-c",
