@@ -213,6 +213,7 @@ networkmanager
 networkmanager-openvpn
 nfs-utils
 nilfs-utils
+noctalia
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji

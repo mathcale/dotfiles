@@ -9,7 +9,6 @@ cider
 code-minimap
 cozette-otb
 dmg2img
-dms-shell-git
 docker-buildx-git
 dualsensectl-git
 ferdium-bin

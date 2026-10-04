@@ -1,7 +1,7 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("wl-paste --watch cliphist store")
-  hl.exec_cmd("dms run")
+  hl.exec_cmd("noctalia --daemon")
   hl.exec_cmd("hyprctl setcursor phinger-cursors-dark 24")
   hl.exec_cmd("bash -c 'sleep 2 && xrandr --output DP-1 --primary'")
   hl.exec_cmd("hyprpm reload -n")

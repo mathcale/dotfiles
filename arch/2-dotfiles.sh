@@ -90,7 +90,44 @@ echo "==> Installing GTK dotfiles"
 
 _installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/arch/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
 _installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/dotfiles/arch/gtk/gtk-3.0/ ~/.config/
+
+echo ""
+echo "==> Installing Catppuccin-GTK-Theme"
+
+CATPPUCCIN_GTK_THEME_DIR="$HOME/Random/Catppuccin-GTK-Theme"
+
+if [ ! -d "$CATPPUCCIN_GTK_THEME_DIR" ]; then
+  git clone git@github.com:Fausto-Korpsvart/Catppuccin-GTK-Theme.git "$CATPPUCCIN_GTK_THEME_DIR"
+  echo "👌 Catppuccin-GTK-Theme cloned."
+else
+  echo "👌 Catppuccin-GTK-Theme already present, skipping clone."
+fi
+
+# ~/.config/gtk-4.0 is normally a symlink into this dotfiles repo (see below),
+# managed by Noctalia's app-theming templates. Unlink it first so the installer's
+# --libadwaita (-l) step writes its generated theme symlinks to a plain directory
+# instead of clobbering the repo-tracked files through the symlink.
+if [ -L ~/.config/gtk-4.0 ]; then
+  unlink ~/.config/gtk-4.0
+fi
+
+(cd "$CATPPUCCIN_GTK_THEME_DIR/themes" && ./install.sh -l -a mauve --shell no-border --tweaks macos)
+echo "👌 Catppuccin-GTK-Theme installed."
+
+echo ""
+echo "==> Restoring Noctalia's GTK4 config"
+
+# Reasserts Noctalia's generated theme as the authority over ~/.config/gtk-4.0,
+# discarding whatever --libadwaita just linked there.
 _installSymLink gtk-4.0 ~/.config/gtk-4.0 ~/dotfiles/arch/gtk/gtk-4.0/ ~/.config/
+
+echo ""
+echo "==> Applying Flatpak theme overrides"
+
+sudo flatpak override --filesystem="$HOME/.themes"
+sudo flatpak override --filesystem="$HOME/.icons"
+flatpak override --user --filesystem=xdg-config/gtk-4.0
+echo "👌 Flatpak theme overrides applied."
 
 echo ""
 echo "==> Installing Hyprland dotfiles"
@@ -98,14 +135,23 @@ echo "==> Installing Hyprland dotfiles"
 _installSymLink hypr ~/.config/hypr ~/dotfiles/arch/hypr/ ~/.config
 
 echo ""
-echo "==> Installing DankMaterialShell dotfiles"
+echo "==> Installing Noctalia dotfiles"
+
+mkdir -p ~/.config/noctalia
+_installSymLink config.toml ~/.config/noctalia/config.toml ~/dotfiles/arch/noctalia/config.toml ~/.config/noctalia/config.toml
+
+# GUI-managed overrides; loads after config.toml and wins on conflicts.
+mkdir -p ~/.local/state/noctalia
+_installSymLink settings.toml ~/.local/state/noctalia/settings.toml ~/dotfiles/arch/noctalia/settings.toml ~/.local/state/noctalia/settings.toml
+
+echo ""
+echo "==> Installing environment.d overrides"
 
 if [ ! -d ~/.config/environment.d ]; then
   mkdir -p ~/.config/environment.d
   echo "👌 ~/.config/environment.d folder created."
 fi
 
-_installSymLink DankMaterialShell ~/.config/DankMaterialShell ~/dotfiles/arch/dms ~/.config/DankMaterialShell
 _installSymLink 90-dms.conf ~/.config/environment.d/90-dms.conf ~/dotfiles/arch/environment.d/90-dms.conf ~/.config/environment.d/90-dms.conf
 
 echo ""
@@ -144,40 +190,11 @@ systemctl --user enable --now ulauncher.service
 echo "👌 ulauncher service enabled (restricted to GNOME sessions)."
 
 echo ""
-echo "==> Installing DMS plugins"
-
-DMS_PLUGINS_DIR="$HOME/.config/DankMaterialShell/plugins"
-mkdir -p "$DMS_PLUGINS_DIR"
-
-_installDmsPlugin() {
-  local name="$1"
-  local url="$2"
-
-  if [ ! -d "$DMS_PLUGINS_DIR/$name" ]; then
-    git clone "$url" "$DMS_PLUGINS_DIR/$name"
-    echo "👌 DMS plugin '$name' installed."
-  else
-    echo "👌 DMS plugin '$name' already installed, skipping."
-  fi
-}
-
-_installDmsPlugin "calculator" "https://github.com/rochacbruno/DankCalculator"
-_installDmsPlugin "emojiLauncher" "https://github.com/devnullvoid/dms-emoji-launcher"
-
-echo ""
 echo "==> Restoring wallpapers"
 
-DMS_WALLPAPER="$HOME/Pictures/wallpapers/valentine-dexheimer-wzTSUHBRVJU-unsplash.jpg"
+# Noctalia's own wallpaper is restored automatically from the symlinked
+# ~/.config/noctalia/config.toml ([wallpaper] section) above.
 GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/valentine-dexheimer-wzTSUHBRVJU-unsplash.jpg"
-DMS_SESSION="$HOME/.local/state/DankMaterialShell/session.json"
-
-if [ -f "$DMS_SESSION" ] && command -v python3 &>/dev/null; then
-  python3 ~/dotfiles/arch/scripts/set-dms-wallpaper.py "$DMS_SESSION" "$DMS_WALLPAPER"
-
-  echo "👌 DMS wallpaper set to $DMS_WALLPAPER"
-else
-  echo "⚠️  DMS session.json not found, skipping DMS wallpaper restore."
-fi
 
 # GNOME: restore via gsettings
 if command -v gsettings &>/dev/null; then
@@ -197,10 +214,6 @@ if [ -f ~/dotfiles/arch/avatar.png ]; then
     sudo cp ~/dotfiles/arch/avatar.png "/var/lib/AccountsService/icons/$USER"
     sudo chown root:root "/var/lib/AccountsService/icons/$USER"
     sudo chmod 644 "/var/lib/AccountsService/icons/$USER"
-  fi
-
-  if command -v dms &>/dev/null; then
-    dms ipc call profile setImage ~/dotfiles/arch/avatar.png
   fi
 
   echo "👌 User avatar restored."

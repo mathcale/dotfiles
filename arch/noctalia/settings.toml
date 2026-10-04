@@ -1,0 +1,408 @@
+config_version = 14
+
+[bar.default]
+center = [ "workspaces" ]
+end = [
+    "tray",
+    "spacer_4",
+    "clipboard",
+    "notifications",
+    "brightness",
+    "battery",
+    "control-center",
+    "volume",
+    "spacer_5",
+    "clock",
+    "session"
+]
+shadow = false
+start = [ "launcher", "spacer_3", "network_rx", "network_tx", "spacer_2", "media", "cpu", "ram", "sysmon" ]
+thickness = 32
+
+[control_center]
+sidebar = "full"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000005",
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000006"
+]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 96.0
+    box_width = 368.0
+    cx = 248.0
+    cy = 1216.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        bands = 32
+        centered = false
+        mirrored = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 144.0
+    box_width = 352.0
+    cx = 256.0
+    cy = 1336.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "media_player"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = true
+        hide_when_no_media = true
+        layout = "horizontal"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 224.0
+    box_width = 224.0
+    cx = 2368.0
+    cy = 208.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = true
+        circle = true
+        clock_style = "analog"
+        timezone = "America/Sao_Paulo"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 2380.0
+    cy = 1056.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        display = "graph"
+        shadow = true
+        show_label = true
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 2380.0
+    cy = 1200.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        display = "graph"
+        shadow = true
+        show_label = true
+        stat = "gpu_usage"
+        stat2 = "gpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 2380.0
+    cy = 1344.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
+        display = "graph"
+        shadow = true
+        show_label = true
+        stat = "net_rx"
+        stat2 = "net_tx"
+
+[dock]
+active_monitor_only = true
+background_opacity = 0.99999997764825821
+concave_edge_corners = false
+cross_axis_padding = 5
+icon_size = 32
+item_spacing = 4
+launcher_position = "start"
+magnification = false
+main_axis_padding = 5
+margin_edge = 10
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[hot_corners]
+enabled = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+address = "Mendes, Rio de Janeiro, Brazil"
+
+[lockscreen]
+blur_intensity = 0.099999997764825821
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@FALLBACK",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 1280.0
+    cy = 947.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface"
+        background_opacity = 0.0
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 12.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = true
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "FALLBACK"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 288.0
+    box_width = 512.0
+    cx = 1280.0
+    cy = 640.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        color = "on_surface"
+        format = "{:%H:%M}"
+        shadow = false
+        timezone = "America/Sao_Paulo"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 48.0
+    box_width = 144.0
+    cx = 1280.0
+    cy = 784.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        clock_style = "digital"
+        color = "on_surface"
+        format = "{:%D}"
+        shadow = false
+        timezone = "America/Sao_Paulo"
+
+[osd]
+background_opacity = 0.99999997764825821
+
+    [osd.kinds]
+    media = false
+
+[shell]
+polkit_agent = true
+
+    [shell.launcher]
+    categories = false
+    fetch_exchange_rates = false
+
+        [shell.launcher.providers.calculator]
+        prefix = "="
+
+        [shell.launcher.providers.emoji]
+        global = true
+        prefix = ":"
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    launcher_placement = "attached"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    open_near_click_wallpaper = true
+
+[theme]
+community_palette = "Catppuccin Mocha Mauve-Lavender"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "cava", "gtk3", "gtk4", "hyprland", "niri", "qt" ]
+    community_ids = [ "opencode", "feishin", "zen-browser", "gimp" ]
+
+[wallpaper]
+directory = "/home/mthx/Pictures/wallpapers"
+transition = [ "disc" ]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
+
+    [wallpaper.last]
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/joshua-kettle-U5aQb-sn_6w-unsplash.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/kim-tunger-MvTpDphP1Vc-unsplash.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/pramod-tiwari-6-38xowCH-Y-unsplash.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/ben-wicks-LjbZd4Qn_Qo-unsplash.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/sour-j8Ydt-FP5rU-unsplash.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
+    theme_mode = "dark"
+
+[widget.launcher]
+capsule_radius = 32
+
+[widget.media]
+enabled = false
+hide_when_no_media = true
+max_length = 350
+title_scroll = "always"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.spacer_5]
+type = "spacer"
+
+[widget.sysmon]
+stat = "gpu_usage"
+
+[widget.workspaces]
+show_labels = false

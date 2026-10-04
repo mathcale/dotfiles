@@ -4,35 +4,37 @@ local mod = "SUPER"
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("brave"))
-hl.bind(mod .. " + space", hl.dsp.exec_cmd("dms ipc call spotlight toggle"))
-hl.bind(mod .. " + V", hl.dsp.exec_cmd("dms ipc call clipboard toggle"))
-hl.bind(mod .. " + M", hl.dsp.exec_cmd("dms ipc call processlist toggle"))
-hl.bind(mod .. " + comma", hl.dsp.exec_cmd("dms ipc call settings toggle"))
-hl.bind(mod .. " + N", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
-hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
-hl.bind(mod .. " + Y", hl.dsp.exec_cmd("dms ipc call dankdash wallpaper"))
-hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
+hl.bind(mod .. " + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind(mod .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+-- Noctalia has no process-list panel; Control Center's System tab is the closest equivalent
+hl.bind(mod .. " + M", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center system"))
+hl.bind(mod .. " + comma", hl.dsp.exec_cmd("noctalia msg settings-toggle"))
+hl.bind(mod .. " + N", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications"))
+-- DMS notepad has no Noctalia equivalent yet; dropped
+hl.bind(mod .. " + Y", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
+-- DMS's overview isn't in Noctalia; window-switcher is the nearest alt-tab style surface
+hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher"))
 
 -- Security
-hl.bind(mod .. " + CTRL + Q", hl.dsp.exec_cmd("dms ipc call powermenu toggle"))
-hl.bind(mod .. " + CTRL + L", hl.dsp.exec_cmd("dms ipc call lock lock"))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("dms ipc call processlist toggle"))
+hl.bind(mod .. " + CTRL + Q", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
+hl.bind(mod .. " + CTRL + L", hl.dsp.exec_cmd("noctalia msg session lock"))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center system"))
 
 -- Audio
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("dms ipc call audio increment 3"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("dms ipc call audio decrement 3"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("dms ipc call audio mute"), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("dms ipc call audio micmute"), { locked = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("noctalia msg volume-up 3"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("noctalia msg volume-down 3"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("noctalia msg volume-mute"), { locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("noctalia msg mic-mute"), { locked = true })
 
 -- Brightness
 hl.bind(
   "XF86MonBrightnessUp",
-  hl.dsp.exec_cmd('dms ipc call brightness increment 5 ""'),
+  hl.dsp.exec_cmd('noctalia msg brightness-up "" 5'),
   { locked = true, repeating = true }
 )
 hl.bind(
   "XF86MonBrightnessDown",
-  hl.dsp.exec_cmd('dms ipc call brightness decrement 5 ""'),
+  hl.dsp.exec_cmd('noctalia msg brightness-down "" 5'),
   { locked = true, repeating = true }
 )
 
