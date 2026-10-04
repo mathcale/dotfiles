@@ -21,6 +21,8 @@ video/vnd.avi=mpv.desktop;
 video/x-matroska=mpv.desktop;
 audio/flac=vlc.desktop;
 text/markdown=sublime_text.desktop;
+application/x-zerosize=sublime_text.desktop;
+application/xml=sublime_text.desktop;
 
 [Default Applications]
 x-scheme-handler/figma=figma-linux.desktop
@@ -65,3 +67,7 @@ x-scheme-handler/itms=cider.desktop
 x-scheme-handler/itmss=cider.desktop
 x-scheme-handler/music=cider.desktop
 x-scheme-handler/itunes=cider.desktop
+application/x-zerosize=sublime_text.desktop
+x-scheme-handler/claude=com.anthropic.Claude.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+application/xml=sublime_text.desktop
