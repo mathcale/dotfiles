@@ -84,15 +84,18 @@ _installSymLink agents-skills ~/.agents/skills ~/dotfiles/cross/agents/skills ~/
 _installSymLink claude-CLAUDE.md ~/.claude/CLAUDE.md ~/dotfiles/cross/agents/AGENTS.md ~/.claude/CLAUDE.md
 _installSymLink claude-agents ~/.claude/agents ~/dotfiles/cross/agents/agents ~/.claude/agents
 _installSymLink claude-commands ~/.claude/commands ~/dotfiles/cross/agents/commands ~/.claude/commands
+_installSymLink claude-settings.json ~/.claude/settings.json ~/dotfiles/cross/claude/settings.json ~/.claude/settings.json
 _installSymLink copilot-agents ~/.copilot/agents ~/dotfiles/cross/agents/agents ~/.copilot/agents
 _installSymLink pi-AGENTS.md ~/.pi/agent/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.pi/agent/AGENTS.md
 
-# Claude Code doesn't support symlinking the whole ~/.claude/skills dir (it holds
-# real marketplace-synced content under skills/synced/), so link each shared skill
-# in individually instead.
+~/dotfiles/cross/claude/install-mcp.sh
+
+# Claude Code doesn't support symlinking the whole ~/.claude/skills dir (it holds real marketplace-synced content under skills/synced/), so link each shared skill in individually instead.
 mkdir -p ~/.claude/skills
+
 for skillDir in ~/dotfiles/cross/agents/skills/*/; do
   skillName="$(basename "${skillDir}")"
+
   if [ ! -L ~/.claude/skills/"${skillName}" ]; then
     ln -s "${skillDir%/}" ~/.claude/skills/"${skillName}"
   fi

@@ -1,0 +1,42 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["@playwright/mcp@latest", "--ignore-https-errors"]
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "/bin/zsh",
+      "args": ["-c", "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y @modelcontextprotocol/server-memory"]
+    },
+    "next-devtools": {
+      "type": "stdio",
+      "command": "/bin/zsh",
+      "args": ["-c", "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y next-devtools-mcp@latest"]
+    },
+    "railway": {
+      "type": "stdio",
+      "command": "/bin/zsh",
+      "args": ["-c", "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y @railway/mcp-server"]
+    },
+    "shadcn": {
+      "type": "stdio",
+      "command": "/bin/zsh",
+      "args": ["-c", "eval \"$(fnm env --use-on-cd --shell zsh)\" && npx -y shadcn@latest mcp"]
+    },
+    "proxmox": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["proxmox-mcp-server"],
+      "env": {
+        "PROXMOX_HOST": "${PROXMOX_HOST}",
+        "PROXMOX_PORT": "${PROXMOX_PORT:-8006}",
+        "PROXMOX_USER": "${PROXMOX_USER}",
+        "PROXMOX_TOKEN_NAME": "${PROXMOX_TOKEN_NAME}",
+        "PROXMOX_TOKEN_VALUE": "${PROXMOX_TOKEN_VALUE}",
+        "PROXMOX_VERIFY_SSL": "${PROXMOX_VERIFY_SSL:-true}"
+      }
+    }
+  }
+}

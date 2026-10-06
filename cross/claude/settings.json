@@ -1,0 +1,15 @@
+{
+  "model": "sonnet",
+  "extraKnownMarketplaces": {
+    "cloudflare": {
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/skills"
+      }
+    }
+  },
+  "theme": "dark",
+  "enabledPlugins": {
+    "cloudflare@cloudflare": true
+  }
+}

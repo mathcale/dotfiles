@@ -42,6 +42,10 @@ ln -sf $DOTFILES/cross/btop/themes/catppuccin_mocha.theme $HOME/.config/btop/the
 mkdir -p $HOME/.config/opencode
 ln -sf $DOTFILES/cross/opencode/opencode.jsonc $HOME/.config/opencode/opencode.jsonc
 
+mkdir -p $HOME/.claude
+ln -sf $DOTFILES/cross/claude/settings.json $HOME/.claude/settings.json
+$DOTFILES/cross/claude/install-mcp.sh
+
 ln -sf $DOTFILES/macos/zsh/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/macos/zsh/.zprofile $HOME/.zprofile
 ln -sf $DOTFILES/macos/zsh/.workrc $HOME/.workrc
