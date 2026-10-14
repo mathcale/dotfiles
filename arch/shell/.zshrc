@@ -160,5 +160,8 @@ export PATH="$HOME/.lmstudio/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 [[ -e "$HOME/.local/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "$HOME/.local/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
+# Railway stuff
+source "$HOME/.railway/env"
+
 # Init Starship prompt
 eval "$(starship init zsh)"

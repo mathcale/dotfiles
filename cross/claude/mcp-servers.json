@@ -37,6 +37,15 @@
         "PROXMOX_TOKEN_VALUE": "${PROXMOX_TOKEN_VALUE}",
         "PROXMOX_VERIFY_SSL": "${PROXMOX_VERIFY_SSL:-true}"
       }
+    },
+    "oracle-oci-cloud-mcp-server": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["oracle.oci-cloud-mcp-server@latest"],
+      "env": {
+        "OCI_CONFIG_PROFILE": "${OCI_CONFIG_PROFILE:-DEFAULT}",
+        "FASTMCP_LOG_LEVEL": "${FASTMCP_LOG_LEVEL:-ERROR}"
+      }
     }
   }
 }
