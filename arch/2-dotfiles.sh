@@ -55,42 +55,29 @@ _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimeapps.list ~/.config/mimeapps.list
 
 echo ""
-echo "==> Installing shared agent config (Claude Code, Copilot)"
+echo "==> Installing shared agent config (Claude Code)"
 
 if [ ! -d ~/.claude ]; then
   mkdir -p ~/.claude
   echo "👌 ~/.claude folder created."
 fi
 
-if [ ! -d ~/.copilot ]; then
-  mkdir -p ~/.copilot
-  echo "👌 ~/.copilot folder created."
-fi
-
-if [ ! -d ~/.agents ]; then
-  mkdir -p ~/.agents
-  echo "👌 ~/.agents folder created."
-fi
-
 _installSymLink claude-CLAUDE.md ~/.claude/CLAUDE.md ~/dotfiles/cross/agents/AGENTS.md ~/.claude/CLAUDE.md
 _installSymLink claude-agents ~/.claude/agents ~/dotfiles/cross/agents/agents ~/.claude/agents
 _installSymLink claude-commands ~/.claude/commands ~/dotfiles/cross/agents/commands ~/.claude/commands
 _installSymLink claude-settings.json ~/.claude/settings.json ~/dotfiles/cross/claude/settings.json ~/.claude/settings.json
-_installSymLink copilot-agents ~/.copilot/agents ~/dotfiles/cross/agents/agents ~/.copilot/agents
 
 ~/dotfiles/cross/claude/install-mcp.sh
 
-# ~/.agents/skills (Copilot) and ~/.claude/skills (Claude Code) must stay real directories: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
-mkdir -p ~/.agents/skills ~/.claude/skills
+# ~/.claude/skills must stay a real directory: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
+mkdir -p ~/.claude/skills
 
 for skillDir in ~/dotfiles/cross/agents/skills/*/; do
   skillName="$(basename "${skillDir}")"
 
-  for target in ~/.agents/skills ~/.claude/skills; do
-    if [ ! -L "${target}/${skillName}" ]; then
-      ln -s "${skillDir%/}" "${target}/${skillName}"
-    fi
-  done
+  if [ ! -L ~/.claude/skills/"${skillName}" ]; then
+    ln -s "${skillDir%/}" ~/.claude/skills/"${skillName}"
+  fi
 done
 
 # External skills are only referenced in external-skills.json and installed from their original source.
