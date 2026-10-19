@@ -6,7 +6,8 @@ This folder is the single source of truth for personal, global AI-agent configur
 
 - `AGENTS.md`: global personal instructions
 - `agents/`: global custom subagent definitions (markdown, one file per agent)
-- `skills/`: global Agent Skills (`skills/<name>/SKILL.md`)
+- `skills/`: Agent Skills **owned by this repo** (`skills/<name>/SKILL.md`). Skills installed from the internet never live here.
+- `external-skills.json`: manifest of third-party skills (source repo + skill names), installed by `install-external-skills.sh` via `npx skills`
 - `commands/`: global custom slash commands (tool-specific frontmatter, so files here are written for whichever tool actually reads them - currently Claude Code)
 
 ## Symlinked into
@@ -15,16 +16,15 @@ This folder is the single source of truth for personal, global AI-agent configur
 |---|---|---|
 | OpenCode | `~/.config/opencode/AGENTS.md` | `AGENTS.md` |
 | OpenCode | `~/.config/opencode/agents/` | `agents/` |
-| OpenCode | `~/.agents/skills/` | `skills/` |
-| GitHub Copilot | `~/.claude/CLAUDE.md` | `AGENTS.md` (Copilot reads `~/.claude/CLAUDE.md` as a user-level fallback) |
 | GitHub Copilot | `~/.copilot/agents/` | `agents/` |
-| GitHub Copilot | `~/.agents/skills/` | `skills/` (already shared with OpenCode) |
 | Pi | `~/.pi/agent/AGENTS.md` | `AGENTS.md` |
-| Pi | `~/.agents/skills/` | `skills/` (already shared with OpenCode/Copilot) |
-| Claude Code | `~/.claude/CLAUDE.md` | `AGENTS.md` (same file Copilot's fallback points at) |
+| Claude Code, GitHub Copilot | `~/.claude/CLAUDE.md` | `AGENTS.md` (Copilot reads `~/.claude/CLAUDE.md` as a user-level fallback) |
 | Claude Code | `~/.claude/agents/` | `agents/` |
 | Claude Code | `~/.claude/commands/` | `commands/` |
-| Claude Code | `~/.claude/skills/<name>/` | `skills/<name>/` (linked per-skill, not as one dir - `skills/synced/` under `~/.claude/skills/` holds real marketplace content and can't be replaced by a directory symlink) |
+| OpenCode, Copilot, Pi | `~/.agents/skills/<name>` | `skills/<name>` (per skill) |
+| Claude Code | `~/.claude/skills/<name>` | `skills/<name>` (per skill) |
+
+`~/.agents/skills/` and `~/.claude/skills/` are real directories, not symlinks into this repo, so skills installed from the internet (`npx skills add`, `railway skills`, marketplaces) don't leak into the dotfiles. To track a third-party skill, add it to `external-skills.json`; the setup scripts install it from its original source.
 
 Pi has no custom-subagent feature, so `agents/` isn't symlinked there.
 

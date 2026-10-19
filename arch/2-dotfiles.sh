@@ -80,7 +80,6 @@ fi
 
 _installSymLink opencode-AGENTS.md ~/.config/opencode/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.config/opencode/AGENTS.md
 _installSymLink opencode-agents ~/.config/opencode/agents ~/dotfiles/cross/agents/agents ~/.config/opencode/agents
-_installSymLink agents-skills ~/.agents/skills ~/dotfiles/cross/agents/skills ~/.agents/skills
 _installSymLink claude-CLAUDE.md ~/.claude/CLAUDE.md ~/dotfiles/cross/agents/AGENTS.md ~/.claude/CLAUDE.md
 _installSymLink claude-agents ~/.claude/agents ~/dotfiles/cross/agents/agents ~/.claude/agents
 _installSymLink claude-commands ~/.claude/commands ~/dotfiles/cross/agents/commands ~/.claude/commands
@@ -90,16 +89,21 @@ _installSymLink pi-AGENTS.md ~/.pi/agent/AGENTS.md ~/dotfiles/cross/agents/AGENT
 
 ~/dotfiles/cross/claude/install-mcp.sh
 
-# Claude Code doesn't support symlinking the whole ~/.claude/skills dir (it holds real marketplace-synced content under skills/synced/), so link each shared skill in individually instead.
-mkdir -p ~/.claude/skills
+# ~/.agents/skills (OpenCode, Copilot, Pi) and ~/.claude/skills (Claude Code) must stay real directories: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
+mkdir -p ~/.agents/skills ~/.claude/skills
 
 for skillDir in ~/dotfiles/cross/agents/skills/*/; do
   skillName="$(basename "${skillDir}")"
 
-  if [ ! -L ~/.claude/skills/"${skillName}" ]; then
-    ln -s "${skillDir%/}" ~/.claude/skills/"${skillName}"
-  fi
+  for target in ~/.agents/skills ~/.claude/skills; do
+    if [ ! -L "${target}/${skillName}" ]; then
+      ln -s "${skillDir%/}" "${target}/${skillName}"
+    fi
+  done
 done
+
+# External skills are only referenced in external-skills.json and installed from their original source.
+~/dotfiles/cross/agents/install-external-skills.sh
 
 echo ""
 echo "==> Installing GTK dotfiles"
