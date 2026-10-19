@@ -306,13 +306,13 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/mthx/Pictures/wallpapers/pramod-tiwari-6-38xowCH-Y-unsplash.jpg"
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
 
     [wallpaper.last]
-    path = "/home/mthx/Pictures/wallpapers/pramod-tiwari-6-38xowCH-Y-unsplash.jpg"
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/mthx/Pictures/wallpapers/pramod-tiwari-6-38xowCH-Y-unsplash.jpg"
+    path = "/home/mthx/Pictures/wallpapers/wallhaven-6lyv5x.png"
 
     [[wallpaper.favorite]]
     community_palette = "Catppuccin Mocha Mauve-Lavender"

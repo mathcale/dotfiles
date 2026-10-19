@@ -69,7 +69,6 @@ _installSymLink claude-settings.json ~/.claude/settings.json ~/dotfiles/cross/cl
 
 ~/dotfiles/cross/claude/install-mcp.sh
 
-# ~/.claude/skills must stay a real directory: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
 mkdir -p ~/.claude/skills
 
 for skillDir in ~/dotfiles/cross/claude/skills/*/; do
@@ -80,7 +79,6 @@ for skillDir in ~/dotfiles/cross/claude/skills/*/; do
   fi
 done
 
-# External skills are only referenced in external-skills.json and installed from their original source.
 ~/dotfiles/cross/claude/install-external-skills.sh
 
 echo ""
@@ -101,10 +99,7 @@ else
   echo "👌 Catppuccin-GTK-Theme already present, skipping clone."
 fi
 
-# ~/.config/gtk-4.0 is normally a symlink into this dotfiles repo (see below),
-# managed by Noctalia's app-theming templates. Unlink it first so the installer's
-# --libadwaita (-l) step writes its generated theme symlinks to a plain directory
-# instead of clobbering the repo-tracked files through the symlink.
+# ~/.config/gtk-4.0 is normally a symlink into this dotfiles repo (see below), managed by Noctalia's app-theming templates. Unlink it first so the installer's --libadwaita (-l) step writes its generated theme symlinks to a plain directory instead of clobbering the repo-tracked files through the symlink.
 if [ -L ~/.config/gtk-4.0 ]; then
   unlink ~/.config/gtk-4.0
 fi
@@ -115,8 +110,7 @@ echo "👌 Catppuccin-GTK-Theme installed."
 echo ""
 echo "==> Restoring Noctalia's GTK4 config"
 
-# Reasserts Noctalia's generated theme as the authority over ~/.config/gtk-4.0,
-# discarding whatever --libadwaita just linked there.
+# Reasserts Noctalia's generated theme as the authority over ~/.config/gtk-4.0, discarding whatever --libadwaita just linked there.
 _installSymLink gtk-4.0 ~/.config/gtk-4.0 ~/dotfiles/arch/gtk/gtk-4.0/ ~/.config/
 
 echo ""
@@ -192,7 +186,7 @@ echo "==> Restoring wallpapers"
 
 # Noctalia's own wallpaper is restored automatically from the symlinked
 # ~/.config/noctalia/config.toml ([wallpaper] section) above.
-GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/valentine-dexheimer-wzTSUHBRVJU-unsplash.jpg"
+GNOME_WALLPAPER="file://$HOME/Pictures/wallpapers/wallhaven-6lyv5x.png"
 
 # GNOME: restore via gsettings
 if command -v gsettings &>/dev/null; then

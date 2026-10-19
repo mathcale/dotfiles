@@ -2,24 +2,18 @@
   "sources": {
     "mattpocock/skills": [
       "code-review",
-      "codebase-design",
       "diagnosing-bugs",
       "domain-modeling",
       "grill-with-docs",
       "grilling",
       "handoff",
       "implement",
-      "prototype",
       "research",
       "tdd",
       "to-spec",
       "to-tickets",
       "triage",
-      "wayfinder",
-      "writing-for-agents"
-    ],
-    "vercel-labs/skills": [
-      "find-skills"
+      "wayfinder"
     ]
   }
 }

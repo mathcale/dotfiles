@@ -1,30 +1,5 @@
 # Arch Linux Dotfiles
 
-![Screenshot](screenshot.png)
-
-## Main Packages
-
-- **Window manager**: Hyprland
-- **Terminal**: Kitty
-- **Editors**: Neovim (feat. LazyVim), Visual Studio Code and Sublime Text
-- **Shell**: zsh
-- **Prompt**: Starship
-- **Glyphs**: Font Awesome
-- **Menus**: Rofi
-- **Color scheme**: Catppuccin Mocha
-- **Browser**: Zen
-- **File manager**: Nautilus
-- **Cursor**: Phinger
-- **Icons**: Kora
-- **Status Bar**: Waybar
-- **Screenshots**: grim & slurp
-- **Clipboard Manager**: cliphist
-- **Notifications**: dunst
-- **Session Manager**: GDM
-- **Logout**: wlogout
-- **Screenlock**: hyprlock
-- **Wallpaper engine**: hyprpaper
-
 ## Getting started
 
 > Make sure to backup your existing `~/.config` folder before running the following commands.
