@@ -225,7 +225,6 @@ obs-studio
 onlyoffice-bin
 openbsd-netcat
 opencl-mesa
-opencode
 openssh
 opentabletdriver
 orca

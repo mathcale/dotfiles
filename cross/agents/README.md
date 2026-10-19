@@ -14,19 +14,14 @@ This folder is the single source of truth for personal, global AI-agent configur
 
 | Tool | Path | Target |
 |---|---|---|
-| OpenCode | `~/.config/opencode/AGENTS.md` | `AGENTS.md` |
-| OpenCode | `~/.config/opencode/agents/` | `agents/` |
 | GitHub Copilot | `~/.copilot/agents/` | `agents/` |
-| Pi | `~/.pi/agent/AGENTS.md` | `AGENTS.md` |
 | Claude Code, GitHub Copilot | `~/.claude/CLAUDE.md` | `AGENTS.md` (Copilot reads `~/.claude/CLAUDE.md` as a user-level fallback) |
 | Claude Code | `~/.claude/agents/` | `agents/` |
 | Claude Code | `~/.claude/commands/` | `commands/` |
-| OpenCode, Copilot, Pi | `~/.agents/skills/<name>` | `skills/<name>` (per skill) |
+| GitHub Copilot | `~/.agents/skills/<name>` | `skills/<name>` (per skill) |
 | Claude Code | `~/.claude/skills/<name>` | `skills/<name>` (per skill) |
 
 `~/.agents/skills/` and `~/.claude/skills/` are real directories, not symlinks into this repo, so skills installed from the internet (`npx skills add`, `railway skills`, marketplaces) don't leak into the dotfiles. To track a third-party skill, add it to `external-skills.json`; the setup scripts install it from its original source.
-
-Pi has no custom-subagent feature, so `agents/` isn't symlinked there.
 
 Managed by `~/dotfiles/arch/2-dotfiles.sh` via `_installSymLink`.
 

@@ -53,10 +53,9 @@ _installSymLink ulauncher ~/.config/ulauncher ~/dotfiles/arch/ulauncher ~/.confi
 _installSymLink xdg-terminals.list ~/.config/xdg-terminals.list ~/dotfiles/arch/xdg-terminals.list ~/.config/xdg-terminals.list
 _installSymLink Kvantum ~/.config/Kvantum ~/dotfiles/arch/Kvantum/ ~/.config
 _installSymLink mimeapps.list ~/.config/mimeapps.list ~/dotfiles/arch/hypr/mimeapps.list ~/.config/mimeapps.list
-_installSymLink opencode.jsonc ~/.config/opencode/opencode.jsonc ~/dotfiles/cross/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
 echo ""
-echo "==> Installing shared agent config (OpenCode, Copilot, Pi)"
+echo "==> Installing shared agent config (Claude Code, Copilot)"
 
 if [ ! -d ~/.claude ]; then
   mkdir -p ~/.claude
@@ -68,28 +67,20 @@ if [ ! -d ~/.copilot ]; then
   echo "👌 ~/.copilot folder created."
 fi
 
-if [ ! -d ~/.pi/agent ]; then
-  mkdir -p ~/.pi/agent
-  echo "👌 ~/.pi/agent folder created."
-fi
-
 if [ ! -d ~/.agents ]; then
   mkdir -p ~/.agents
   echo "👌 ~/.agents folder created."
 fi
 
-_installSymLink opencode-AGENTS.md ~/.config/opencode/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.config/opencode/AGENTS.md
-_installSymLink opencode-agents ~/.config/opencode/agents ~/dotfiles/cross/agents/agents ~/.config/opencode/agents
 _installSymLink claude-CLAUDE.md ~/.claude/CLAUDE.md ~/dotfiles/cross/agents/AGENTS.md ~/.claude/CLAUDE.md
 _installSymLink claude-agents ~/.claude/agents ~/dotfiles/cross/agents/agents ~/.claude/agents
 _installSymLink claude-commands ~/.claude/commands ~/dotfiles/cross/agents/commands ~/.claude/commands
 _installSymLink claude-settings.json ~/.claude/settings.json ~/dotfiles/cross/claude/settings.json ~/.claude/settings.json
 _installSymLink copilot-agents ~/.copilot/agents ~/dotfiles/cross/agents/agents ~/.copilot/agents
-_installSymLink pi-AGENTS.md ~/.pi/agent/AGENTS.md ~/dotfiles/cross/agents/AGENTS.md ~/.pi/agent/AGENTS.md
 
 ~/dotfiles/cross/claude/install-mcp.sh
 
-# ~/.agents/skills (OpenCode, Copilot, Pi) and ~/.claude/skills (Claude Code) must stay real directories: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
+# ~/.agents/skills (Copilot) and ~/.claude/skills (Claude Code) must stay real directories: skills installed from the internet land there (via `npx skills`) and must not leak into this repo. Only the skills owned by this repo are linked in, one by one.
 mkdir -p ~/.agents/skills ~/.claude/skills
 
 for skillDir in ~/dotfiles/cross/agents/skills/*/; do

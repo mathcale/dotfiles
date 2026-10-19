@@ -1,7 +1,7 @@
 # Global agent instructions
 
 Personal, cross-project instructions shared across all AI coding agents
-(OpenCode, GitHub Copilot, Claude Code, Pi) on this machine. Not tied to any
+(GitHub Copilot, Claude Code) on this machine. Not tied to any
 single project — keep project-specific rules in each repo's own `AGENTS.md`.
 
 This file lives in `~/dotfiles/cross/agents/AGENTS.md` and is symlinked into

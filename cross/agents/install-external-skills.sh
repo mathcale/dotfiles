@@ -17,7 +17,7 @@ for source in $(jq -r '.sources | keys[]' "${CONFIG}"); do
     skills+=("${skill}")
   done < <(jq -r --arg s "${source}" '.sources[$s][]' "${CONFIG}")
 
-  npx -y skills add "${source}" --global --yes --agent claude-code opencode github-copilot pi --skill "${skills[@]}"
+  npx -y skills add "${source}" --global --yes --agent claude-code github-copilot --skill "${skills[@]}"
 
   echo "Skills from '${source}' installed."
 done
