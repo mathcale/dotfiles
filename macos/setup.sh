@@ -39,9 +39,19 @@ mkdir -p $HOME/.config/btop/themes
 ln -sf $DOTFILES/cross/btop/btop.conf $HOME/.config/btop/btop.conf
 ln -sf $DOTFILES/cross/btop/themes/catppuccin_mocha.theme $HOME/.config/btop/themes/catppuccin_mocha.theme
 
-mkdir -p $HOME/.claude
+mkdir -p $HOME/.claude/skills
+ln -sf $DOTFILES/cross/claude/CLAUDE.md $HOME/.claude/CLAUDE.md
 ln -sf $DOTFILES/cross/claude/settings.json $HOME/.claude/settings.json
+ln -sfn $DOTFILES/cross/claude/agents $HOME/.claude/agents
+ln -sfn $DOTFILES/cross/claude/commands $HOME/.claude/commands
 $DOTFILES/cross/claude/install-mcp.sh
+
+# ~/.claude/skills must stay a real directory (skills installed from the internet land there and must not leak into this repo), so link the repo-owned skills one by one.
+for skillDir in $DOTFILES/cross/claude/skills/*/; do
+  ln -sfn "${skillDir%/}" "$HOME/.claude/skills/$(basename "$skillDir")"
+done
+
+$DOTFILES/cross/claude/install-external-skills.sh
 
 ln -sf $DOTFILES/macos/zsh/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/macos/zsh/.zprofile $HOME/.zprofile
