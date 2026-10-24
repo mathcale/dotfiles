@@ -53,6 +53,16 @@ echo "==> Enabling GDM"
 sudo systemctl enable gdm
 
 echo ""
+echo "==> Configuring Plymouth boot splash"
+sudo cp ~/dotfiles/arch/boot/plymouthd.conf /etc/plymouth/plymouthd.conf
+sudo mkdir -p /etc/mkinitcpio.conf.d
+sudo cp ~/dotfiles/arch/boot/mkinitcpio-plymouth.conf /etc/mkinitcpio.conf.d/10-plymouth.conf
+sudo sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=.*|GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 udev.log-priority=3"|' /etc/default/grub
+sudo mkinitcpio -P
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo "👌 Plymouth configured."
+
+echo ""
 echo "==> Enabling Bluetooth dongle rebind workaround"
 sudo cp ~/dotfiles/arch/scripts/rebind-bt-dongle.sh /usr/local/bin/rebind-bt-dongle.sh
 sudo chmod +x /usr/local/bin/rebind-bt-dongle.sh
